@@ -13,12 +13,13 @@ const Home = ({ data }) => {
   console.log(data)
 
   const { featuredImage, headline, subhead } = data.allSanityHomepage.nodes[0].homepageContent
-  const featImg = getImage(featuredImage)
+  const featImg = getImage(featuredImage.asset)
 
   return (
     <Layout header footer>
-      <h1>Hello</h1>
-      <h2>How are you</h2>
+      <h1>{headline}</h1>
+      <Block blocks={subhead._rawData} />
+      <GatsbyImage image={featImg} />
     </Layout>
   )
 }
