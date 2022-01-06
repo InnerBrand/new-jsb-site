@@ -1,14 +1,14 @@
 module.exports = {
   siteMetadata: {
     siteUrl: "https://www.yourdomain.tld",
-    title: "gatsby sanity boiler",
+    title: "jsb gatsby 2022",
   },
   plugins: [
     {
       resolve: "gatsby-source-sanity",
       options: {
         projectId: "9w4zo7wb",
-        dataset: "production",
+        dataset: "jsb-cms",
         watchMode: true
       },
     },

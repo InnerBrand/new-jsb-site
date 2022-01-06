@@ -1,11 +1,11 @@
 {
   "root": true,
   "project": {
-    "name": "IBC CMS"
+    "name": "jsb sanity cms"
   },
   "api": {
     "projectId": "9w4zo7wb",
-    "dataset": "production"
+    "dataset": "jsb-cms"
   },
   "plugins": [
     "@sanity/base",
