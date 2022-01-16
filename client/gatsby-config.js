@@ -5,6 +5,16 @@ module.exports = {
   },
   plugins: [
     {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [
+          `Space Grotesk`,
+          `sans-serif`,
+        ],
+        display: 'swap'
+      },
+    },
+    {
       resolve: "gatsby-source-sanity",
       options: {
         projectId: "9w4zo7wb",
@@ -28,6 +38,6 @@ module.exports = {
         },
       },
     },
-    "gatsby-plugin-image"
+    "gatsby-plugin-image",
   ],
 };
