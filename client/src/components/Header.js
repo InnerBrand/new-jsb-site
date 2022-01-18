@@ -1,43 +1,52 @@
-import React, { useState } from 'react'
-import PropTypes from 'prop-types'
-import { Link } from 'gatsby'
-import { MdClose } from 'react-icons/md'
-import { FiMenu } from 'react-icons/fi'
+import React, { useState } from 'react';
+import PropTypes from 'prop-types';
+import { Link } from 'gatsby';
+import { MdClose } from 'react-icons/md';
+import { FiMenu } from 'react-icons/fi';
 
 // logo
-import logo from '../images/jsb-logo.png'
+import logo from '../images/jsb-logo.png';
 
 // styles
-import * as styles from "../styles/modules/Header.module.scss"
+import * as styles from '../styles/modules/Header.module.scss';
 
+const Header = props => {
+  const [navbarOpen, setNavbarOpen] = useState(false);
 
-const Header = (props) => {
-    const [navbarOpen, setNavbarOpen] = useState(false)
-    const handleToggle = () => {
-        setNavbarOpen(!navbarOpen)
-    }
-    const closeMenu = () => {
-        setNavbarOpen(false)
-      }
-    return (
-        <header className={styles.header}>
-            <nav className={styles.navBar} navbarOpen={navbarOpen} setNavbarOpen={setNavbarOpen}>
-                <button onClick={handleToggle}>
-                    {navbarOpen ? (
-                        <MdClose style={{ color: "#fff", width: "26px", height: "26px" }} />
-                    ) : (
-                        <FiMenu style={{ color: "#7b7b7b", width: "26px", height: "26px" }} />
-                    )}
-                </button>
-                    <ul className={`menuNav ${navbarOpen ? " showMenu" : ""}`}>
-                        <Link to="/">Home</Link>
-                        <Link to="/about">About</Link>
-                    </ul>
-            </nav>
-            <img src={logo} className={styles.logo} />
+  const handleToggle = () => {
+    setNavbarOpen(state => !state);
+  };
 
-        </header>
-    )
-}
+  return (
+    <header
+      className={`${styles.header} ${navbarOpen ? styles.menuIsOpen : ''}`}>
+      <div className={styles.overlayWrapper}>
+        <div className={styles.circleWrapper}>
+          <div className={styles.circle} />
+        </div>
+        <div className={styles.overlay} />
+      </div>
 
-export default Header
+      <button onClick={handleToggle}>
+        <div className={styles.btnTextWrapper}>
+          <p>Menu</p>
+          <p>Close</p>
+        </div>
+        <div className={styles.burgerWrapper}>
+          <span />
+          <span />
+        </div>
+      </button>
+
+      <nav className={styles.nav}>
+        <div className={`${styles.menuNav}`}>
+          <Link to='/'>Home</Link>
+          <Link to='/about'>About</Link>
+        </div>
+      </nav>
+      <img src={logo} className={styles.logo} />
+    </header>
+  );
+};
+
+export default Header;

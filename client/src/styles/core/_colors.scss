@@ -1,11 +1,15 @@
-// Blacks
+// Primary Palette
 $color__black: #000;
+$color__grey: #ededed;
+$color__peach: #ffdfc8;
+$color__peach-light: #ffe7d5;
+$color__lime: #f5ffb6;
 
-// Primary
-$color__primary: rgb(200, 0, 255);
-
-// Secondary
-$color__secondary: #f40909;
+// Colors below this were experimental, may get rid of them eventually
+$color__sage: #d8d6c6;
+$color__indigo: #817eff;
+$color__indigo-bg: #e3e9ff;
+$color__indigo-light: #d0dbff;
 
 // Status
 $color__status--error: #f24444;
@@ -14,8 +18,3 @@ $color__status--warning: #f0c91f;
 
 // Utility
 $focus-ring: rgba(#8ab5ff, 0.4);
-
-// Gradients
-@mixin primary-gradient() {
-  background: linear-gradient(45deg, $color__primary, $color__secondary);
-}

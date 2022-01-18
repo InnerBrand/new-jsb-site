@@ -1,0 +1,22 @@
+{
+  "editor.tabSize": 2,
+  "workbench.colorCustomizations": {
+    "titleBar.activeForeground": "#91674a",
+    "titleBar.inactiveForeground": "#91674a",
+    "titleBar.activeBackground": "#FFDFC8",
+    "titleBar.inactiveBackground": "#FFDFC8",
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "prettier.jsxSingleQuote": true,
+  "typescript.npm": "",
+  "prettier.singleQuote": true,
+  "prettier.arrowParens": "avoid",
+  "prettier.jsxBracketSameLine": true,
+  "javascript.format.insertSpaceAfterOpeningAndBeforeClosingJsxExpressionBraces": true,
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact"
+  },
+
+}
