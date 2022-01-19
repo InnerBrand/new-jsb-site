@@ -2,5 +2,5 @@
   @if type-of($int) != 'number' {
     @error 'Property #{$int} must be an integer';
   }
-  @return $int * 5px;
+  @return $int * 8px;
 }

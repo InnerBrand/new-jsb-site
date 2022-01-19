@@ -1,0 +1,51 @@
+@import 'core';
+
+.wrapper {
+  position: relative;
+
+  &.stacked {
+    margin-bottom: space(3);
+  }
+}
+
+.input {
+  width: 100%;
+  background: transparent;
+  color: $color__black;
+  font-family: $font__special;
+  font-size: 18px;
+  line-height: 1.96;
+  border: 2px solid $color__black;
+  border-radius: 30px;
+  height: 60px;
+  padding: 0 space(3);
+  outline: none;
+  padding-right: space(8);
+  transition: box-shadow 0.3s ease-out;
+
+  &::placeholder {
+    color: rgba($color__black, 0.4);
+  }
+
+  &:not([disabled]) {
+    &:focus {
+      box-shadow: 4px 4px 0 4px $color__lime;
+    }
+  }
+
+  &[disabled] {
+    color: rgba($color__black, 0.15);
+    border-color: rgba($color__black, 0.2);
+  }
+}
+
+.errorIndicator {
+  position: absolute;
+  right: space(2);
+  color: $color__status--error;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 26px;
+  height: 26px;
+  outline: none;
+}

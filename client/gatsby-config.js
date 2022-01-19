@@ -1,33 +1,32 @@
+require('dotenv');
+
 module.exports = {
   siteMetadata: {
-    siteUrl: "https://www.yourdomain.tld",
-    title: "jsb gatsby 2022",
+    siteUrl: 'https://www.yourdomain.tld',
+    title: 'jsb gatsby 2022',
   },
   plugins: [
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
-        fonts: [
-          `Space Grotesk`,
-          `sans-serif`,
-        ],
-        display: 'swap'
+        fonts: [`Space Grotesk`, `Fraunces\:400`],
+        display: 'swap',
       },
     },
     {
-      resolve: "gatsby-source-sanity",
+      resolve: 'gatsby-source-sanity',
       options: {
-        projectId: "9w4zo7wb",
-        dataset: "jsb-cms",
-        watchMode: true
+        projectId: process.env.SANITY_PROJECT_ID,
+        dataset: process.env.SANITY_DATASET,
+        watchMode: true,
       },
     },
     {
       resolve: `gatsby-plugin-sass`,
       options: {
         sassOptions: {
-          includePaths: ["./src/styles/core"],
-        }
+          includePaths: ['./src/styles/core'],
+        },
       },
     },
     {
@@ -38,6 +37,6 @@ module.exports = {
         },
       },
     },
-    "gatsby-plugin-image",
+    'gatsby-plugin-image',
   ],
 };

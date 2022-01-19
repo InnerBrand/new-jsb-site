@@ -5,41 +5,49 @@ h4,
 h5,
 h6 {
   color: inherit;
-  font-family: $heading-font;
-  font-weight: 700;
+  font-family: $font__heading;
+  font-weight: 400;
 }
 
 h1 {
-  @include h2;
+  @include header_l;
 
   @include breakpoint('tablet') {
-    font-size: 32px;
+    @include header_xl;
   }
 
   @include breakpoint('desktop') {
-    @include h1;
+    @include header_xxl;
   }
 
-  &.display {
-    @include h1_display;
+  &.jumbo {
+    @include header_jumbo;
   }
 }
 
 h2 {
-  @include h2;
+  @include header_l;
+
+  @include breakpoint('tablet') {
+    @include header_xl;
+  }
 }
 
 h3 {
-  @include h3;
+  @include header_m;
+
+  @include breakpoint('tablet') {
+    @include header_l;
+  }
 }
 
 h4 {
-  @include h4;
+  @include header_m;
 }
 
 h5,
 h6 {
-  @include h5;
+  @include header_s;
 }
 
 h1,
@@ -59,21 +67,10 @@ h5 {
 
 p,
 li {
-  font-size: 16px;
-  line-height: 1.6;
-  opacity: 0.8;
-
-  &.caption {
-    font-size: 12px;
-  }
-
-  &.small {
-    font-size: 14px;
-  }
+  @include body;
 
   &.large {
-    font-size: 20px;
-    line-height: 1.5;
+    @include body-l;
   }
 }
 
@@ -88,8 +85,8 @@ li {
 a {
   color: $color__black;
   text-decoration: underline;
-  text-underline-offset: 4px;
-  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
 
   &:hover {
     text-decoration: none;

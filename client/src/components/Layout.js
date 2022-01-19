@@ -10,8 +10,6 @@ import '../styles/global/index.scss';
 import * as styles from '../styles/modules/Layout.module.scss';
 
 const Layout = props => {
-  console.log(props);
-
   const { children, header, footer } = props;
 
   return (
@@ -21,6 +19,10 @@ const Layout = props => {
       {footer && <Footer />}
     </>
   );
+};
+
+Layout.defaultProps = {
+  header: true,
 };
 
 Layout.propTypes = {
