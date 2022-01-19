@@ -1,10 +1,12 @@
 import React from 'react';
 import { Link } from 'gatsby';
 
+import * as styles from '../styles/modules/Footer.module.scss'
+
 const Footer = () => {
   return (
     <div>
-      <section className='footer-section'>
+      <section className={styles.footerSection}>
         <div className='subscribe-div'>
           <h3>Subscribe</h3>
           <p>Get info on how to land the perfect job and other helpful tips</p>
