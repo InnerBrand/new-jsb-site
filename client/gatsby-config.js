@@ -1,4 +1,4 @@
-require('dotenv').config({path:'.env'});
+require('dotenv').config({ path: '.env' });
 
 module.exports = {
   siteMetadata: {
@@ -9,7 +9,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
-        fonts: [`Space Grotesk`, `Fraunces\:400`],
+        fonts: [`Space Grotesk\:400,600`, `Fraunces\:400`, `Noto Sans\:400`],
         display: 'swap',
       },
     },

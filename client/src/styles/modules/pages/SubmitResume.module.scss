@@ -1,11 +1,11 @@
 @import 'core';
 
-.hero {
-  padding: 200px 0 148px;
-}
-
 .form {
   text-align: center;
+}
+
+.formItem {
+  margin-bottom: space(12);
 }
 
 .formQuestion {
@@ -14,40 +14,21 @@
   margin-bottom: space(9);
 }
 
-.multiInputRow {
+.inputWrapper {
   display: flex;
   flex-flow: column;
-  justify-content: stretch;
+  justify-content: center;
   gap: space(3);
 
   @include breakpoint('mobile') {
     flex-flow: row;
   }
-
-  .input {
-    flex: 1;
-  }
 }
 
-.formSubmitBtn {
-  background: $color__lime;
-  width: 156px;
-  height: 156px;
-  position: relative;
-  border-radius: 50%;
-  cursor: pointer;
-  padding: 0;
+.input {
+  width: 100%;
 
-  span {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    @include header_m;
-    font-family: $font__special;
-    white-space: nowrap;
-    display: flex;
-    align-items: center;
-    gap: space(1.5);
+  @include breakpoint('mobile') {
+    max-width: 415px;
   }
 }

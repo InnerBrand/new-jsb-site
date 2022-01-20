@@ -30,5 +30,10 @@ button {
 
   &:after {
     border-left-color: $color__peach-lightest !important;
+    border-top-width: 8px !important;
+    border-bottom-width: 8px !important;
+    border-left-width: 8px !important;
+    margin-top: -7px !important;
+    right: -9px !important;
   }
 }

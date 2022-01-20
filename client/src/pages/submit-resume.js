@@ -1,17 +1,43 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { useForm } from 'react-hook-form';
 import validation from '../libs/validation';
 // Components
+import CircleButton from '../components/CircleButton';
 import Container from '../components/Container';
 import Input from '../components/Input';
 import Layout from '../components/Layout';
+import Space from '../components/Space';
+import TabSelector from '../components/TabSelector';
 // Styles
 import * as styles from '../styles/modules/pages/SubmitResume.module.scss';
-// SVG
-import FancyArrowRight from '../images/svg/fancy-arrow-right.inline.svg';
 
 const SubmitResume = props => {
+  const contactMethodData = [
+    { id: 'phone', value: 'Phone', label: 'Phone' },
+    { id: 'email', value: 'Email', label: 'Email', defaultChecked: true },
+    { id: 'both', value: 'Both', label: 'Both' },
+  ];
+  const employmentStatusData = [
+    { id: 'employed', value: 'Employed', label: 'Yes' },
+    {
+      id: 'unemployed',
+      value: 'Unemployed',
+      label: 'No',
+      defaultChecked: true,
+    },
+  ];
+
+  const getDefaultContactMethod = () =>
+    contactMethodData.find(item => item.defaultChecked).id;
+  const getDefaultEmploymentStatus = () =>
+    employmentStatusData.find(item => item.defaultChecked).id;
+
+  const [contactMethod, setContactMethod] = useState(getDefaultContactMethod);
+  const [employmentStatus, setEmploymentStatus] = useState(
+    getDefaultEmploymentStatus
+  );
+
   const {
     register,
     formState: { errors },
@@ -25,40 +51,95 @@ const SubmitResume = props => {
     <Layout header={false}>
       <Container>
         <section className={styles.hero}>
+          <Space unit={40} />
           <h1>Let's get started, together</h1>
+          <Space unit={30} />
         </section>
         <form
           className={styles.form}
           onSubmit={handleSubmit(onSubmit, onError)}>
-          <h3 className={styles.formQuestion}>What's your name</h3>
-          <div className={styles.multiInputRow}>
-            <Input
-              wrapperClass={styles.input}
-              name='firstName'
-              id='firstName'
-              type='text'
-              placeholder='First name'
-              errors={errors}
-              register={register}
-              validation={validation.generalRequired}
-            />
-            <Input
-              wrapperClass={styles.input}
-              name='lastName'
-              id='lastName'
-              type='text'
-              placeholder='Last name'
-              errors={errors}
-              register={register}
-              validation={validation.generalRequired}
-            />
+          <div className={styles.formItem}>
+            <h3 className={styles.formQuestion}>What's your name?</h3>
+            <div className={styles.inputWrapper}>
+              <Input
+                wrapperClass={styles.input}
+                name='firstName'
+                id='firstName'
+                type='text'
+                placeholder='First name'
+                errors={errors}
+                register={register}
+                validation={validation.generalRequired}
+              />
+              <Input
+                wrapperClass={styles.input}
+                name='lastName'
+                id='lastName'
+                type='text'
+                placeholder='Last name'
+                errors={errors}
+                register={register}
+                validation={validation.generalRequired}
+              />
+            </div>
           </div>
 
-          <button className={styles.formSubmitBtn} type='submit'>
-            <span>
-              Submit <FancyArrowRight />
-            </span>
-          </button>
+          <div className={styles.formItem}>
+            <h3 className={styles.formQuestion}>
+              How would you like us to contact you?
+            </h3>
+            <div className={styles.inputWrapper}>
+              <TabSelector
+                name='contactMethod'
+                register={register}
+                data={contactMethodData}
+                onChange={setContactMethod}
+              />
+            </div>
+            <Space unit={16} />
+            <div className={styles.inputWrapper}>
+              {(contactMethod === 'email' || contactMethod === 'both') && (
+                <Input
+                  wrapperClass={styles.input}
+                  name='email'
+                  id='email'
+                  type='email'
+                  placeholder='Email'
+                  errors={errors}
+                  register={register}
+                  validation={validation.email}
+                />
+              )}
+              {(contactMethod === 'phone' || contactMethod === 'both') && (
+                <Input
+                  wrapperClass={styles.input}
+                  name='phone'
+                  id='phone'
+                  type='phone'
+                  placeholder='Phone'
+                  errors={errors}
+                  register={register}
+                  validation={validation.phone}
+                />
+              )}
+            </div>
+          </div>
+
+          <div className={styles.formItem}>
+            <h3 className={styles.formQuestion}>Are you currently employed?</h3>
+            <div className={styles.inputWrapper}>
+              <TabSelector
+                name='employmentStatus'
+                register={register}
+                data={employmentStatusData}
+                onChange={setEmploymentStatus}
+              />
+            </div>
+          </div>
+
+          <CircleButton ctaText='Submit' showArrow={true} />
+
+          <Space unit={60} />
         </form>
       </Container>
     </Layout>

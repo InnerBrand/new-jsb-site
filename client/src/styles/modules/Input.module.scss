@@ -37,6 +37,11 @@
     color: rgba($color__black, 0.15);
     border-color: rgba($color__black, 0.2);
   }
+
+  &.error {
+    border-color: $color__status--error;
+    color: $color__status--error;
+  }
 }
 
 .errorIndicator {
@@ -45,7 +50,7 @@
   color: $color__status--error;
   top: 50%;
   transform: translateY(-50%);
-  width: 26px;
-  height: 26px;
+  width: 32px;
+  height: 32px;
   outline: none;
 }

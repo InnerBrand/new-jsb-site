@@ -1,0 +1,51 @@
+@import 'core';
+
+.wrapper {
+  background: rgba($color__lime, 0.3);
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
+  align-items: center;
+  height: 60px;
+  border-radius: 30px;
+  padding: 2px;
+  position: relative;
+  width: 100%;
+
+  @include breakpoint('mobile') {
+    max-width: 416px;
+  }
+
+  &.threeOptions {
+    max-width: 636px;
+  }
+}
+
+.tab {
+  @include body-l;
+  font-family: $font__special;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+  cursor: pointer;
+
+  @include breakpoint('mobile') {
+    @include header_s;
+  }
+
+  &.checked {
+    font-weight: 600;
+  }
+}
+
+.selectTab {
+  position: absolute;
+  left: 2px;
+  background: $color__lime;
+  height: calc(100% - 4px);
+  border-radius: 30px;
+  transition: transform 0.3s cubic-bezier(0.5, 0.1, 0, 1);
+}

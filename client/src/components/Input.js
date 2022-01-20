@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import ReactTooltip from 'react-tooltip';
 // SVG
-import { RiErrorWarningFill } from 'react-icons/ri';
+import { ExclamationCircleIcon } from '@heroicons/react/solid';
 // Styles
 import * as styles from '../styles/modules/Input.module.scss';
 
@@ -30,7 +30,7 @@ const Input = ({
 
   const inputClasses = `${styles.input} 
     ${raised ? styles.raised : ''} 
-    ${className ? className : ''}`;
+    ${className ? className : ''} ${error ? styles.error : ''}`;
 
   useEffect(() => {
     ReactTooltip.rebuild();
@@ -41,7 +41,7 @@ const Input = ({
       <ReactTooltip className='custom-tooltip' place='left' effect='solid' />
       <div className={wrapperClasses}>
         {error && (
-          <RiErrorWarningFill
+          <ExclamationCircleIcon
             className={styles.errorIndicator}
             data-tip={error.message}
           />
