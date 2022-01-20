@@ -23,6 +23,7 @@ const Layout = props => {
 
 Layout.defaultProps = {
   header: true,
+  footer: true,
 };
 
 Layout.propTypes = {

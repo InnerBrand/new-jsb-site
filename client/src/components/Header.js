@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
-import { MdClose } from 'react-icons/md';
-import { FiMenu } from 'react-icons/fi';
 
 // logo
 import logo from '../images/jsb-logo.png';
@@ -14,12 +12,12 @@ const Header = props => {
   const [navbarOpen, setNavbarOpen] = useState(false);
 
   const handleToggle = () => {
+    console.log(handleToggle)
     setNavbarOpen(state => !state);
   };
 
   return (
-    <header
-      className={`${styles.header} ${navbarOpen ? styles.menuIsOpen : ''}`}>
+    <header className={`${styles.header} ${navbarOpen ? styles.menuIsOpen : ''}`}>
       <div className={styles.overlayWrapper}>
         <div className={styles.circleWrapper}>
           <div className={styles.circle} />
@@ -27,7 +25,7 @@ const Header = props => {
         <div className={styles.overlay} />
       </div>
 
-      <button onClick={handleToggle}>
+      <button className={styles.navToggle} onClick={handleToggle}>
         <div className={styles.btnTextWrapper}>
           <p>Menu</p>
           <p>Close</p>

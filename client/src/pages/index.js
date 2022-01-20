@@ -16,7 +16,7 @@ const Home = ({ data }) => {
   const featImg = getImage(featuredImage.asset)
 
   return (
-    <Layout header footer>
+    <Layout>
       <h1>{headline}</h1>
       <Block blocks={subhead._rawData} />
       <GatsbyImage image={featImg} />
