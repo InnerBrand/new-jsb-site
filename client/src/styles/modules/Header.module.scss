@@ -60,27 +60,38 @@
   background: $color__lime;
 }
 
-span {
-  display: block;
-  width: 100%;
-  border-top: 1px solid #ccc;
-}
-
-.navBar {
-  position: relative;
-}
-
-.navBar button {
-  position: fixed;
-  z-index: 10;
-  cursor: pointer;
-  background: transparent;
-  border: none;
-}
-
 .navToggle {
   position: relative;
   background: transparent;
+
+  p {
+    color: peru;
+  }
+
+  span {
+    width: 40px;
+    height: 40px;
+    background-color: red;
+    position: relative;
+    border-radius: 6px;
+    box-shadow: 2px 2px 4px 0 white;
+  }
+  .burgerWrapper {
+    background-color: #3fffd2;
+
+    .spanLine {
+      width: 40px;
+      height: 40px;
+      background-color: red;
+      position: relative;
+      border-radius: 6px;
+      box-shadow: 2px 2px 4px 0 white;
+    }
+  }
+}
+
+nav {
+  background: #3fffd2;
 }
 
 .menuNav {
@@ -95,11 +106,13 @@ span {
   width: 0;
   overflow: hidden;
   max-width: 290px;
-  z-index: 9;
 }
 
-.menuNav.showMenu {
-  width: 100%;
+.navItem {
+  text-decoration: none;
+  color: black;
+  padding: 10px;
+  background: violet;
 }
 
 a {
@@ -109,17 +122,6 @@ a {
   color: #3fffd2;
   text-transform: uppercase;
   font-weight: bold;
-}
-
-.menuNav li:first-child {
-  margin-top: 7rem;
-}
-
-.navItem {
-  text-decoration: none;
-  color: black;
-  padding: 10px;
-  background: violet;
 }
 
 .logo {

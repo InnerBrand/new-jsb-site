@@ -31,15 +31,15 @@ const Header = props => {
           <p>Close</p>
         </div>
         <div className={styles.burgerWrapper}>
-          <span />
-          <span />
+          <span className={styles.spanLine} />
+          <span className={styles.spanLine} />
         </div>
       </button>
 
       <nav className={styles.nav}>
         <div className={`${styles.menuNav}`}>
-          <Link to='/'>Home</Link>
-          <Link to='/about'>About</Link>
+          <Link to='/' className={styles.navItem}>Home</Link>
+          <Link to='/about' className={styles.navItem}>About</Link>
         </div>
       </nav>
       <img src={logo} className={styles.logo} />
