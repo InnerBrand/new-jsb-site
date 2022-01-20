@@ -16,6 +16,15 @@
       width: 1400px;
       height: 1400px;
     }
+    .overlay {
+      background-color: rgba($color__black, 0.7);
+      transition: all 0.5s ease;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
   }
 }
 
@@ -51,17 +60,8 @@
   background: $color__lime;
 }
 
-.overlay {
-  background-color: rgba($color__black, 0.7);
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-}
-
 span {
-  display:block;
+  display: block;
   width: 100%;
   border-top: 1px solid #ccc;
 }
