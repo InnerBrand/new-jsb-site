@@ -1,13 +1,12 @@
-import React, { useEffect } from 'react';
+import React, {useEffect} from 'react';
 import PropTypes from 'prop-types';
 import ReactTooltip from 'react-tooltip';
 // SVG
-import { ExclamationCircleIcon } from '@heroicons/react/solid';
+import {ExclamationCircleIcon} from '@heroicons/react/solid';
 // Styles
 import * as styles from '../styles/modules/Input.module.scss';
 
 const Input = ({
-  raised,
   className,
   disabled,
   errors,
@@ -18,18 +17,15 @@ const Input = ({
   name,
   placeholder,
   register,
-  stacked,
   validation,
   wrapperClass,
 }) => {
   const error = errors[name];
 
   const wrapperClasses = `${styles.wrapper} 
-     ${stacked ? styles.stacked : ''} 
      ${wrapperClass ? wrapperClass : ''}`;
 
   const inputClasses = `${styles.input} 
-    ${raised ? styles.raised : ''} 
     ${className ? className : ''} ${error ? styles.error : ''}`;
 
   useEffect(() => {
@@ -53,11 +49,14 @@ const Input = ({
             ...validation,
           })}
           type={type}
-          placeholder={placeholder}
           disabled={disabled}
+          placeholder={placeholder}
           onFocus={onFocus}
           onBlur={onBlur}
         />
+        <label className={styles.label} for={id}>
+          {placeholder}
+        </label>
       </div>
     </>
   );
@@ -74,8 +73,6 @@ Input.propTypes = {
   id: PropTypes.string,
   name: PropTypes.string.isRequired,
   type: PropTypes.string,
-  stacked: PropTypes.bool,
-  raised: PropTypes.bool,
   required: PropTypes.bool,
 };
 

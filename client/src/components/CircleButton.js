@@ -1,12 +1,12 @@
-import React, { useState, useLayoutEffect, useRef } from 'react';
-import { gsap } from 'gsap';
+import React, {useState, useLayoutEffect, useRef} from 'react';
+import {gsap} from 'gsap';
 import PropTypes from 'prop-types';
 // SVG
 import FancyArrowRight from '../images/svg/fancy-arrow-right.inline.svg';
 // Styles
 import * as styles from '../styles/modules/CircleButton.module.scss';
 
-const CircleButton = ({ ctaText, showArrow, ease }) => {
+const CircleButton = ({ctaText, showArrow, ease, duration}) => {
   const buttonRef = useRef(null);
   const circleRef = useRef(null);
   const ctaTextRef = useRef(null);
@@ -22,6 +22,8 @@ const CircleButton = ({ ctaText, showArrow, ease }) => {
   }, [ease]);
 
   function handleMouseMove(e) {
+    circleRef.current.classList.add(styles.mouseOn);
+
     const bcr = e.target.getBoundingClientRect();
     const xPos = bcr.x;
     const yPos = bcr.y;
@@ -51,17 +53,23 @@ const CircleButton = ({ ctaText, showArrow, ease }) => {
       x: -circleMoveX,
       y: -circleMoveY,
       scale: 1,
+      duration,
     });
     gsap.to(ctaTextRef.current, {
       x: textMoveX,
       y: textMoveY,
+      duration,
       ease,
     });
   }
 
   function handleMouseLeave() {
-    gsap.to(circleRef.current, { x: 0, y: 0, scale: 0.8, ease });
-    gsap.to(ctaTextRef.current, { x: 0, y: 0, ease });
+    setTimeout(
+      () => circleRef.current.classList.remove(styles.mouseOn),
+      duration * 1000
+    );
+    gsap.to(circleRef.current, {x: 0, y: 0, scale: 0.8, duration, ease});
+    gsap.to(ctaTextRef.current, {x: 0, y: 0, duration, ease});
   }
 
   return (
@@ -76,6 +84,7 @@ const CircleButton = ({ ctaText, showArrow, ease }) => {
 
 CircleButton.defaultProps = {
   ease: 'Power3.easeOut',
+  duration: 0.5,
 };
 
 export default CircleButton;

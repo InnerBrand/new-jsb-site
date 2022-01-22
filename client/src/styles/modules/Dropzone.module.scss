@@ -1,0 +1,205 @@
+@import 'core';
+
+.wrapper {
+  max-width: 636px;
+  margin: auto;
+}
+
+.dropzoneWrapper {
+  height: 300px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border: 2px dashed $color__black;
+    border-radius: 30px;
+    z-index: -1;
+  }
+
+  &.active {
+    .input,
+    &:hover .input {
+      border-color: $color__black;
+      background: transparent;
+
+      &:before {
+        color: $color__black;
+      }
+    }
+
+    .hoverWrapper {
+      &:before {
+        transform: translate(-50%, -50%) scale(1);
+      }
+    }
+  }
+
+  &.rejected {
+    &:before {
+      border-color: $color__status--error;
+    }
+
+    .title {
+      color: $color__status--error;
+    }
+  }
+
+  &.active,
+  &.interacted {
+    &:before {
+      border-width: 4px;
+    }
+  }
+}
+
+.hoverWrapper {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  right: 8px;
+  bottom: 8px;
+  overflow: hidden;
+  z-index: -1;
+
+  &:before {
+    content: '';
+    display: block;
+    position: absolute;
+    background: $color__lime;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    width: 510px;
+    height: 510px;
+    transform: translate(-50%, -50%) scale(0);
+    transition: 0.5s $motion__cubic-ease--1;
+  }
+}
+
+.title {
+  font-family: $font__special;
+  @include header_s;
+  margin-bottom: space(4);
+}
+
+.input {
+  width: 196px;
+  height: 60px;
+  margin: auto;
+  background: transparent;
+  color: $color__black;
+  border: 2px solid $color__lime;
+  border-radius: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s $motion__cubic-ease--1;
+  cursor: pointer;
+
+  &:before {
+    content: 'Browse';
+    height: 55px;
+    margin-bottom: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: $font__special;
+    font-size: 18px;
+    font-weight: 600;
+    pointer-events: none;
+    transition: color 0.3s $motion__cubic-ease--1;
+  }
+
+  &:hover {
+    background: $color__black;
+    border-color: $color__black;
+
+    &:before {
+      color: #fff;
+    }
+  }
+}
+
+.errorIndicator {
+  position: absolute;
+  right: space(2);
+  top: space(2);
+  color: $color__status--error;
+  width: 32px;
+  height: 32px;
+  outline: none;
+}
+
+.captionWrapper {
+  display: flex;
+  margin: space(1.5);
+  margin-bottom: unset;
+  align-items: center;
+
+  p {
+    @include helper;
+    font-family: $font__special;
+    line-height: 1;
+    margin-left: space(1);
+  }
+}
+
+.previewWrapper {
+  background: $color__lime;
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  right: 8px;
+  bottom: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 23px;
+  transition: background 0.3s $motion__cubic-ease--1;
+  overflow: hidden;
+
+  &.hovering {
+    background: $color__coral;
+    cursor: none;
+
+    .previewText {
+      opacity: 0;
+    }
+  }
+}
+
+.previewText {
+  font-family: $font__special;
+  gap: space(1);
+  @include header_s;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  transition: opacity 0.3s $motion__cubic-ease--1;
+  pointer-events: none;
+  padding: 0 space(8);
+  text-align: left;
+
+  svg {
+    width: 24px;
+    height: 24px;
+    flex: 1 0 auto;
+  }
+}
+
+.mouseText {
+  @include header_m;
+  font-family: $font__special;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform-origin: center;
+}

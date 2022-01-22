@@ -47,5 +47,5 @@
   background: $color__lime;
   height: calc(100% - 4px);
   border-radius: 30px;
-  transition: transform 0.3s cubic-bezier(0.5, 0.1, 0, 1);
+  transition: transform 0.3s $motion__cubic-ease--1;
 }

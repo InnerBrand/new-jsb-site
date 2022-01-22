@@ -1,0 +1,9 @@
+@import 'core';
+
+.svg {
+  position: absolute;
+  z-index: -100;
+  width: max(123vw, 1766px);
+  left: 50%;
+  transform: translateX(-50%);
+}

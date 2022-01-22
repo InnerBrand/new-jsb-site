@@ -8,9 +8,22 @@
   }
 }
 
+.label {
+  font-family: $font__special;
+  font-size: 18px;
+  line-height: 1.96;
+  position: absolute;
+  top: 12px;
+  left: space(3) + 2px - 8px;
+  font-weight: 600;
+  transition: 0.3s $motion__cubic-ease--1;
+  pointer-events: none;
+  padding: 0 space(1);
+}
+
 .input {
   width: 100%;
-  background: transparent;
+  background: $color__peach;
   color: $color__black;
   font-family: $font__special;
   font-size: 18px;
@@ -21,15 +34,30 @@
   padding: 0 space(3);
   outline: none;
   padding-right: space(8);
-  transition: box-shadow 0.3s ease-out;
+  transition: box-shadow 0.3s $motion__cubic-ease--1;
+  font-weight: 600;
+
+  &::-webkit-validation-bubble-message {
+    display: none;
+  }
 
   &::placeholder {
-    color: rgba($color__black, 0.4);
+    opacity: 0; // we hide the placeholder b/c we use the :not(:placeholder-shown) pseudo selector to control label transform
   }
 
   &:not([disabled]) {
     &:focus {
       box-shadow: 4px 4px 0 4px $color__lime;
+      font-weight: 400;
+    }
+
+    &:focus,
+    &:not(:placeholder-shown) {
+      ~ .label {
+        transform: translateY(-26px);
+        font-size: 16px;
+        background: $color__peach;
+      }
     }
   }
 
@@ -41,6 +69,7 @@
   &.error {
     border-color: $color__status--error;
     color: $color__status--error;
+    font-weight: 600;
   }
 }
 
