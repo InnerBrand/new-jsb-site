@@ -12,7 +12,7 @@
       transform: translate(0, 0);
     }
     .circle {
-      transform: translate(-50%, -50%);
+      transform: translate(-30%, -50%);
       width: 1400px;
       height: 1400px;
     }
@@ -24,6 +24,42 @@
       bottom: 0;
       left: 0;
       right: 0;
+    }
+
+    .navToggle {
+
+      .btnTextWrapper {
+
+        .btnTextWrapperInner {
+         
+          p {
+            transform: translateY(-28px);
+            overflow: visible;
+          }
+        }
+      }
+    }
+
+    .burgerWrapper {
+
+      span {
+
+        &:first-child {
+          transform: rotate(-45deg) translateY(0);
+        }
+        &:last-child {
+          transform: rotate(45deg) translateY(0);
+        }
+     
+      }
+    }
+
+    
+    .navWrapper {
+      opacity: 1;
+      pointer-events: all;
+      transition: all 1s ease;
+
     }
   }
 }
@@ -63,57 +99,98 @@
 .navToggle {
   position: relative;
   background: transparent;
+  display: flex;
 
-  p {
-    color: peru;
-  }
+  .btnTextWrapper {
 
-  span {
-    width: 40px;
-    height: 40px;
-    background-color: red;
-    position: relative;
-    border-radius: 6px;
-    box-shadow: 2px 2px 4px 0 white;
-  }
-  .burgerWrapper {
-    background-color: #3fffd2;
-
-    .spanLine {
-      width: 40px;
-      height: 40px;
-      background-color: red;
-      position: relative;
-      border-radius: 6px;
-      box-shadow: 2px 2px 4px 0 white;
+    .btnTextWrapperInner {
+      height: 26px;
+      width: 42px;
+      overflow: hidden;
     }
   }
 }
 
-nav {
-  background: #3fffd2;
+.burgerWrapper {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  margin-left: space(1.5);
+
+  span {
+    display: block;
+    position: absolute;
+    top: calc(50% - 1px);
+    left: 0;
+    width: 24px;
+    height: 2px;
+    background: $color__black;
+    transition: .5s $motion__cubic-ease--1;
+
+    &:first-child {
+      transform: translateY(-4px);
+    }
+    &:last-child {
+      transform: translateY(4px);
+    }
+  }
+
 }
 
-.menuNav {
-  overflow-y: scroll;
-  list-style: none;
+.navWrapper {
   position: fixed;
-  top: 0;
-  background: darkcyan;
-  left: 0;
+  top: 50;
   bottom: 0;
-  height: 100vh;
-  width: 0;
-  overflow: hidden;
-  max-width: 290px;
-}
+  animation: slide 3s forwards;
+  pointer-events: none;
+  opacity: 0;
 
-.navItem {
-  text-decoration: none;
-  color: black;
-  padding: 10px;
-  background: violet;
-}
+  nav {
+    width: auto;
+    height: 80vh;
+    position: static;  
+    top: 50;
+    font-family: $font__special;
+    
+    .menuNavLinks {
+      margin: auto;
+      @include header_m;
+    }
+
+      .navItem {
+        color: black;
+        text-decoration: none;
+        width: 100%;
+        text-transform: none;
+        margin-top: 16px;
+
+        // background: violet;
+      }
+
+      .menuMoreInfo {
+        display: flex;
+        margin-top: 145px;
+        @include header_s;
+
+        .menuSecondaryLinks {
+
+       }
+  
+        .menuAddress {
+          margin-left: 140px;
+
+          p {
+            margin-top: 16px;
+          }
+        }
+      }
+    }
+  
+  }
+
+
+
 
 a {
   display: block;

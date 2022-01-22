@@ -27,21 +27,43 @@ const Header = props => {
 
       <button className={styles.navToggle} onClick={handleToggle}>
         <div className={styles.btnTextWrapper}>
-          <p>Menu</p>
+          <div className={styles.btnTextWrapperInner}>
+          <p>Menu</ p>
           <p>Close</p>
+          </div>
         </div>
         <div className={styles.burgerWrapper}>
-          <span className={styles.spanLine} />
-          <span className={styles.spanLine} />
+         <span />
+         <span />
         </div>
       </button>
 
-      <nav className={styles.nav}>
-        <div className={`${styles.menuNav}`}>
-          <Link to='/' className={styles.navItem}>Home</Link>
-          <Link to='/about' className={styles.navItem}>About</Link>
-        </div>
-      </nav>
+      <div className={styles.navWrapper}>
+        <nav className={styles.nav}>
+          <div className={styles.menuNav}> 
+            <div className={styles.menuNavLinks}>
+              <Link to='/' className={styles.navItem}>Job listings</Link>
+              <Link to='/' className={styles.navItem}>Looking for talent?</Link>
+              <Link to='/about' className={styles.navItem}>Success stories</Link>
+              <Link to='/about' className={styles.navItem}>Meet your experts</Link>
+              <Link to='/submit-resume' className={styles.navItem}>Services</Link>
+            </div>
+            <div className={styles.menuMoreInfo}>
+              <div className={styles.menuSecondaryLinks}>
+                <Link to='/about' className={styles.navItem}>Contact us</Link>
+                <Link to='/about' className={styles.navItem}>About the company</Link>
+                <Link to='/submit-resume' className={styles.navItem}>Send us your resume</Link>
+                <Link to='/submit-resume' className={styles.navItem}>Careers at JSB</Link>
+               </div>
+               <div className={styles.menuAddress}>
+                <p>New York</p>
+                <p>212-750-7007</p>
+                <p>info@jsbpartners.com</p>
+               </div>
+            </div>
+          </div>
+        </nav>
+      </div>
       <img src={logo} className={styles.logo} />
     </header>
   );
