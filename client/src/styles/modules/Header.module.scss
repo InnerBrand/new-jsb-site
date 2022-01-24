@@ -27,24 +27,15 @@
     }
 
     .navToggle {
-
       .btnTextWrapper {
-
         .btnTextWrapperInner {
-         
-          p {
-            transform: translateY(-28px);
-            overflow: visible;
-            animation: fade-inout 1s infinite alternate;
-          }
+          transform: translateY(-28px);
         }
       }
     }
 
     .burgerWrapper {
-
       span {
-
         &:first-child {
           transform: rotate(-45deg) translateY(0);
         }
@@ -94,22 +85,20 @@
   background: $color__lime;
 }
 
-@keyframes fade-inout {
- 0%{ opacity:1;}
- 100%{ opacity: 0;}     
-}
-
 .navToggle {
   position: relative;
   background: transparent;
   display: flex;
+  font-family: $font__special;
+  font-weight: 600;
 
   .btnTextWrapper {
+    overflow: hidden;
 
     .btnTextWrapperInner {
+      transition: 0.5s $motion__cubic-ease--1;
       height: 26px;
       width: 42px;
-      overflow: hidden;
     }
   }
 }
@@ -120,6 +109,7 @@
   height: 24px;
   cursor: pointer;
   margin-left: space(1.5);
+  top: 2px;
 
   span {
     display: block;
@@ -129,7 +119,7 @@
     width: 24px;
     height: 2px;
     background: $color__black;
-    transition: .5s $motion__cubic-ease--1;
+    transition: 0.5s $motion__cubic-ease--1;
 
     &:first-child {
       transform: translateY(-4px);
@@ -138,7 +128,6 @@
       transform: translateY(4px);
     }
   }
-
 }
 
 .navWrapper {
@@ -152,45 +141,44 @@
   nav {
     width: auto;
     height: 80vh;
-    position: static;  
+    position: static;
     top: 50;
     font-family: $font__special;
-    
+
     .menuNavLinks {
       margin: auto;
       @include header_m;
     }
 
-      .navItem {
-        color: black;
-        text-decoration: none;
-        width: 100%;
-        text-transform: none;
-        margin-top: 16px;
+    .navItem {
+      color: black;
+      text-decoration: none;
+      width: 100%;
+      text-transform: none;
+      margin-top: 16px;
 
-        // background: violet;
+      // background: violet;
+    }
+
+    .menuMoreInfo {
+      display: flex;
+      margin-top: 145px;
+      @include header_s;
+
+      .menuSecondaryLinks {
+        text-decoration: underline;
       }
 
-      .menuMoreInfo {
-        display: flex;
-        margin-top: 145px;
-        @include header_s;
+      .menuAddress {
+        margin-left: 140px;
 
-        .menuSecondaryLinks {
-          text-decoration: underline;
-       }
-  
-        .menuAddress {
-          margin-left: 140px;
-
-          p {
-            margin-top: 16px;
-          }
+        p {
+          margin-top: 16px;
         }
       }
     }
-  
   }
+}
 
 a {
   display: block;

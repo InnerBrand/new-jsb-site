@@ -32,7 +32,7 @@ const Header = props => {
           <button className={styles.navToggle} onClick={handleToggle}>
             <div className={styles.btnTextWrapper}>
               <div className={styles.btnTextWrapperInner}>
-              <p>Menu</ p>
+              <p>Menu</p>
               <p>Close</p>
               </div>
             </div>
