@@ -50,7 +50,7 @@ const SubmitResume = props => {
   const onError = (errors, e) => console.log('Errors: ', errors);
 
   return (
-    <Layout header={false}>
+    <Layout>
       <main className={styles.main}>
         <Container>
           <section className={styles.hero}>
