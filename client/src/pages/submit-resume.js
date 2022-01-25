@@ -50,9 +50,9 @@ const SubmitResume = props => {
   const onError = (errors, e) => console.log('Errors: ', errors);
 
   return (
+  <Container>
     <Layout>
       <main className={styles.main}>
-        <Container>
           <section className={styles.hero}>
             <Space unit={40} />
             <h1>Let's get started, together</h1>
@@ -180,9 +180,9 @@ const SubmitResume = props => {
 
             <Space unit={24} />
           </form>
-        </Container>
       </main>
     </Layout>
+  </Container>
   );
 };
 

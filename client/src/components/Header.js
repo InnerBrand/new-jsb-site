@@ -4,6 +4,7 @@ import { Link } from 'gatsby';
 
 // components
 import Container from './Container';
+import FancyArrowRight from '../images/svg/fancy-arrow-right.inline.svg';
 
 // logo
 import logo from '../images/jsb-logo.png';
@@ -22,6 +23,7 @@ const Header = props => {
   return (
     
       <header className={`${styles.header} ${navbarOpen ? styles.menuIsOpen : ''}`}>
+       <Container>
           <div className={styles.overlayWrapper}>
             <div className={styles.circleWrapper}>
               <div className={styles.circle} />
@@ -46,7 +48,7 @@ const Header = props => {
             <nav className={styles.nav}>
               <div className={styles.menuNav}> 
                 <div className={styles.menuNavLinks}>
-                  <Link to='/' className={styles.navItem}>Job listings</Link>
+                  <Link to='/' className={styles.navItem}>Job listings<FancyArrowRight className={styles.linkArrow}/></Link>
                   <Link to='/' className={styles.navItem}>Looking for talent?</Link>
                   <Link to='/about' className={styles.navItem}>Success stories</Link>
                   <Link to='/about' className={styles.navItem}>Meet your experts</Link>
@@ -68,6 +70,7 @@ const Header = props => {
               </div>
             </nav>
           </div>
+          </Container>
           <div className="logoWrapper">
             <img src={logo} className={styles.logo} />
           </div>

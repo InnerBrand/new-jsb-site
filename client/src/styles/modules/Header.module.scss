@@ -17,13 +17,7 @@
       height: 1440px;
     }
     .overlay {
-      background-color: rgba($color__black, 0.7);
-      transition: all 0.5s ease;
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 0;
+      opacity: 1;
     }
 
     .navToggle {
@@ -48,7 +42,7 @@
     .navWrapper {
       opacity: 1;
       pointer-events: all;
-      transition: all 1s ease;
+      transition: all 1s $motion__cubic-ease--1;
     }
   }
 }
@@ -59,6 +53,17 @@
   left: 0;
   right: 0;
   bottom: 0;
+}
+
+.overlay {
+  transition: opacity 0.5s $motion__cubic-ease--1;
+  background-color: rgba($color__black, 0.7);
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 
 .circleWrapper {
@@ -91,6 +96,7 @@
   display: flex;
   font-family: $font__special;
   font-weight: 600;
+  cursor: pointer;
 
   .btnTextWrapper {
     overflow: hidden;
@@ -99,6 +105,10 @@
       transition: 0.5s $motion__cubic-ease--1;
       height: 26px;
       width: 42px;
+
+      p {
+        line-height: 1.64;
+      }
     }
   }
 }
@@ -109,7 +119,6 @@
   height: 24px;
   cursor: pointer;
   margin-left: space(1.5);
-  top: 2px;
 
   span {
     display: block;
@@ -157,7 +166,18 @@
       text-transform: none;
       margin-top: 16px;
 
-      // background: violet;
+      &:hover {
+        transform: translateX(8px);
+        transition: 0.5s $motion__cubic-ease--1;
+      }
+      .linkArrow:hover {
+        visibility: visible;
+      }
+    }
+
+    .linkArrow {
+      margin-left: 16px;
+      visibility: hidden;
     }
 
     .menuMoreInfo {
