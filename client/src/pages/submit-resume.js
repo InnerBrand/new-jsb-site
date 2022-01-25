@@ -50,7 +50,6 @@ const SubmitResume = props => {
   const onError = (errors, e) => console.log('Errors: ', errors);
 
   return (
-  <Container>
     <Layout>
       <main className={styles.main}>
           <section className={styles.hero}>
@@ -169,7 +168,6 @@ const SubmitResume = props => {
                 )}
               </div>
             </div>
-
             <div className={styles.formItem}>
               <h3 className={styles.formQuestion}>Upload your resume</h3>
               <Dropzone />
@@ -182,7 +180,6 @@ const SubmitResume = props => {
           </form>
       </main>
     </Layout>
-  </Container>
   );
 };
 

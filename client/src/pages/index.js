@@ -19,7 +19,7 @@ const Home = ({ data }) => {
     <Container>
       <Layout>
         <h1>{headline}</h1>
-        <Block blocks={subhead._rawData} />
+        {/* <Block blocks={subhead._rawData} /> */}
         {/* <GatsbyImage image={featImg} /> */}
       </Layout>
     </Container>

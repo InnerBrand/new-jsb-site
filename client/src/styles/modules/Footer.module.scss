@@ -1,6 +1,121 @@
+@import 'core';
+
 .footerSection {
     display: flex;
     justify-content: space-between;
     padding: 119px 0;
+    font-family: $font__special;
+
+    .subscribeDiv {
+
+        h3 {
+            font-family: $font__special;
+            font-weight: 700;
+            @include header_m;
+        }
+
+        .subscribeBtn {
+            display: flex;
+            margin: 24px 0 10px;
+
+            form {
+
+                input {
+                    font-family: $font__special;
+                    background: transparent;
+                    padding: 15px 132px 16px 24px;
+                    border-radius: 30px;
+                    border-width: 2px;
+                    
+                    .text {
+                        color: $color__black;
+                    }
+                }
+            }
+
+            button {
+                font-family: $font__special;
+                font-weight: 600;
+                font-size: 18px;
+                border-radius: 30px;
+                background: $color__lime;
+                padding: 0 16px;
+                left: 10px;
+            }
+
+        }
+
+        p {
+            
+            &:first-child {
+                font-size: 18px;
+            }
+            &:last-child {
+                font-size: 14px;
+            }
+        }
+
+        .socialLinks {
+            display: flex;
+
+            img {
+                background: $color__lime;
+                padding: 9px;
+                margin-right: 16px;
+                border-radius: 50%;
+                max-width: 39px;
+                margin-top: 32px;
+            }
+        }
+
+
+    }
+
+    .contactDiv {
+
+        h3 {
+            font-family: $font__special;
+            font-weight: 700;
+            @include header_m;
+        }
+
+        .infoText {
+            display: flex;
+            align-items: center;
+            margin-top: 32px;
+
+            img {
+                max-width: 18px;
+                max-height: 18px;
+            }
+            p {
+                margin-left: 20px;
+            }
+        }
+      }
+
+      
 }
 
+.bottomText {
+    font-family: $font__special;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    margin-bottom: 96px;
+
+    .termsLinks {
+        display: flex;
+    
+        .termsLink {
+            text-transform: none;
+            margin-right: 10px;
+    
+            span {
+                text-decoration: none;
+                margin-left: 10px;
+            }
+        }
+    }
+}

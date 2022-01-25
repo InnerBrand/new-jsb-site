@@ -8,15 +8,18 @@ import Footer from '../components/Footer';
 // Styles
 import '../styles/global/index.scss';
 import * as styles from '../styles/modules/Layout.module.scss';
+import Container from './Container';
 
 const Layout = props => {
   const { children, header, footer } = props;
 
   return (
     <>
+    <Container>
       {header && <Header />}
       {children}
       {footer && <Footer />}
+    </Container>
     </>
   );
 };

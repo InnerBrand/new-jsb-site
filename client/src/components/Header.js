@@ -23,7 +23,6 @@ const Header = props => {
   return (
     
       <header className={`${styles.header} ${navbarOpen ? styles.menuIsOpen : ''}`}>
-       <Container>
           <div className={styles.overlayWrapper}>
             <div className={styles.circleWrapper}>
               <div className={styles.circle} />
@@ -49,17 +48,17 @@ const Header = props => {
               <div className={styles.menuNav}> 
                 <div className={styles.menuNavLinks}>
                   <Link to='/' className={styles.navItem}>Job listings<FancyArrowRight className={styles.linkArrow}/></Link>
-                  <Link to='/' className={styles.navItem}>Looking for talent?</Link>
-                  <Link to='/about' className={styles.navItem}>Success stories</Link>
-                  <Link to='/about' className={styles.navItem}>Meet your experts</Link>
-                  <Link to='/submit-resume' className={styles.navItem}>Services</Link>
+                  <Link to='/' className={styles.navItem}>Looking for talent?<FancyArrowRight className={styles.linkArrow}/></Link>
+                  <Link to='/about' className={styles.navItem}>Success stories<FancyArrowRight className={styles.linkArrow}/></Link>
+                  <Link to='/about' className={styles.navItem}>Meet your experts<FancyArrowRight className={styles.linkArrow}/></Link>
+                  <Link to='/submit-resume' className={styles.navItem}>Services<FancyArrowRight className={styles.linkArrow}/></Link>
                 </div>
                 <div className={styles.menuMoreInfo}>
                   <div className={styles.menuSecondaryLinks}>
-                    <Link to='/about' className={styles.navItem}>Contact us</Link>
-                    <Link to='/about' className={styles.navItem}>About the company</Link>
-                    <Link to='/submit-resume' className={styles.navItem}>Send us your resume</Link>
-                    <Link to='/submit-resume' className={styles.navItem}>Careers at JSB</Link>
+                    <Link to='/about' className={styles.navItem}>Contact us<FancyArrowRight className={styles.linkArrow}/></Link>
+                    <Link to='/about' className={styles.navItem}>About the company<FancyArrowRight className={styles.linkArrow}/></Link>
+                    <Link to='/submit-resume' className={styles.navItem}>Send us your resume<FancyArrowRight className={styles.linkArrow}/></Link>
+                    <Link to='/submit-resume' className={styles.navItem}>Careers at JSB<FancyArrowRight className={styles.linkArrow}/></Link>
                   </div>
                   <div className={styles.menuAddress}>
                     <p>New York</p>
@@ -70,7 +69,6 @@ const Header = props => {
               </div>
             </nav>
           </div>
-          </Container>
           <div className="logoWrapper">
             <img src={logo} className={styles.logo} />
           </div>

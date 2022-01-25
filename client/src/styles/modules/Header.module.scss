@@ -149,6 +149,7 @@
 
   nav {
     width: auto;
+    // position: absolute;
     height: 80vh;
     position: static;
     top: 50;
@@ -157,6 +158,7 @@
     .menuNavLinks {
       margin: auto;
       @include header_m;
+      
     }
 
     .navItem {
@@ -166,23 +168,26 @@
       text-transform: none;
       margin-top: 16px;
 
+      .linkArrow {
+        margin-left: 16px;
+        visibility: hidden;
+      }
+
       &:hover {
         transform: translateX(8px);
         transition: 0.5s $motion__cubic-ease--1;
-      }
-      .linkArrow:hover {
-        visibility: visible;
-      }
-    }
 
-    .linkArrow {
-      margin-left: 16px;
-      visibility: hidden;
+        .linkArrow {
+          visibility: visible;
+          transition: 0.5s $motion__cubic-ease--1;
+        }
+      }
     }
+    
 
     .menuMoreInfo {
       display: flex;
-      margin-top: 145px;
+      margin-top: 140px;
       @include header_s;
 
       .menuSecondaryLinks {
