@@ -10,36 +10,10 @@ import Dropzone from '../components/Dropzone';
 import Input from '../components/Input';
 import Layout from '../components/Layout';
 import Space from '../components/Space';
-import TabSelector from '../components/TabSelector';
 // Styles
 import * as styles from '../styles/modules/pages/SubmitResume.module.scss';
 
 const SubmitResume = props => {
-  const contactMethodData = [
-    {id: 'phone', value: 'Phone', label: 'Phone'},
-    {id: 'email', value: 'Email', label: 'Email', defaultChecked: true},
-    {id: 'either', value: 'Either', label: 'Either'},
-  ];
-  const employmentStatusData = [
-    {id: 'employed', value: 'Employed', label: 'Yes'},
-    {
-      id: 'unemployed',
-      value: 'Unemployed',
-      label: 'No',
-      defaultChecked: true,
-    },
-  ];
-
-  const getDefaultContactMethod = () =>
-    contactMethodData.find(item => item.defaultChecked).id;
-  const getDefaultEmploymentStatus = () =>
-    employmentStatusData.find(item => item.defaultChecked).id;
-
-  const [contactMethod, setContactMethod] = useState(getDefaultContactMethod);
-  const [employmentStatus, setEmploymentStatus] = useState(
-    getDefaultEmploymentStatus
-  );
-
   const {
     register,
     formState: {errors},
@@ -169,6 +143,7 @@ const SubmitResume = props => {
                 )}
               </div>
             </div>
+
             <div className={styles.formItem}>
               <h3 className={styles.formQuestion}>Upload your resume</h3>
               <Dropzone />

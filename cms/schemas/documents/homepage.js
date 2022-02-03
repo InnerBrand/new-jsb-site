@@ -1,4 +1,4 @@
-import { AiFillHome as icon } from 'react-icons/ai';
+import {AiFillHome as icon} from 'react-icons/ai';
 
 export default {
   icon,

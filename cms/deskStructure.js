@@ -1,6 +1,6 @@
 import S from '@sanity/desk-tool/structure-builder';
 import React from 'react';
-import { AiFillHome } from 'react-icons/ai';
+import {AiFillHome} from 'react-icons/ai';
 // import { ImCog } from 'react-icons/im';
 // import { BsPeopleFill } from 'react-icons/bs';
 // import { AiFillStar } from 'react-icons/ai';
@@ -18,6 +18,10 @@ export default () =>
         .title('Homepage')
         .icon(() => <AiFillHome />)
         .child(S.editor().schemaType('homepage').documentId('homepage')),
+      S.listItem()
+        .title('Team Page')
+        .icon(() => <h1>Hi</h1>)
+        .child(S.editor().schemaType('teamPage').documentId('teamPage')),
       // S.listItem()
       //   .title('Products')
       //   .icon(() => <span style={iconStyle}>🎁</span>)
@@ -27,6 +31,6 @@ export default () =>
       //   .icon(() => <span style={iconStyle}>🧭</span>)
       //   .child(S.editor().schemaType('navigation').documentId('navigation')),
       ...S.documentTypeListItems().filter(
-        listItem => !['homepage'].includes(listItem.getId())
+        listItem => !['homepage', 'teamPage'].includes(listItem.getId())
       ),
     ]);
