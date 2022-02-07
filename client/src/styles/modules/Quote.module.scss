@@ -1,0 +1,21 @@
+@import 'core';
+
+.section {
+  padding: 10px 10px;
+}
+
+.content {
+  display: flex;
+}
+
+.image {
+  width: percentage(416, 1296);
+ 
+  img {
+    width: 100%;
+  }
+}
+
+.info {
+
+}

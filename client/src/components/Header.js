@@ -50,7 +50,7 @@ const Header = props => {
                   <Link to='/' className={styles.navItem}>Job listings<FancyArrowRight className={styles.linkArrow}/></Link>
                   <Link to='/' className={styles.navItem}>Looking for talent?<FancyArrowRight className={styles.linkArrow}/></Link>
                   <Link to='/about' className={styles.navItem}>Success stories<FancyArrowRight className={styles.linkArrow}/></Link>
-                  <Link to='/about' className={styles.navItem}>Meet your experts<FancyArrowRight className={styles.linkArrow}/></Link>
+                  <Link to='/team' className={styles.navItem}>Meet your experts<FancyArrowRight className={styles.linkArrow}/></Link>
                   <Link to='/submit-resume' className={styles.navItem}>Services<FancyArrowRight className={styles.linkArrow}/></Link>
                 </div>
                 <div className={styles.menuMoreInfo}>
