@@ -11,6 +11,7 @@ import teamPage from './documents/teams';
 import rte from './objects/rte';
 import homepageObject from './objects/homepage-object';
 import teamMember from './documents/teamMember';
+import fact from './objects/fact';
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -24,6 +25,7 @@ export default createSchema({
     teamMember,
     // products,
     homepageObject,
+    fact,
     // navigation,
     // seoObject,
     rte,

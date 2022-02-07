@@ -19,5 +19,15 @@ export default {
         },
       ],
     },
+    {
+      title: 'Facts',
+      name: 'facts',
+      type: 'array',
+      of: [
+        {
+          type: 'fact',
+        },
+      ],
+    },
   ],
 };
