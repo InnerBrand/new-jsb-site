@@ -1,0 +1,6 @@
+@import 'core';
+
+.heroHeadline {
+  padding: 193px 72px;
+  @include header_jumbo;
+}
