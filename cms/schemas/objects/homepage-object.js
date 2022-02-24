@@ -17,7 +17,7 @@ export default {
 
   fields: [
     {
-      title: 'Headline',
+      title: 'Hero Headline',
       name: 'headline',
       type: 'string',
       fieldset: 'hero',
