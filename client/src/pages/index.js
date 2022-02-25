@@ -6,21 +6,30 @@ import Block from "@sanity/block-content-to-react"
 // Components
 import Layout from '../components/Layout'
 import Container from '../components/Container'
+import CircleButton from '../components/CircleButton'
+
 // Styles
 import * as styles from '../styles/modules/pages/Home.module.scss'
 
 const Home = ({ data }) => {
   console.log(data)
 
-  const { featuredImage, headline, subhead } = data.allSanityHomepage.nodes[0].homepageContent
-  // const featImg = getImage(featuredImage.asset.gatsbyImageData)
+  const { featuredImage, bioHeadline, heroHeadline, subhead } = data.allSanityHomepage.nodes[0].homepageContent
+  const featImg = getImage(featuredImage.asset.gatsbyImageData)
 
   return (
     <Container>
       <Layout>
-        <h1>{headline}</h1>
+        <section className={styles.wrapper}>
+          <div className={styles.homeHeroContent}>
+            <h1 className={styles.heroHeadline}>{heroHeadline}</h1>
+            <GatsbyImage className={styles.heroImg} image={featImg} />
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed m dolor sit.</p>
+            <CircleButton ctaText='Upload Your Resumé' showArrow={true} />
+          </div>
+        </section>
+        <h1 className={styles.heroBio}>{bioHeadline}</h1>
         {/* <Block blocks={subhead._rawData} /> */}
-        {/* <GatsbyImage image={featImg} /> */}
       </Layout>
     </Container>
   )
@@ -31,7 +40,8 @@ export const query = graphql`
     allSanityHomepage {
       nodes {
         homepageContent {
-          headline
+          bioHeadline
+          heroHeadline
           featuredImage {
             asset {
               gatsbyImageData

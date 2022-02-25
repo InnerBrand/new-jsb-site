@@ -18,7 +18,14 @@ export default {
   fields: [
     {
       title: 'Hero Headline',
-      name: 'headline',
+      name: 'heroHeadline',
+      type: 'string',
+      fieldset: 'hero',
+      validation: Rule => Rule.required()
+    },
+    {
+      title: 'Bio Headline',
+      name: 'bioHeadline',
       type: 'string',
       fieldset: 'hero',
       validation: Rule => Rule.required()

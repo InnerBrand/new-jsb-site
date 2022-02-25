@@ -1,5 +1,9 @@
 import React from 'react';
 import { Link } from 'gatsby';
+import {useForm} from 'react-hook-form';
+
+// Components
+import Input from '../components/Input';
 
 // Imgs
 import FacebookLogo from '../images/fb-icon.png'
@@ -22,10 +26,13 @@ const Footer = () => {
           <h3>Subscribe</h3>
             <p>Get info on how to land the perfect job and other helpful tips</p>
           <div className={styles.subscribeBtn}>
-            <form>
-              <input placeholder="email address" />
-            </form>
-            <button class="button">Subscribe</button>
+            {/* <form>
+              <Input placeholder='email address'
+              
+              >
+
+               <button class="button">Subscribe</button>
+            </form> */}
           </div>
           <p>Our newsletter is bi-weekly</p>
           <div className={styles.socialLinks}>
