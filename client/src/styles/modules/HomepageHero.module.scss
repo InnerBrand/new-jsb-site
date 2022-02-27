@@ -1,0 +1,37 @@
+@import 'core';
+
+.wrapper {
+  position: relative;
+}
+
+.homeHeroContent {
+  position: relative;
+  margin-bottom: 260px;
+  z-index: -1;
+}
+
+.heroHeadline {
+  @include header_xxl;
+  max-width: 730px;
+}
+
+.heroImg {
+  position: absolute;
+  z-index: -2;
+  border-radius: 999px;
+  left: 371px;
+  top: -20px;
+}
+
+.heroSubtext {
+  font-family: $font__special;
+  @include header_m;
+  width: 636px;
+  margin-top: 317px;
+}
+
+.heroBtn {
+  position: absolute;
+  left: 1100px;
+  top: 550px;
+}
