@@ -1,0 +1,17 @@
+@import 'core';
+
+.section {
+  margin-bottom: 453px;
+}
+.wrapper {
+  background-color: aquamarine;
+  display: flex;
+  justify-content: space-between;
+}
+
+.singleMember {
+  display: flex;
+  flex-direction: column;
+  width: 306px;
+  border-radius: 70px;
+}
