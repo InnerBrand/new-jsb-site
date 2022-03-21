@@ -2,25 +2,30 @@
 
 .wrapper {
   position: relative;
+  width: 100%;
 }
 
 .homeHeroContent {
   position: relative;
   margin-bottom: 260px;
-  z-index: -1;
 }
 
 .heroHeadline {
   @include header_xxl;
   max-width: 730px;
+  // TODO: remove once type for mobile
 }
 
 .heroImg {
   position: absolute;
-  z-index: -2;
+  z-index: -1;
   border-radius: 999px;
-  left: 371px;
-  top: -20px;
+  top: 40px;
+
+  @include breakpoint('tablet') {
+    left: 371px;
+    top: -20px;
+  }
 }
 
 .heroSubtext {
@@ -32,6 +37,6 @@
 
 .heroBtn {
   position: absolute;
-  left: 1100px;
-  top: 550px;
+  right: 20px;
+  bottom: 0;
 }

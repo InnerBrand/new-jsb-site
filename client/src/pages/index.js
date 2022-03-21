@@ -17,14 +17,12 @@ const Home = ({ data }) => {
   const { bioHeadline } = data.allSanityHomepage.nodes[0].homepageContent;
 
   return (
-    <Container>
       <Layout>
         <HomepageHero />
         <h1 className={styles.heroBio}>{bioHeadline}</h1>
         {/* <Block blocks={subhead._rawData} /> */}
         <Quote />
       </Layout>
-    </Container>
   );
 };
 

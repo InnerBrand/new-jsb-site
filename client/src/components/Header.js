@@ -29,7 +29,7 @@ const Header = props => {
             </div>
             <div className={styles.overlay} />
           </div>
-
+        <Container className={styles.container}>
           <button className={styles.navToggle} onClick={handleToggle}>
             <div className={styles.btnTextWrapper}>
               <div className={styles.btnTextWrapperInner}>
@@ -47,7 +47,7 @@ const Header = props => {
             <nav className={styles.nav}>
               <div className={styles.menuNav}> 
                 <div className={styles.menuNavLinks}>
-                  <Link to='/' className={styles.navItem}>Job listings<FancyArrowRight className={styles.linkArrow}/></Link>
+                  <Link to={"https://jobs.vivahr.com/6965-aktiv-insight/jobs"} className={styles.navItem}>Job listings<FancyArrowRight className={styles.linkArrow}/></Link>
                   <Link to='/' className={styles.navItem}>Looking for talent?<FancyArrowRight className={styles.linkArrow}/></Link>
                   <Link to='/about' className={styles.navItem}>Success stories<FancyArrowRight className={styles.linkArrow}/></Link>
                   <Link to='/team' className={styles.navItem}>Meet your experts<FancyArrowRight className={styles.linkArrow}/></Link>
@@ -72,6 +72,7 @@ const Header = props => {
           <div className="logoWrapper">
             <img src={logo} className={styles.logo} />
           </div>
+        </Container>
     </header>
   );
 };

@@ -15,11 +15,9 @@ const Layout = props => {
 
   return (
     <>
-    <Container>
       {header && <Header />}
       {children}
       {footer && <Footer />}
-    </Container>
     </>
   );
 };
