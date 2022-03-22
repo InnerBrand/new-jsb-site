@@ -1,11 +1,9 @@
 import React from 'react';
-import { Link } from 'gatsby';
-
+import {Link} from 'gatsby';
 // Styles
-import * as styles from '../styles/modules/Quote.module.scss';
-
+import * as styles from 'styles/modules/Quote.module.scss';
 // Images
-import TestPic from '../images/quote-1.png';
+import TestPic from 'assets/images/quote-1.png';
 
 const Quote = () => {
   return (

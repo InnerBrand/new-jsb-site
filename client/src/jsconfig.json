@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "baseUrl": ".",
+    "paths": {
+      "components/*": [
+        "./components/*"
+      ],
+      "styles/*": [
+        "./styles/*"
+      ],
+      "libs/*": [
+        "./libs/*"
+      ],
+    }
+  },
+}

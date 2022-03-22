@@ -10,7 +10,17 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: $color__black;
-  background: #ffdfc8;
+  background: #fff;
+
+  &.theme_light {
+    color: $color__black;
+    background: $color__peach;
+  }
+
+  &.theme_dark {
+    color: #fff;
+    background: $color__really-dark;
+  }
 }
 
 button {

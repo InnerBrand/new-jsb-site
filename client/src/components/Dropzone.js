@@ -1,12 +1,12 @@
 import React, {useState, useEffect} from 'react';
 import ReactDropzoneUploader from 'react-dropzone-uploader';
 import ReactTooltip from 'react-tooltip';
-import {ExclamationCircleIcon} from '@heroicons/react/solid';
 // Styles
-import * as styles from '../styles/modules/Dropzone.module.scss';
+import * as styles from 'styles/modules/Dropzone.module.scss';
 // SVG
+import {ExclamationCircleIcon} from '@heroicons/react/solid';
 import {InformationCircleIcon} from '@heroicons/react/outline';
-import PageIcon from '../images/svg/page-icon.inline.svg';
+import PageIcon from 'assets/svg/page-icon.inline.svg';
 
 const INIT_STATUS = 'init';
 const Dropzone = props => {

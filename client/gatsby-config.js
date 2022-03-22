@@ -37,12 +37,31 @@ module.exports = {
         },
       },
     },
-    'gatsby-plugin-image',
+    `gatsby-plugin-image`,
+    {
+      resolve: `gatsby-plugin-sharp`,
+      options: {
+        defaults: {
+          formats: [`auto`, `webp`, 'avif'],
+          placeholder: `blurred`,
+          quality: 50,
+          // breakpoints: [750, 1080, 1366, 1920],
+          // backgroundColor: `transparent`,
+          // tracedSVGOptions: {},
+          // blurredOptions: {},
+          // jpgOptions: {},
+          // pngOptions: {},
+          // webpOptions: {},
+          // avifOptions: {},
+        },
+      },
+    },
+    `gatsby-transformer-sharp`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
-        path: `${__dirname}/src/images/`,
+        path: `${__dirname}/src/assets/images/`,
       },
     },
   ],

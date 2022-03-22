@@ -12,15 +12,18 @@
       transform: translate(0, 0);
       z-index: 1;
     }
+
     .circle {
       transform: translate(-35%, -50%);
       width: 1440px;
       height: 1440px;
     }
+
     .overlayWrapper {
       pointer-events: all;
       z-index: 1;
     }
+
     .overlay {
       opacity: 1;
     }
@@ -28,15 +31,17 @@
     .navToggle {
       z-index: 2;
       position: fixed;
-      .btnTextWrapper {
-        .btnTextWrapperInner {
-          transform: translateY(-28px);
-        }
+      color: $color__black;
+
+      .btnTextWrapperInner {
+        transform: translateY(-28px);
       }
     }
 
     .burgerWrapper {
       span {
+        background: $color__black;
+
         &:first-child {
           transform: rotate(-45deg) translateY(0);
         }
@@ -111,6 +116,7 @@
   font-family: $font__special;
   font-weight: 600;
   cursor: pointer;
+  color: inherit;
 
   .btnTextWrapper {
     overflow: hidden;
@@ -149,6 +155,14 @@
     }
     &:last-child {
       transform: translateY(4px);
+    }
+  }
+}
+
+:global(.theme_dark) {
+  .burgerWrapper {
+    span {
+      background: #fff;
     }
   }
 }
@@ -224,6 +238,10 @@ a {
   color: #3fffd2;
   text-transform: uppercase;
   font-weight: bold;
+}
+
+.logoWrapper {
+  margin-left: auto;
 }
 
 .logo {

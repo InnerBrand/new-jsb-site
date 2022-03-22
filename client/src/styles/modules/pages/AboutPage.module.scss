@@ -1,0 +1,38 @@
+@import 'core';
+
+.hero {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-flow: column;
+  position: relative;
+}
+
+.heroHeading {
+  color: $color__really-dark;
+  text-shadow: -1px -1px 0 $color__lime, 1px -1px 0 $color__lime,
+    -1px 1px 0 $color__lime, 1px 1px 0 $color__lime;
+  mix-blend-mode: lighten;
+}
+
+.heroImg {
+  margin: -(space(7)) auto;
+  height: 554px;
+  width: 416px;
+  border-radius: 210px;
+  position: relative;
+  z-index: -1;
+}
+
+.heroSubhead {
+  max-width: 750px;
+  margin: auto;
+}
+
+.heroMeta {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  display: flex;
+  justify-content: space-between;
+}

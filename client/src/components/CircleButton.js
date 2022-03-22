@@ -2,9 +2,9 @@ import React, {useState, useLayoutEffect, useRef} from 'react';
 import {gsap} from 'gsap';
 import PropTypes from 'prop-types';
 // SVG
-import FancyArrowRight from '../images/svg/fancy-arrow-right.inline.svg';
+import FancyArrowRight from 'assets/svg/fancy-arrow-right.inline.svg';
 // Styles
-import * as styles from '../styles/modules/CircleButton.module.scss';
+import * as styles from 'styles/modules/CircleButton.module.scss';
 
 const CircleButton = ({ctaText, showArrow, ease, duration}) => {
   const buttonRef = useRef(null);

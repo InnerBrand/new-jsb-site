@@ -1,18 +1,18 @@
 import React, {useState} from 'react';
 import PropTypes from 'prop-types';
 import {useForm} from 'react-hook-form';
-import validation from '../libs/validation';
+import validation from 'libs/validation';
 // Components
-import Blob from '../components/Blob';
-import CircleButton from '../components/CircleButton';
-import Container from '../components/Container';
-import Dropzone from '../components/Dropzone';
-import Input from '../components/Input';
-import Layout from '../components/Layout';
-import Space from '../components/Space';
-import TabSelector from '../components/TabSelector';
+import Blob from 'components/Blob';
+import CircleButton from 'components/CircleButton';
+import Container from 'components/Container';
+import Dropzone from 'components/Dropzone';
+import Input from 'components/Input';
+import Layout from 'components/Layout';
+import Space from 'components/Space';
+import TabSelector from 'components/TabSelector';
 // Styles
-import * as styles from '../styles/modules/pages/SubmitResume.module.scss';
+import * as styles from 'styles/modules/pages/SubmitResume.module.scss';
 
 const SubmitResume = props => {
   const contactMethodData = [

@@ -1,17 +1,14 @@
-import React, { useState } from 'react'
-import { GatsbyImage, getImage } from 'gatsby-plugin-image';
+import React, {useState} from 'react';
+import {GatsbyImage, getImage} from 'gatsby-plugin-image';
 
-// Components 
-import Container from './Container'
+// Components
+import Container from 'components/Container';
 
 // Styles
-import * as styles from '../styles/modules/TeamMembers.module.scss'
+import * as styles from 'styles/modules/TeamMembers.module.scss';
 
-
-
-function SingleMember({ member }) {
-
-  const [isPillOpen, setPillOpen] = useState(false)
+function SingleMember({member}) {
+  const [isPillOpen, setPillOpen] = useState(false);
   const memberImg = getImage(member.image.asset.gatsbyImageData);
 
   return (
@@ -22,21 +19,21 @@ function SingleMember({ member }) {
       </div>
       {/* { isPillOpen && (<OpenPill data={member}/>) } */}
     </>
-  )
+  );
 }
 
-const TeamMembers = ({ members }) => {
+const TeamMembers = ({members}) => {
   return (
     <Container>
       <section className={styles.section}>
         <div className={styles.wrapper}>
-          {members.map((member) => (
-            <SingleMember key={member.id} member={member}/>
+          {members.map(member => (
+            <SingleMember key={member.id} member={member} />
           ))}
         </div>
       </section>
     </Container>
   );
-}
+};
 
-export default TeamMembers
+export default TeamMembers;

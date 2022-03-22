@@ -4,7 +4,7 @@ import ReactTooltip from 'react-tooltip';
 // SVG
 import {ExclamationCircleIcon} from '@heroicons/react/solid';
 // Styles
-import * as styles from '../styles/modules/Input.module.scss';
+import * as styles from 'styles/modules/Input.module.scss';
 
 const Input = ({
   className,

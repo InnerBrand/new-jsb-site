@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 // Styles
-import * as styles from '../styles/modules/Blob.module.scss';
+import * as styles from 'styles/modules/Blob.module.scss';
 
 const Blob = ({className}) => {
   return (

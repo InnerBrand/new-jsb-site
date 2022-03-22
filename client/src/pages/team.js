@@ -1,24 +1,22 @@
 import React from 'react';
-import { graphql } from 'gatsby';
-
+import {graphql} from 'gatsby';
 // Components
-import Quote from '../components/Quote';
-import TeamMembers from '../components/TeamMembers';
-
+import Blob from 'components/Blob';
+import Layout from 'components/Layout';
+import Quote from 'components/Quote';
+import TeamMembers from 'components/TeamMembers';
 // Styles
-import * as styles from '../styles/modules/pages/Team.module.scss';
-import Layout from '../components/Layout';
-import Blob from '../components/Blob';
+import * as styles from 'styles/modules/pages/Team.module.scss';
 
-const TeamPage = ({ data }) => {
+const TeamPage = ({data}) => {
   const headline = data.allSanityTeamPage.nodes[0].heroHeadline;
   const members = data.allSanityTeamPage.nodes[0].teamMembers;
-  console.log(members)
+  console.log(members);
   return (
     <>
       <Layout>
         <h1 className={styles.heroHeadline}>{headline}</h1>
-        <TeamMembers members={members}/>
+        <TeamMembers members={members} />
         <Quote />
       </Layout>
     </>
@@ -26,22 +24,22 @@ const TeamPage = ({ data }) => {
 };
 
 export const query = graphql`
-query MyQuery {
-  allSanityTeamPage {
-    nodes {
-      teamMembers {
-        name
-        id
-        image {
-          asset {
-            gatsbyImageData
+  query MyQuery {
+    allSanityTeamPage {
+      nodes {
+        teamMembers {
+          name
+          id
+          image {
+            asset {
+              gatsbyImageData
+            }
           }
         }
+        heroHeadline
       }
-      heroHeadline
     }
   }
-}
 `;
 
 export default TeamPage;

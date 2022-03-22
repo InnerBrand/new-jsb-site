@@ -1,19 +1,19 @@
 import React from 'react';
-import { Link } from 'gatsby';
-import { useForm } from 'react-hook-form';
+import {Link} from 'gatsby';
+import {useForm} from 'react-hook-form';
 
 // Components
-import Input from '../components/Input';
-import Container from './Container';
+import Input from 'components/Input';
+import Container from 'components/Container';
 
 // Imgs
-import FacebookLogo from '../images/fb-icon.png';
-import InstaLogo from '../images/ig-icon.png';
-import LinkedLogo from '../images/li-icon.png';
-import MailIcon from '../images/mail-icon.png';
-import PhoneIcon from '../images/phone-icon.png';
-import PinIcon from '../images/pin-icon.png';
-import TimeIcon from '../images/clock-icon.png';
+import FacebookLogo from 'assets/images/fb-icon.png';
+import InstaLogo from 'assets/images/ig-icon.png';
+import LinkedLogo from 'assets/images/li-icon.png';
+import MailIcon from 'assets/images/mail-icon.png';
+import PhoneIcon from 'assets/images/phone-icon.png';
+import PinIcon from 'assets/images/pin-icon.png';
+import TimeIcon from 'assets/images/clock-icon.png';
 
 // Styles
 import * as styles from '../styles/modules/Footer.module.scss';

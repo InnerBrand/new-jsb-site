@@ -1,13 +1,11 @@
 import React from 'react';
-import { graphql, useStaticQuery } from 'gatsby';
-import { GatsbyImage, getImage } from 'gatsby-plugin-image';
-
+import {graphql, useStaticQuery} from 'gatsby';
+import {GatsbyImage, getImage} from 'gatsby-plugin-image';
 // Components
-import CircleButton from '../components/CircleButton';
-import Container from '../components/Container';
-
+import CircleButton from 'components/CircleButton';
+import Container from 'components/Container';
 // Styles
-import * as styles from '../styles/modules/HomepageHero.module.scss';
+import * as styles from 'styles/modules/HomepageHero.module.scss';
 
 const HomepageHero = () => {
   const data = useStaticQuery(graphql`
@@ -31,7 +29,7 @@ const HomepageHero = () => {
     }
   `);
 
-  const { featuredImage, bioHeadline, heroHeadline, subhead } =
+  const {featuredImage, bioHeadline, heroHeadline, subhead} =
     data.allSanityHomepage.nodes[0].homepageContent;
   const featImg = getImage(featuredImage.asset.gatsbyImageData);
 

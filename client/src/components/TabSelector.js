@@ -1,9 +1,9 @@
-import React, { useRef, useState, useLayoutEffect } from 'react';
+import React, {useRef, useState, useLayoutEffect} from 'react';
 import PropTypes from 'prop-types';
 // Styles
-import * as styles from '../styles/modules/TabSelector.module.scss';
+import * as styles from 'styles/modules/TabSelector.module.scss';
 
-const TabSelector = ({ data, name, register, onChange }) => {
+const TabSelector = ({data, name, register, onChange}) => {
   const [checkedTab, setCheckedTab] = useState(() => {
     let id;
     let index;
@@ -41,7 +41,7 @@ const TabSelector = ({ data, name, register, onChange }) => {
             }`}>
             {input.label}
             <input
-              style={{ width: 0, height: 0, position: 'absolute' }}
+              style={{width: 0, height: 0, position: 'absolute'}}
               type='radio'
               id={input.id}
               name={name}
