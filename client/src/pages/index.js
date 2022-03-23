@@ -1,26 +1,26 @@
 import React from 'react';
-import {graphql} from 'gatsby';
-import Block from '@sanity/block-content-to-react';
+import { graphql } from 'gatsby';
 
 // Components
-import Container from 'components/Container';
 import Layout from 'components/Layout';
 import HomepageHero from 'components/HomepageHero';
 import Quote from 'components/Quote';
+import RolesGrid from 'components/RolesGrid';
+import BigClaim from 'components/BigClaim';
 
 // Styles
 import * as styles from 'styles/modules/pages/Home.module.scss';
 
-const Home = ({data}) => {
+const Home = ({ data }) => {
   console.log(data);
 
-  const {bioHeadline} = data.allSanityHomepage.nodes[0].homepageContent;
+  const roles = data.allSanityHomepage.nodes[0].rolesPlaced;
 
   return (
     <Layout>
       <HomepageHero />
-      <h1 className={styles.heroBio}>{bioHeadline}</h1>
-      {/* <Block blocks={subhead._rawData} /> */}
+      <RolesGrid roles={roles} />
+      <BigClaim />
       <Quote />
     </Layout>
   );
@@ -30,16 +30,12 @@ export const query = graphql`
   {
     allSanityHomepage {
       nodes {
-        homepageContent {
-          bioHeadline
-          heroHeadline
-          featuredImage {
+        rolesPlaced {
+          name
+          image {
             asset {
               gatsbyImageData
             }
-          }
-          subhead {
-            _rawData
           }
         }
       }

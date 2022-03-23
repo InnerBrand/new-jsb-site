@@ -12,6 +12,8 @@ import rte from './objects/rte';
 import homepageObject from './objects/homepage-object';
 import teamMember from './documents/teamMember';
 import fact from './objects/fact';
+import role from './documents/role';
+import bigClaim from './objects/bigClaim';
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -20,6 +22,7 @@ export default createSchema({
   // Then proceed to concatenate our document type
   // to the ones provided by any plugins that are installed
   types: schemaTypes.concat([
+    bigClaim,
     homepage,
     teamPage,
     teamMember,
@@ -28,6 +31,7 @@ export default createSchema({
     fact,
     // navigation,
     // seoObject,
+    role,
     rte,
     // link,
     // navItem,

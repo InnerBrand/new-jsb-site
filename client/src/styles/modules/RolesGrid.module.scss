@@ -1,0 +1,75 @@
+@import 'core';
+
+.section {
+  margin: 300px 0;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 41.6% 58.3%;
+}
+
+.introText {
+  font-family: $font__special;
+  align-items: center;
+  margin-top: 450px;
+  max-width: 416px;
+
+  p {
+    @include header_l;
+  }
+}
+
+.wrapper {
+  display: flex;
+  gap: 0 8rem;
+}
+
+.leftWrap {
+}
+
+.rightWrap {
+  margin-top: 10rem;
+}
+
+.singleRole {
+  position: relative;
+  margin-bottom: 8rem;
+}
+
+.roleName {
+  display: none;
+}
+.singleRole:hover {
+  .singleOverlay {
+    background-color: rgba($color__black, 0.85);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+
+  .roleName {
+    display: flex;
+    position: absolute;
+    font-family: $font__special;
+    @include header_m;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+  }
+}
+
+.role {
+}
+.roleImg {
+}
+
+.role {
+}
+
+.roleBtn {
+}

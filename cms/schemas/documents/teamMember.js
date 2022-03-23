@@ -1,4 +1,4 @@
-import {FaPepperHot as icon} from 'react-icons/fa';
+import {BsFillPersonLinesFill as icon} from 'react-icons/fa';
 
 export default {
   type: 'document',

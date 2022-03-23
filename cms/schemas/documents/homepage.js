@@ -1,7 +1,6 @@
 import {AiFillHome as icon} from 'react-icons/ai';
 
 export default {
-  icon,
   title: 'Homepage',
   name: 'homepage',
   type: 'document',
@@ -11,6 +10,22 @@ export default {
       name: 'homepageContent',
       type: 'homepageObject',
     },
+    {
+      title: 'Roles We Place',
+      name: 'rolesPlaced',
+      type: 'array',
+      of: [
+        {
+          type: 'reference',
+          to: [{type: 'rolesGrid'}],
+        },
+      ],
+    },
+    {
+      title: 'Big Claim',
+      name: 'bigClaim',
+      type: 'bigClaim',
+    }
   ],
   preview: {
     prepare: () => {

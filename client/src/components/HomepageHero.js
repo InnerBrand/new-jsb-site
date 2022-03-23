@@ -49,6 +49,7 @@ const HomepageHero = () => {
             <CircleButton ctaText='Contact Us' showArrow={false} />
           </div>
         </div>
+        <h1 className={styles.heroBio}>{bioHeadline}</h1>
       </Container>
     </section>
   );
