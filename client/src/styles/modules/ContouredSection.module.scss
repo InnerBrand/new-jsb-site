@@ -1,0 +1,28 @@
+@import 'core';
+
+.wrapper {
+  overflow: hidden;
+  position: relative;
+  padding-top: 217px;
+  padding-bottom: space(15);
+}
+
+.waveySvg {
+  height: 217px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+
+  &.reallyDark {
+    path {
+      fill: $color__really-dark;
+    }
+  }
+
+  &.peach {
+    path {
+      fill: $color__peach;
+    }
+  }
+}

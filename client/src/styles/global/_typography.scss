@@ -21,7 +21,11 @@ h1 {
   }
 
   &.jumbo {
-    @include header_jumbo;
+    @include header_xl;
+
+    @include breakpoint('tablet') {
+      @include header_jumbo;
+    }
   }
 }
 

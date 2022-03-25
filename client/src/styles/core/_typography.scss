@@ -40,6 +40,11 @@ $font__special: 'Space Grotesk', sans-serif;
   letter-spacing: -0.24px;
 }
 
+@mixin body-xl {
+  font-size: 24px;
+  line-height: 1.8;
+}
+
 @mixin body-l {
   font-size: 18px;
   line-height: 1.72;
@@ -53,4 +58,19 @@ $font__special: 'Space Grotesk', sans-serif;
 @mixin helper {
   font-size: 14px;
   line-height: 1.96;
+}
+
+@mixin special_l {
+  font-size: 48px;
+  line-height: 1.08;
+}
+
+@mixin special_m {
+  font-size: 32px;
+  line-height: 1.2;
+}
+
+@mixin special_s {
+  font-size: 24px;
+  line-height: 1.2;
 }

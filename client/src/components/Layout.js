@@ -17,7 +17,7 @@ const Layout = props => {
   return (
     <>
       <Helmet>
-        <body className={`theme_${theme}`} />
+        <body className={theme ? `theme_${theme}` : ''} />
       </Helmet>
       {header && <Header />}
       {children}

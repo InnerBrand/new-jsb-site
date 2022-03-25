@@ -1,0 +1,135 @@
+@use 'sass:math';
+@import 'core';
+
+$sliderHeightDesktop: 360px;
+
+.wrapper {
+  position: relative;
+  padding-bottom: $sliderHeightDesktop;
+  margin-bottom: space(8);
+
+  @include breakpoint('tablet') {
+    margin-bottom: space(25);
+  }
+}
+
+.bigHeading {
+  @include header_jumbo;
+  color: $color__lime;
+  text-align: center;
+  max-width: 920px;
+  margin: 0 auto space(12);
+
+  @include breakpoint('tablet') {
+    margin-bottom: space(25);
+  }
+}
+
+.titlesWrapper {
+  position: relative;
+  left: calc(16vw - 16px);
+  margin-bottom: space(4);
+
+  @include breakpoint('tablet') {
+    position: absolute;
+    top: -104px;
+    left: percentage(1, 12);
+    margin-bottom: unset;
+  }
+}
+
+.eyebrow {
+  font-family: $font__special;
+  @include helper;
+  margin-bottom: space(3);
+  margin-left: -(space(3));
+  text-transform: uppercase;
+
+  @include breakpoint('tablet') {
+    margin-bottom: space(3);
+    @include special_s;
+  }
+}
+
+.header {
+  @include header_m;
+
+  @include breakpoint('tablet') {
+    @include header_xl;
+    max-width: 416px;
+  }
+
+  span {
+    color: $color__coral;
+  }
+}
+
+.slider {
+  position: absolute;
+  left: 0;
+  right: 0;
+  overflow-x: scroll;
+  cursor: url("data:image/svg+xml,%3Csvg width='120' height='32' viewBox='0 0 120 32' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M16.9022 30.7692C16.9022 31.449 17.4517 32 18.1295 32C18.8074 32 19.3569 31.449 19.3569 30.7692C19.3569 26.4061 16.5572 22.836 13.3843 20.2291C11.9793 19.0747 10.4561 18.0708 8.97305 17.2308L111.472 17.2308C109.849 18.1917 108.155 19.3416 106.606 20.6425C103.477 23.2699 100.643 26.7629 100.643 30.7692C100.643 31.449 101.193 32 101.87 32C102.548 32 103.098 31.449 103.098 30.7692C103.098 27.915 105.174 25.0556 108.182 22.5297C111.135 20.0499 114.704 18.1315 117.073 17.135L120 15.9043L117.009 14.8401C114.656 14.0029 111.107 12.2787 108.171 9.86685C105.208 7.43159 103.098 4.49049 103.098 1.23077C103.098 0.551038 102.548 4.0887e-06 101.87 4.0887e-06C101.193 4.0887e-06 100.643 0.551038 100.643 1.23077C100.643 5.59389 103.443 9.16395 106.616 11.7709C108.021 12.9253 109.544 13.9292 111.027 14.7692L8.52787 14.7692C10.1514 13.8083 11.8453 12.6584 13.3944 11.3575C16.5233 8.73007 19.3569 5.23708 19.3569 1.23077C19.3569 0.551035 18.8074 5.94244e-08 18.1295 0C17.4517 -5.94241e-08 16.9022 0.551035 16.9022 1.23077C16.9022 4.085 14.8264 6.94437 11.8184 9.47029C8.86538 11.9501 5.29634 13.8685 2.92662 14.865L0 16.0957L2.99082 17.1599C5.34374 17.9971 8.89307 19.7213 11.8285 22.1332C14.7925 24.5684 16.9022 27.5095 16.9022 30.7692Z' fill='%23F5FFB6'/%3E%3C/svg%3E%0A")
+      49 13,
+    pointer;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.sliderInner {
+  width: max-content;
+  display: flex;
+  column-gap: space(3);
+  height: $sliderHeightDesktop;
+  padding: 0 16vw;
+
+  @include breakpoint('mobile') {
+    padding: 0 24vw;
+  }
+
+  @include breakpoint('tablet') {
+    padding: 0 32vw;
+  }
+}
+
+.card {
+  width: 70vw;
+  border: 1px solid rgba(#fff, 0.5);
+  padding: 0 space(3);
+  display: flex;
+  align-items: center;
+  @include special_s;
+  font-family: $font__special;
+
+  @include breakpoint('mobile') {
+    width: 52vw;
+  }
+
+  @include breakpoint('tablet') {
+    padding: 0 space(6);
+  }
+
+  @include breakpoint('tablet-lg') {
+    width: 36vw;
+    padding: 0 space(8);
+  }
+
+  @include breakpoint('desktop') {
+    @include special_m;
+  }
+}
+
+// <div className={styles.titlesWrapper}>
+//   <h6 className={styles.eyebrow}>{eyebrow}</h6>
+//   <h3 className={styles.header}>
+//     {headerPre}&nbsp;
+//     <span>{headerHighlight}</span>
+//   </h3>
+// </div>
+// <div className={styles.slider}>
+//   {cardData.map(card => (
+//     <div className={styles.card}>{card}</div>
+//   ))}
+// </div>

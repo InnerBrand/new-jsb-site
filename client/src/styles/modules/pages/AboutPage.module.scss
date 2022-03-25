@@ -16,23 +16,174 @@
 }
 
 .heroImg {
-  margin: -(space(7)) auto;
-  height: 554px;
-  width: 416px;
+  margin: -(space(3)) auto (-(space(6)));
+  height: 335px;
+  width: 253px;
   border-radius: 210px;
   position: relative;
   z-index: -1;
+
+  @include breakpoint('tablet') {
+    margin: -(space(7)) auto;
+    height: 554px;
+    width: 416px;
+  }
 }
 
 .heroSubhead {
-  max-width: 750px;
+  max-width: 540px;
   margin: auto;
+
+  @include breakpoint('tablet') {
+    max-width: 750px;
+  }
 }
 
 .heroMeta {
   position: absolute;
   width: 100%;
   top: 50%;
-  display: flex;
+  display: none;
   justify-content: space-between;
+
+  @include breakpoint('tablet') {
+    display: flex;
+  }
+}
+
+.offsetText {
+  padding-top: space(12);
+
+  @include breakpoint('tablet') {
+    padding-top: space(32);
+  }
+}
+
+.offsetLeftHeading {
+  color: $color__lime;
+
+  @include breakpoint('mobile') {
+    margin-left: percentage(1, 12);
+    margin-right: percentage(3, 12);
+  }
+}
+
+.centerBlurb {
+  @include header_s;
+  font-family: $font__heading;
+  width: percentage(7, 8);
+  margin: space(4) 0 0 auto;
+
+  @include breakpoint('mobile') {
+    @include header_m;
+    width: percentage(8, 12);
+    margin: space(6) auto 0;
+  }
+
+  @include breakpoint('tablet') {
+    width: percentage(8, 12);
+  }
+
+  @include breakpoint('desktop') {
+    width: percentage(6, 12);
+  }
+}
+
+.storyMission {
+  padding-top: space(8);
+  display: flex;
+  flex-flow: column;
+  row-gap: space(8);
+
+  @include breakpoint('tablet') {
+    padding-top: space(24);
+    row-gap: space(12);
+  }
+
+  .block {
+    display: flex;
+    flex-flow: column;
+
+    @include breakpoint('tablet') {
+      flex-flow: row;
+    }
+  }
+
+  .titleCol {
+    margin-bottom: space(3);
+    flex: 1 0 auto;
+
+    @include breakpoint('mobile') {
+      margin-left: percentage(1, 12);
+      margin-right: percentage(3, 12);
+    }
+
+    @include breakpoint('tablet') {
+      margin-bottom: unset;
+      margin-right: 0;
+      width: percentage(2, 12);
+    }
+
+    h6 {
+      @include helper;
+      font-family: $font__special;
+      text-transform: uppercase;
+      opacity: 0.5;
+
+      @include breakpoint('tablet-lg') {
+        font-size: 18px;
+      }
+    }
+  }
+
+  .bodyCol {
+    font-family: $font__special;
+    margin-left: percentage(1, 8);
+
+    @include breakpoint('mobile') {
+      width: percentage(8, 12);
+      margin: 0 auto 0;
+    }
+
+    @include breakpoint('tablet') {
+      margin-left: 0;
+      margin-right: percentage(2, 12);
+    }
+
+    @include breakpoint('tablet-lg') {
+      @include body-xl;
+    }
+    p {
+      font-size: inherit;
+    }
+
+    &.fourGrid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: space(4) percentage(1, 8);
+    }
+  }
+}
+
+.firstCardSlider {
+  padding-top: space(36);
+}
+
+.ctaBtnContainer {
+  padding: space(20) 0;
+  text-align: center;
+}
+
+.bottomSection {
+  background-color: $color__ash;
+
+  .content {
+    margin-top: space(6);
+    text-align: center;
+  }
+
+  .btnGroup {
+    margin-top: space(6);
+    justify-content: center;
+  }
 }
