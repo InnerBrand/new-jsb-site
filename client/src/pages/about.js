@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {graphql} from 'gatsby';
-import {GatsbyImage, getImage} from 'gatsby-plugin-image';
+import { graphql } from 'gatsby';
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 // Components
 import BigTextPillsPlank from 'components/BigTextPillsPlank';
-import Button, {ButtonGroup} from 'components/Button';
+import Button, { ButtonGroup } from 'components/Button';
 import CircleButton from 'components/CircleButton';
 import CardSlider from 'components/CardSlider';
 import Container from 'components/Container';
@@ -13,7 +13,7 @@ import Layout from 'components/Layout';
 // Styles
 import * as styles from 'styles/modules/pages/AboutPage.module.scss';
 
-const AboutPage = ({data}) => {
+const AboutPage = ({ data }) => {
   const heroImgData = data.heroFiles.nodes[0].childImageSharp;
   const heroImg = getImage(heroImgData);
 
@@ -131,14 +131,16 @@ const AboutPage = ({data}) => {
 
 export const query = graphql`
   {
-    heroFiles: allFile(filter: {name: {eq: "nyc-skyline"}}) {
+    heroFiles: allFile(filter: { name: { eq: "nyc-skyline" } }) {
       nodes {
         childImageSharp {
           gatsbyImageData
         }
       }
     }
-    bigTextPillsFiles: allFile(filter: {name: {regex: "/(barry|joseph)/"}}) {
+    bigTextPillsFiles: allFile(
+      filter: { name: { regex: "/(barry|joseph)/" } }
+    ) {
       nodes {
         id
         childImageSharp {

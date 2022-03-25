@@ -25,6 +25,11 @@ export default {
       title: 'Big Claim',
       name: 'bigClaim',
       type: 'bigClaim',
+    },
+    {
+      title: 'Industry Logos',
+      name: 'industryLogos',
+      type: 'industryLogos',
     }
   ],
   preview: {

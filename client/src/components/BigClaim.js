@@ -3,10 +3,10 @@ import { graphql, useStaticQuery } from 'gatsby';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 
 // Components
-import Container from './Container';
+import Container from 'components/Container';
 
 // Styles
-import * as styles from '../styles/modules/BigClaim.module.scss';
+import * as styles from 'styles/modules/BigClaim.module.scss';
 
 const BigClaim = () => {
   const data = useStaticQuery(graphql`
@@ -33,7 +33,7 @@ const BigClaim = () => {
   return (
     <section className={styles.section}>
       <Container>
-        <div className={styles.imgOverlay}>
+        <div className={styles.imgWrapper}>
           <GatsbyImage className={styles.claimImg} image={claimImg} />
         </div>
         <div className={styles.claimText}>

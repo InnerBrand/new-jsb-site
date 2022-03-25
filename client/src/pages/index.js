@@ -7,9 +7,12 @@ import HomepageHero from 'components/HomepageHero';
 import Quote from 'components/Quote';
 import RolesGrid from 'components/RolesGrid';
 import BigClaim from 'components/BigClaim';
+import IndustryLogos from 'components/IndustryLogos';
 
 // Styles
 import * as styles from 'styles/modules/pages/Home.module.scss';
+
+import figLogos from 'assets/images/fig-logos.png';
 
 const Home = ({ data }) => {
   console.log(data);
@@ -21,6 +24,10 @@ const Home = ({ data }) => {
       <HomepageHero />
       <RolesGrid roles={roles} />
       <BigClaim />
+      <div className={styles.figLogos}>
+        <img src={figLogos} />
+      </div>
+      {/* <IndustryLogos /> */}
       <Quote />
     </Layout>
   );

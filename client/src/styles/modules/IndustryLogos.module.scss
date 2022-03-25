@@ -1,0 +1,23 @@
+@import 'core';
+
+.section {
+  position: relative;
+  margin-bottom: 200px;
+}
+
+.wrapper {
+  display: flex;
+}
+
+.text {
+  text-align: center;
+  // background-color: cyan;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.singleLogo {
+  max-width: 300px;
+}
