@@ -6,11 +6,12 @@
   justify-content: space-between;
   padding: 60px 0;
   margin: auto;
+  position: relative;
+  z-index: 1000;
 
   &.menuIsOpen {
     .circleWrapper {
       transform: translate(0, 0);
-      z-index: 1;
     }
 
     .circle {
@@ -21,7 +22,6 @@
 
     .overlayWrapper {
       pointer-events: all;
-      z-index: 1;
     }
 
     .overlay {
@@ -29,8 +29,8 @@
     }
 
     .navToggle {
-      z-index: 2;
       position: fixed;
+      z-index: 10;
       color: $color__black;
 
       .btnTextWrapperInner {
@@ -54,7 +54,7 @@
     .navWrapper {
       opacity: 1;
       pointer-events: all;
-      transition: all 1s $motion__cubic-ease--1;
+      transition: opacity 0.5s $motion__cubic-ease--1 0.2s;
       z-index: 2;
     }
   }
@@ -73,6 +73,7 @@
   left: 0;
   right: 0;
   bottom: 0;
+  z-index: 1;
 }
 
 .overlay {
@@ -90,10 +91,11 @@
   position: absolute;
   left: 0;
   top: 0;
+  z-index: 1;
   transform: translate(0, -50%);
   width: 100%;
   height: 100vh;
-  transition: 0.35s ease-out;
+  transition: 0.5s $motion__cubic-ease--1;
 }
 
 .circle {
@@ -104,7 +106,7 @@
   height: 0;
   transform: translate(-50%, -50%);
   transform-origin: 50% 50%;
-  transition: 0.35s ease-out;
+  transition: 0.5s $motion__cubic-ease--1;
   border-radius: 50%;
   background: $color__lime;
 }
@@ -117,6 +119,8 @@
   font-weight: 600;
   cursor: pointer;
   color: inherit;
+  padding: 0;
+  z-index: 2;
 
   .btnTextWrapper {
     overflow: hidden;
@@ -169,65 +173,113 @@
 
 .navWrapper {
   position: fixed;
-  top: 50;
+  top: 0;
   bottom: 0;
-  animation: slide 3s forwards;
   pointer-events: none;
   opacity: 0;
 
   nav {
-    width: auto;
-    // position: absolute;
-    height: 80vh;
-    position: static;
-    top: 50;
+    height: 100%;
+    padding-top: space(17);
     font-family: $font__special;
+  }
+}
 
-    .menuNavLinks {
-      margin: auto;
-      @include header_m;
-    }
+.menuWrapper {
+  height: 100%;
+  position: relative;
+}
 
-    .navItem {
-      color: black;
-      text-decoration: none;
-      width: 100%;
-      text-transform: none;
-      margin-top: 16px;
+.scrollContainer {
+  overflow-y: scroll;
+  height: 100%;
+  padding: space(7) 0 space(12);
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  &:before {
+    content: '';
+    background: linear-gradient(
+      0deg,
+      rgba($color__lime, 0),
+      rgba($color__lime, 1)
+    );
+    display: block;
+    height: space(7);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    pointer-events: none;
+  }
+}
+
+.menuNavLinks {
+  margin: auto;
+  display: inline-flex;
+  flex-flow: column;
+  @include header_m;
+  gap: space(2);
+
+  .navItem {
+    &:hover {
+      transform: translateX(8px);
 
       .linkArrow {
-        margin-left: 16px;
-        visibility: hidden;
-      }
-
-      &:hover {
-        transform: translateX(8px);
-        transition: 0.5s $motion__cubic-ease--1;
-
-        .linkArrow {
-          visibility: visible;
-          transition: 0.5s $motion__cubic-ease--1;
-        }
+        opacity: 1;
       }
     }
+  }
+}
 
-    .menuMoreInfo {
-      display: flex;
-      margin-top: 140px;
-      @include header_s;
+.navItem {
+  color: $color__black;
+  text-decoration: none;
+  transition: 0.3s $motion__cubic-ease--1;
 
-      .menuSecondaryLinks {
-        text-decoration: underline;
-      }
+  .linkArrow {
+    margin-left: 16px;
+    opacity: 0;
+    transition: 0.3s $motion__cubic-ease--1;
+  }
+}
 
-      .menuAddress {
-        margin-left: 140px;
+.menuMoreInfo {
+  display: flex;
+  margin-top: 140px;
+  @include header_s;
+}
 
-        p {
-          margin-top: 16px;
-        }
-      }
+.menuSecondaryLinks,
+.menuAddress {
+  display: flex;
+  flex-flow: column;
+  gap: space(2);
+}
+
+.menuSecondaryLinks {
+  .navItem {
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    text-decoration-thickness: 1px;
+    font-size: 18px;
+    line-height: 1.64;
+
+    &:hover {
+      text-decoration: none;
     }
+  }
+}
+
+.menuAddress {
+  color: $color__black;
+  margin-left: 140px;
+
+  .navItem {
+    font-size: 18px;
+    line-height: 1.72;
   }
 }
 

@@ -1,6 +1,11 @@
-import React, {useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import PropTypes from 'prop-types';
 import {Link} from 'gatsby';
+import {
+  disableBodyScroll,
+  enableBodyScroll,
+  clearAllBodyScrollLocks,
+} from 'body-scroll-lock';
 // Components
 import Container from 'components/Container';
 // SVG
@@ -10,12 +15,17 @@ import FancyArrowRight from 'assets/svg/fancy-arrow-right.inline.svg';
 import * as styles from 'styles/modules/Header.module.scss';
 
 const Header = props => {
+  const scrollRef = useRef(null);
   const [navbarOpen, setNavbarOpen] = useState(false);
 
   const handleToggle = () => {
     console.log(handleToggle);
     setNavbarOpen(state => !state);
   };
+
+  useEffect(() => {
+    navbarOpen ? disableBodyScroll(scrollRef) : enableBodyScroll(scrollRef);
+  }, [navbarOpen]);
 
   return (
     <header
@@ -42,54 +52,56 @@ const Header = props => {
 
         <div className={styles.navWrapper}>
           <nav className={styles.nav}>
-            <div className={styles.menuNav}>
-              <div className={styles.menuNavLinks}>
-                <Link
-                  to={'https://jobs.vivahr.com/6965-aktiv-insight/jobs'}
-                  className={styles.navItem}>
-                  Job listings
-                  <FancyArrowRight className={styles.linkArrow} />
-                </Link>
-                <Link to='/' className={styles.navItem}>
-                  Looking for talent?
-                  <FancyArrowRight className={styles.linkArrow} />
-                </Link>
-                <Link to='/about' className={styles.navItem}>
-                  Success stories
-                  <FancyArrowRight className={styles.linkArrow} />
-                </Link>
-                <Link to='/team' className={styles.navItem}>
-                  Meet your experts
-                  <FancyArrowRight className={styles.linkArrow} />
-                </Link>
-                <Link to='/submit-resume' className={styles.navItem}>
-                  Services
-                  <FancyArrowRight className={styles.linkArrow} />
-                </Link>
-              </div>
-              <div className={styles.menuMoreInfo}>
-                <div className={styles.menuSecondaryLinks}>
-                  <Link to='/about' className={styles.navItem}>
-                    Contact us
+            <div className={styles.menuWrapper}>
+              <div className={styles.scrollContainer} ref={scrollRef}>
+                <div className={styles.menuNavLinks}>
+                  <Link
+                    to={'https://jobs.vivahr.com/6965-aktiv-insight/jobs'}
+                    className={styles.navItem}>
+                    Job listings
+                    <FancyArrowRight className={styles.linkArrow} />
+                  </Link>
+                  <Link to='/' className={styles.navItem}>
+                    Looking for talent?
                     <FancyArrowRight className={styles.linkArrow} />
                   </Link>
                   <Link to='/about' className={styles.navItem}>
-                    About the company
+                    Success stories
+                    <FancyArrowRight className={styles.linkArrow} />
+                  </Link>
+                  <Link to='/team' className={styles.navItem}>
+                    Meet your experts
                     <FancyArrowRight className={styles.linkArrow} />
                   </Link>
                   <Link to='/submit-resume' className={styles.navItem}>
-                    Send us your resume
-                    <FancyArrowRight className={styles.linkArrow} />
-                  </Link>
-                  <Link to='/submit-resume' className={styles.navItem}>
-                    Careers at JSB
+                    Services
                     <FancyArrowRight className={styles.linkArrow} />
                   </Link>
                 </div>
-                <div className={styles.menuAddress}>
-                  <p>New York</p>
-                  <p>212-750-7007</p>
-                  <p>info@jsbpartners.com</p>
+                <div className={styles.menuMoreInfo}>
+                  <div className={styles.menuSecondaryLinks}>
+                    <Link to='/about' className={styles.navItem}>
+                      Contact us
+                    </Link>
+                    <Link to='/about' className={styles.navItem}>
+                      About the company
+                    </Link>
+                    <Link to='/submit-resume' className={styles.navItem}>
+                      Send us your resume
+                    </Link>
+                    <Link to='/submit-resume' className={styles.navItem}>
+                      Careers at JSB
+                    </Link>
+                  </div>
+                  <div className={styles.menuAddress}>
+                    <p className={styles.navItem}>
+                      <strong>New York</strong>
+                    </p>
+                    <a className={styles.navItem} href='tel:212-750-7007'>
+                      212-750-7007
+                    </a>
+                    <p className={styles.navItem}>info@jsbpartners.com</p>
+                  </div>
                 </div>
               </div>
             </div>

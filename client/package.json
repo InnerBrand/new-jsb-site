@@ -17,6 +17,7 @@
   "dependencies": {
     "@heroicons/react": "^1.0.5",
     "@sanity/block-content-to-react": "^3.0.0",
+    "body-scroll-lock": "^4.0.0-beta.0",
     "esm": "^3.2.25",
     "gatsby": "^4.0.1",
     "gatsby-image": "^3.11.0",
