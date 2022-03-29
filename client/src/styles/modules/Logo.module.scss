@@ -6,5 +6,13 @@
 
   svg {
     height: 26px;
+
+    :global(body.theme_light) & {
+      fill: $color__black;
+    }
+
+    :global(body.theme_dark) & {
+      fill: #fff;
+    }
   }
 }

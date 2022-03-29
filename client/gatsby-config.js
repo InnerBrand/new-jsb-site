@@ -2,7 +2,7 @@ require('dotenv').config({path: '.env'});
 
 module.exports = {
   siteMetadata: {
-    siteUrl: 'https://www.yourdomain.tld',
+    siteUrl: 'https://jsb.com',
     title: 'jsb gatsby 2022',
   },
   plugins: [
@@ -18,7 +18,7 @@ module.exports = {
       options: {
         projectId: process.env.SANITY_PROJECT_ID,
         dataset: process.env.SANITY_DATASET,
-        watchMode: true,
+        watchMode: process.env.NODE_ENV === 'development' ? true : false,
       },
     },
     {

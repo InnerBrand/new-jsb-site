@@ -34,7 +34,7 @@
       color: $color__black;
 
       .btnTextWrapperInner {
-        transform: translateY(-28px);
+        transform: translateY(-24px);
       }
     }
 
@@ -127,11 +127,11 @@
 
     .btnTextWrapperInner {
       transition: 0.5s $motion__cubic-ease--1;
-      height: 26px;
+      height: 24px;
       width: 42px;
 
       p {
-        line-height: 1.64;
+        line-height: 24px;
       }
     }
   }
@@ -248,8 +248,14 @@
 
 .menuMoreInfo {
   display: flex;
-  margin-top: 140px;
+  flex-flow: column;
+  margin-top: space(12);
   @include header_s;
+
+  @include breakpoint('mobile') {
+    margin-top: space(17);
+    flex-flow: row;
+  }
 }
 
 .menuSecondaryLinks,
@@ -275,7 +281,12 @@
 
 .menuAddress {
   color: $color__black;
-  margin-left: 140px;
+  margin-top: space(8);
+
+  @include breakpoint('mobile') {
+    margin-left: min(140px, 16vw);
+    margin-top: 0;
+  }
 
   .navItem {
     font-size: 18px;

@@ -6,14 +6,9 @@ import SVG from 'assets/svg/jsb-logo.inline.svg';
 // Styles
 import * as styles from 'styles/modules/Logo.module.scss';
 
-const Logo = ({inverted}) => {
+const Logo = () => {
   return (
-    <Link
-      title='JSB Logo'
-      to='/'
-      className={[styles.linkWrapper, inverted ? styles.inverted : ''].join(
-        ' '
-      )}>
+    <Link title='JSB Logo' to='/' className={styles.linkWrapper}>
       <SVG />
     </Link>
   );

@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { GatsbyImage, getImage } from 'gatsby-plugin-image';
+import React, {useEffect, useRef, useState} from 'react';
+import {GatsbyImage, getImage} from 'gatsby-plugin-image';
 
 // Components
 import Container from 'components/Container';
@@ -7,31 +7,62 @@ import Container from 'components/Container';
 // Styles
 import * as styles from 'styles/modules/TeamMembers.module.scss';
 
-function SingleMember({ member }) {
-  const [isPillOpen, setPillOpen] = useState(false);
-  const memberImg = getImage(member.image.asset.gatsbyImageData);
+const TeamMembers = ({members}) => {
+  const controllerRef = useRef(null);
+  const sliderRef = useRef(null);
+
+  console.log(controllerRef, sliderRef);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(handleInView, {
+      root: document,
+      rootMargin: '-50% 0px 0px 0px',
+      threshold: 0,
+    });
+
+    observer.observe(controllerRef.current);
+  }, [controllerRef.current]);
+
+  function handleInView(entries, observer) {
+    entries.forEach(entry => {
+      console.log(entry);
+    });
+  }
 
   return (
-    <>
-      <div className={styles.singleMember}>
-        <GatsbyImage image={memberImg} />
-        <h4>{member.name}</h4>
-      </div>
-      {/* { isPillOpen && (<OpenPill data={member}/>) } */}
-    </>
-  );
-}
-
-const TeamMembers = ({ members }) => {
-  return (
-    <section className={styles.section}>
-      <Container>
-        <div className={styles.wrapper}>
-          {members.map(member => (
-            <SingleMember key={member.id} member={member} />
-          ))}
+    <section className={styles.wrapper}>
+      <div
+        style={{
+          width: 100,
+          background: 'yellow',
+          height: 1,
+          position: 'absolute',
+          top: '50%',
+          left: 0,
+        }}
+        ref={controllerRef}
+      />
+      {/* <Container> */}
+      <div className={styles.sliderWrapper}>
+        <div className={styles.slider} ref={sliderRef}>
+          <h6 className={styles.verticalText}>Team Members</h6>
+          <div className={styles.members}>
+            {members.map(member => {
+              const memberImg = getImage(member.image.asset.gatsbyImageData);
+              return (
+                <div key={member.id} className={styles.singleMember}>
+                  <GatsbyImage
+                    className={styles.memberImage}
+                    image={memberImg}
+                  />
+                  <h4 className={styles.memberName}>{member.name}</h4>
+                </div>
+              );
+            })}
+          </div>
         </div>
-      </Container>
+      </div>
+      {/* </Container> */}
     </section>
   );
 };

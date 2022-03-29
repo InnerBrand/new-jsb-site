@@ -62,7 +62,14 @@ export default {
       type: 'richTextEditor',
       name: 'biography',
       title: 'Biography',
-      validation: Rule => Rule.required(),
+      validation: Rule =>
+        Rule.required().custom(({data}) => {
+          console.log(data);
+          const chars = data.reduce((acc, curr) => {
+            return acc + curr.children[0].text.length;
+          }, 0);
+          return chars > 296 ? 'Limit is 296 characters!' : true;
+        }),
     },
   ],
   preview: {
