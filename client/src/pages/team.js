@@ -13,6 +13,7 @@ import * as styles from 'styles/modules/pages/Team.module.scss';
 import FactsPic from 'assets/images/facts .png';
 import tMemb from 'assets/images/t-memb.png';
 import fMemb from 'assets/images/f-memb.png';
+import Space from 'components/Space';
 
 const TeamPage = ({data}) => {
   const headline = data.allSanityTeamPage.nodes[0].heroHeadline;
@@ -22,7 +23,8 @@ const TeamPage = ({data}) => {
     <>
       <Layout>
         <Container>
-          <h1 className={`jumbo ${styles.heroHeadline}`}>{headline}</h1>
+          <h1 className={styles.heroHeadline}>{headline}</h1>
+          <Space unit={10} />
         </Container>
         <TeamMembers members={members} />
         {/* <div className={styles.tMemb}>

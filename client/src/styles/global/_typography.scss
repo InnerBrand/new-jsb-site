@@ -23,7 +23,7 @@ h1 {
   &.jumbo {
     @include header_xl;
 
-    @include breakpoint('tablet') {
+    @include breakpoint('desktop') {
       @include header_jumbo;
     }
   }
@@ -32,7 +32,7 @@ h1 {
 h2 {
   @include header_l;
 
-  @include breakpoint('tablet') {
+  @include breakpoint('desktop') {
     @include header_xl;
   }
 }
@@ -40,7 +40,7 @@ h2 {
 h3 {
   @include header_m;
 
-  @include breakpoint('tablet') {
+  @include breakpoint('desktop') {
     @include header_l;
   }
 }

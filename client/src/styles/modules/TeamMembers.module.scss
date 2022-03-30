@@ -1,45 +1,123 @@
 @import 'core';
 
+$pillTransition: 600ms cubic-bezier(0.16, 0, 0.08, 1);
+
 .wrapper {
   position: relative;
   overflow: hidden;
-  background: blue;
+  // background: blue;
+  padding: 80px 0;
 }
 
 .sliderWrapper {
   width: 100%;
-  overflow-y: scroll;
-  padding: space(18) 0;
+  height: calc(100vh - 160px);
+  min-height: 516px;
+  display: flex;
+  align-items: center;
+
+  @include breakpoint('desktop') {
+    min-height: 716px - 160px;
+  }
 }
 
 .slider {
   position: relative;
-
-  // padding-left: 24vw;
-  padding-right: 35vw;
   width: max-content;
+  background: $color__peach;
+  padding: space(8) 0;
 }
 
 .verticalText {
   position: absolute;
   transform: rotate(-90deg) translateX(calc(-100% + 28px));
   transform-origin: bottom left;
-  left: calc(50vw + 24px - 570px);
+  left: 44px;
   font-family: $font__special;
-  @include special_s;
+  @include body-l;
+
+  @include breakpoint('mobile') {
+    left: 13vw;
+  }
+
+  @include breakpoint('tablet') {
+    left: calc(50vw + 24px - 359px);
+    @include special_s;
+  }
+
+  @include breakpoint('tablet-lg') {
+    left: calc(50vw + 24px - 420px);
+  }
+
+  @include breakpoint('desktop') {
+    left: calc(50vw + 24px - 570px);
+  }
 }
 
 .members {
   display: flex;
-  gap: space(15);
+  gap: space(8);
   align-items: start;
   position: relative;
-  left: calc(50vw - 380px);
+  left: calc(50vw - 100px);
+  padding-right: 35vw;
+
+  @include breakpoint('mobile') {
+    left: calc(50vw - 130px);
+  }
+
+  @include breakpoint('tablet') {
+    left: calc(50vw + 24px - 264px);
+    gap: space(12);
+  }
+
+  @include breakpoint('tablet-lg') {
+    left: calc(50vw - 280px);
+    gap: space(15);
+  }
+
+  @include breakpoint('desktop') {
+    left: calc(50vw - 380px);
+  }
 }
 
 .singleMember {
-  width: clamp(300px, 25vw, 360px);
+  background: transparent; // Reset b/c it's a button
+  padding: 0; // Reset b/c it's a button
+  text-align: left; // Reset b/c it's a button
+  width: 200px;
   position: relative;
+  cursor: pointer;
+
+  @include breakpoint('mobile') {
+    width: 260px;
+  }
+
+  @include breakpoint('tablet-lg') {
+    width: clamp(300px, 25vw, 360px);
+  }
+
+  &:hover {
+    .memberImage {
+      transform: scale(1.1);
+    }
+
+    .memberName {
+      transform: translateY(-16px);
+    }
+
+    .readCta {
+      opacity: 1;
+
+      span {
+        transform: translateX(10px);
+      }
+
+      svg {
+        transform: translateX(-10px);
+      }
+    }
+  }
 
   &:nth-child(3n + 2) {
     margin-top: space(26);
@@ -48,6 +126,11 @@
   &:nth-child(3n + 3) {
     margin-top: space(10);
   }
+}
+
+.memberImage,
+.memberName {
+  transition: transform $pillTransition;
 }
 
 .memberImage {
@@ -59,10 +142,37 @@
 
 .memberName {
   position: absolute;
-  top: calc(100% - space(6));
-  @include header_l;
+  top: calc(100% - space(4));
+  @include header_m;
   font-family: $font__special;
   mix-blend-mode: exclusion;
   background: #000;
   color: #fff;
+
+  @include breakpoint('tablet') {
+    @include header_l;
+    top: calc(100% - space(6));
+  }
+}
+
+.readCta {
+  position: absolute;
+  bottom: -75px;
+  right: 0;
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  transition: opacity $pillTransition;
+  opacity: 0;
+
+  span {
+    font-family: $font__special;
+    @include special_s;
+    text-transform: uppercase;
+  }
+
+  span,
+  svg {
+    transition: transform $pillTransition;
+  }
 }

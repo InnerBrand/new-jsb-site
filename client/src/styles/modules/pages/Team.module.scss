@@ -1,8 +1,14 @@
 @import 'core';
 
 .heroHeadline {
-  margin-top: space(7);
-  margin-left: percentage(1, 12);
+  @include breakpoint('mobile') {
+    margin-top: space(7);
+    margin-left: percentage(1, 12);
+  }
+
+  @include breakpoint('desktop') {
+    @include header_jumbo;
+  }
 }
 
 .facts {
