@@ -1,0 +1,54 @@
+@import 'core';
+
+.hero {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-flow: column;
+  position: relative;
+}
+
+.heroHeading {
+  color: $color__really-dark;
+  text-shadow: -1px -1px 0 $color__lime, 1px -1px 0 $color__lime,
+    -1px 1px 0 $color__lime, 1px 1px 0 $color__lime;
+  mix-blend-mode: lighten;
+}
+
+.heroImg {
+  margin: -(space(3)) auto (-(space(6)));
+  height: 335px;
+  width: 253px;
+  border-radius: 210px;
+  position: relative;
+  z-index: -1;
+
+  @include breakpoint('tablet') {
+    margin: -(space(7)) auto;
+    height: 554px;
+    width: 416px;
+  }
+}
+
+.heroSubhead {
+  max-width: 540px;
+  margin: auto;
+
+  @include breakpoint('tablet') {
+    max-width: 750px;
+  }
+}
+
+.bigText {
+  text-align: center;
+  padding: 200px 0;
+}
+
+.bottomSection {
+  background-color: $color__ash;
+
+  .content {
+    margin-top: space(6);
+    text-align: center;
+  }
+}

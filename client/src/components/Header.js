@@ -1,6 +1,6 @@
-import React, {useEffect, useRef, useState} from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
-import {Link} from 'gatsby';
+import { Link } from 'gatsby';
 import {
   disableBodyScroll,
   enableBodyScroll,
@@ -61,7 +61,7 @@ const Header = props => {
                     Job listings
                     <FancyArrowRight className={styles.linkArrow} />
                   </Link>
-                  <Link to='/' className={styles.navItem}>
+                  <Link to='/apply' className={styles.navItem}>
                     Looking for talent?
                     <FancyArrowRight className={styles.linkArrow} />
                   </Link>
@@ -73,7 +73,7 @@ const Header = props => {
                     Meet your experts
                     <FancyArrowRight className={styles.linkArrow} />
                   </Link>
-                  <Link to='/submit-resume' className={styles.navItem}>
+                  <Link to='/about' className={styles.navItem}>
                     Services
                     <FancyArrowRight className={styles.linkArrow} />
                   </Link>
