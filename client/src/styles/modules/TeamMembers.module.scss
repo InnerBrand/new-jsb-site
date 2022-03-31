@@ -4,7 +4,7 @@ $pillTransition: 600ms cubic-bezier(0.16, 0, 0.08, 1);
 
 .wrapper {
   position: relative;
-  // overflow: clip;
+  overflow-x: clip;
   // background: blue;
   padding: 105px 0;
 }

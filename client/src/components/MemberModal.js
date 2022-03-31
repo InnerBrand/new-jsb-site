@@ -1,8 +1,13 @@
-import React from 'react';
+import React, {useEffect, useRef} from 'react';
 import PropTypes from 'prop-types';
 import {GatsbyImage, getImage} from 'gatsby-plugin-image';
 import Block from '@sanity/block-content-to-react';
 import {AnimatePresence, motion} from 'framer-motion';
+import {
+  disableBodyScroll,
+  enableBodyScroll,
+  clearAllBodyScrollLocks,
+} from 'body-scroll-lock';
 // Comopnents
 // Styles
 import * as styles from 'styles/modules/MemberModal.module.scss';
@@ -12,6 +17,13 @@ import {RiLinkedinBoxFill} from 'react-icons/ri';
 import {HiOutlineMail} from 'react-icons/hi';
 
 const MemberModal = ({data, isOpen, handler}) => {
+  const scrollRef = useRef(null);
+
+  useEffect(() => {
+    isOpen ? disableBodyScroll(scrollRef) : enableBodyScroll(scrollRef);
+    return () => clearAllBodyScrollLocks(scrollRef);
+  }, [isOpen]);
+
   function handleClose() {
     handler.setMemberModalOpen(false);
   }
@@ -55,11 +67,16 @@ const MemberModal = ({data, isOpen, handler}) => {
               transition={{ease: [0.3, 0, 0, 1], duration: 0.5}}
               className={styles.content}>
               <div className={styles.circle}>
-                <button onClick={handleClose}>
+                <motion.button
+                  initial={{rotate: -45}}
+                  animate={{rotate: 0}}
+                  exit={{rotate: -45}}
+                  transition={{ease: 'easeInOut', duration: 0.5}}
+                  onClick={handleClose}>
                   <BigX />
-                </button>
+                </motion.button>
               </div>
-              <div className={styles.memberContent}>
+              <div className={styles.memberContent} ref={scrollRef}>
                 <div className={styles.inner}>
                   <div className={styles.memberDetails}>
                     <GatsbyImage

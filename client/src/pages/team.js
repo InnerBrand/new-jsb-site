@@ -30,12 +30,12 @@ const TeamPage = ({data}) => {
         {/* <div className={styles.tMemb}>
           <img src={tMemb} />
         </div> */}
-        <div className={styles.facts}>
+        {/* <div className={styles.facts}>
           <img src={FactsPic} />
         </div>
         <div className={styles.fMemb}>
           <img src={fMemb} />
-        </div>
+        </div> */}
         <Quote />
       </Layout>
     </>
