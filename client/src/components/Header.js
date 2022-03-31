@@ -61,7 +61,7 @@ const Header = props => {
                     Job listings
                     <FancyArrowRight className={styles.linkArrow} />
                   </Link>
-                  <Link to='/apply' className={styles.navItem}>
+                  <Link to='/services' className={styles.navItem}>
                     Looking for talent?
                     <FancyArrowRight className={styles.linkArrow} />
                   </Link>
