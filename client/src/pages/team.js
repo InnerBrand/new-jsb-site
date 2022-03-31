@@ -18,7 +18,7 @@ import Space from 'components/Space';
 const TeamPage = ({data}) => {
   const headline = data.allSanityTeamPage.nodes[0].heroHeadline;
   const members = data.allSanityTeamPage.nodes[0].teamMembers;
-  // console.log(members);
+  console.log(members);
   return (
     <>
       <Layout>
@@ -42,33 +42,33 @@ const TeamPage = ({data}) => {
   );
 };
 
-// export const query = graphql`
-//   query MyQuery {
-//     allSanityTeamPage {
-//       nodes {
-//         teamMembers {
-//           name
-//           id
-//           image {
-//             asset {
-//               gatsbyImageData
-//             }
-//           }
-//           title {
-//             _rawData
-//           }
-//           email
-//           phoneNumber
-//           linkedInLink
-//           jobTitle
-//           biography {
-//             _rawData
-//           }
-//         }
-//         heroHeadline
-//       }
-//     }
-//   }
-// `;
+export const query = graphql`
+  query MyQuery {
+    allSanityTeamPage {
+      nodes {
+        teamMembers {
+          name
+          id
+          image {
+            asset {
+              gatsbyImageData
+            }
+          }
+          title {
+            _rawData
+          }
+          email
+          phoneNumber
+          linkedInLink
+          jobTitle
+          biography {
+            _rawData
+          }
+        }
+        heroHeadline
+      }
+    }
+  }
+`;
 
 export default TeamPage;
