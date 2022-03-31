@@ -73,7 +73,7 @@ const Header = props => {
                     Meet your experts
                     <FancyArrowRight className={styles.linkArrow} />
                   </Link>
-                  <Link to='/about' className={styles.navItem}>
+                  <Link to='/services' className={styles.navItem}>
                     Services
                     <FancyArrowRight className={styles.linkArrow} />
                   </Link>

@@ -3,7 +3,7 @@ import { graphql, useStaticQuery } from 'gatsby';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 
 // Styles
-import * as styles from 'styles/modules/industryLogos.module.scss';
+import * as styles from 'styles/modules/IndustryLogos.module.scss';
 
 function SingleLogo({ imgData }) {
   const logoImg = getImage(imgData.asset);
