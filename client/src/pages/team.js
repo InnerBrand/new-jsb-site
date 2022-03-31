@@ -54,6 +54,16 @@ export const query = graphql`
               gatsbyImageData
             }
           }
+          title {
+            _rawData
+          }
+          email
+          phoneNumber
+          linkedInLink
+          jobTitle
+          biography {
+            _rawData
+          }
         }
         heroHeadline
       }

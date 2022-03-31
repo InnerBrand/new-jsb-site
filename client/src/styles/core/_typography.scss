@@ -68,6 +68,7 @@ $font__special: 'Space Grotesk', sans-serif;
 @mixin special_m {
   font-size: 32px;
   line-height: 1.2;
+  letter-spacing: initial;
 }
 
 @mixin special_s {

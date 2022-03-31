@@ -19,9 +19,9 @@ export default {
       validation: Rule => Rule.required(),
     },
     {
-      type: 'string',
-      name: 'certifications',
-      title: 'Certifications',
+      type: 'richTextEditor',
+      name: 'title',
+      title: 'Title',
       validation: Rule => Rule.required(),
     },
     {
@@ -39,18 +39,8 @@ export default {
     },
     {
       type: 'url',
-      name: 'facebookLink',
-      title: 'Facebook Profile URL',
-    },
-    {
-      type: 'url',
       name: 'linkedInLink',
       title: 'Linkedin Profile URL',
-    },
-    {
-      type: 'url',
-      name: 'twitterLink',
-      title: 'Twitter Profile URL',
     },
     {
       type: 'string',

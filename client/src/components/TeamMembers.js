@@ -10,15 +10,7 @@ import * as styles from 'styles/modules/TeamMembers.module.scss';
 import Arrow from 'assets/svg/fancy-arrow-right.inline.svg';
 
 const TeamMembers = ({members}) => {
-  const [activeMember, setActiveMember] = useState({
-    name: '',
-    title: '',
-    email: '',
-    phone: '',
-    linkedin: '',
-    heading: '',
-    description: '',
-  });
+  const [activeMember, setActiveMember] = useState({});
   const [memberModalOpen, setMemberModalOpen] = useState(false);
 
   gsap.registerPlugin(ScrollTrigger);
@@ -66,7 +58,10 @@ const TeamMembers = ({members}) => {
                 <button
                   key={member.id}
                   className={styles.singleMember}
-                  onClick={handleClick}>
+                  onClick={() => {
+                    setMemberModalOpen(true);
+                    setActiveMember(member);
+                  }}>
                   <GatsbyImage
                     alt=''
                     className={styles.memberImage}
