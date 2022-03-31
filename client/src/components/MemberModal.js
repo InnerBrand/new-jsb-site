@@ -31,7 +31,6 @@ const MemberModal = ({data, isOpen, handler}) => {
   const {
     biography,
     email,
-    id,
     image,
     jobTitle,
     linkedInLink,
@@ -151,15 +150,15 @@ const MemberModal = ({data, isOpen, handler}) => {
   );
 };
 
-MemberModal.propTypes = {
-  image: PropTypes.object.isRequired,
-  name: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
-  email: PropTypes.string.isRequired,
-  phone: PropTypes.string.isRequired,
-  linkedin: PropTypes.string.isRequired,
-  jobTitle: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
-};
+// MemberModal.propTypes = {
+//   image: PropTypes.object.isRequired,
+//   name: PropTypes.string.isRequired,
+//   title: PropTypes.string.isRequired,
+//   email: PropTypes.string.isRequired,
+//   phone: PropTypes.string.isRequired,
+//   linkedin: PropTypes.string.isRequired,
+//   jobTitle: PropTypes.string.isRequired,
+//   description: PropTypes.string.isRequired,
+// };
 
 export default MemberModal;
