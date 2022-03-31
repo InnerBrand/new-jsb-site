@@ -16,15 +16,14 @@ import fMemb from 'assets/images/f-memb.png';
 import Space from 'components/Space';
 
 const TeamPage = ({data}) => {
-  // const headline = data.allSanityTeamPage.nodes[0].heroHeadline;
-  // const members = data.allSanityTeamPage.nodes[0].teamMembers;
+  const headline = data.allSanityTeamPage.nodes[0].heroHeadline;
+  const members = data.allSanityTeamPage.nodes[0].teamMembers;
   // console.log(members);
   return (
     <>
       <Layout>
         <Container>
-          {/* <h1 className={styles.heroHeadline}>{headline}</h1> */}
-          <h1>Heyyy</h1>
+          <h1 className={styles.heroHeadline}>{headline}</h1>
           <Space unit={10} />
         </Container>
         {/* <TeamMembers members={members} /> */}
@@ -37,7 +36,7 @@ const TeamPage = ({data}) => {
         <div className={styles.fMemb}>
           <img src={fMemb} />
         </div> */}
-        {/* <Quote /> */}
+        <Quote />
       </Layout>
     </>
   );
