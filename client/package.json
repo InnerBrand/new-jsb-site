@@ -19,6 +19,7 @@
     "@sanity/block-content-to-react": "^3.0.0",
     "body-scroll-lock": "^4.0.0-beta.0",
     "esm": "^3.2.25",
+    "framer-motion": "^6.2.8",
     "gatsby": "^4.0.1",
     "gatsby-image": "^3.11.0",
     "gatsby-plugin-google-fonts": "^1.0.1",

@@ -4,20 +4,20 @@ $pillTransition: 600ms cubic-bezier(0.16, 0, 0.08, 1);
 
 .wrapper {
   position: relative;
-  overflow: hidden;
+  // overflow: clip;
   // background: blue;
-  padding: 80px 0;
+  padding: 105px 0;
 }
 
 .sliderWrapper {
   width: 100%;
-  height: calc(100vh - 160px);
-  min-height: 516px;
+  height: calc(100vh - 210px);
+  min-height: 480px;
   display: flex;
   align-items: center;
 
   @include breakpoint('desktop') {
-    min-height: 716px - 160px;
+    min-height: 556px;
   }
 }
 
@@ -52,6 +52,10 @@ $pillTransition: 600ms cubic-bezier(0.16, 0, 0.08, 1);
   @include breakpoint('desktop') {
     left: calc(50vw + 24px - 570px);
   }
+
+  @include breakpoint('desktop-lg') {
+    left: calc(50vw + 24px - 690px);
+  }
 }
 
 .members {
@@ -78,6 +82,10 @@ $pillTransition: 600ms cubic-bezier(0.16, 0, 0.08, 1);
 
   @include breakpoint('desktop') {
     left: calc(50vw - 380px);
+  }
+
+  @include breakpoint('desktop-lg') {
+    left: calc(50vw - 460px);
   }
 }
 

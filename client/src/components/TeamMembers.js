@@ -3,25 +3,31 @@ import {GatsbyImage, getImage} from 'gatsby-plugin-image';
 import {gsap} from 'gsap';
 import {ScrollTrigger} from 'gsap/ScrollTrigger';
 // Components
-import Container from 'components/Container';
+import MemberModal from 'components/MemberModal';
 // Styles
 import * as styles from 'styles/modules/TeamMembers.module.scss';
 // SVG
 import Arrow from 'assets/svg/fancy-arrow-right.inline.svg';
 
 const TeamMembers = ({members}) => {
+  const [activeMember, setActiveMember] = useState({
+    name: '',
+    title: '',
+    email: '',
+    phone: '',
+    linkedin: '',
+    heading: '',
+    description: '',
+  });
+  const [memberModalOpen, setMemberModalOpen] = useState(false);
+
   gsap.registerPlugin(ScrollTrigger);
   const section = useRef(null);
   const sliderWrapper = useRef(null); // our 'pin-wrap'
   const slider = useRef(null); // our 'animation-wrap'
 
   useLayoutEffect(() => {
-    console.log(section);
-    console.log(sliderWrapper);
-    console.log(slider);
-    console.log('Running effect');
     const getToValue = () => -(slider.current.scrollWidth - window.innerWidth);
-    console.log(getToValue());
     const scrollAnimation = gsap.fromTo(
       slider.current,
       {x: 0},
@@ -33,18 +39,19 @@ const TeamMembers = ({members}) => {
           start: 'top top',
           end: () => '+=' + (slider.current.scrollWidth - window.innerWidth),
           pin: sliderWrapper.current,
+          anticipatePin: 0.5,
           invalidateOnRefresh: true,
           scrub: true,
           // markers: true,
         },
       }
     );
-
-    return () => {
-      console.log('cleanup');
-      scrollAnimation.kill();
-    };
+    return () => scrollAnimation.kill();
   }, []);
+
+  function handleClick() {
+    setMemberModalOpen(true);
+  }
 
   return (
     <section className={styles.wrapper} ref={section}>
@@ -56,7 +63,10 @@ const TeamMembers = ({members}) => {
             {members.map(member => {
               const memberImg = getImage(member.image.asset.gatsbyImageData);
               return (
-                <button key={member.id} className={styles.singleMember}>
+                <button
+                  key={member.id}
+                  className={styles.singleMember}
+                  onClick={handleClick}>
                   <GatsbyImage
                     alt=''
                     className={styles.memberImage}
@@ -73,6 +83,11 @@ const TeamMembers = ({members}) => {
           </div>
         </div>
       </div>
+      <MemberModal
+        data={activeMember}
+        isOpen={memberModalOpen}
+        handler={{setMemberModalOpen}}
+      />
       {/* </Container> */}
     </section>
   );

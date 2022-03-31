@@ -1,0 +1,25 @@
+@import 'core';
+
+.wrapper {
+  @include fixed-0;
+}
+
+.overlay {
+  background: rgba(#fff, 0.96);
+  @include absolute-0;
+}
+
+.content {
+  position: relative;
+}
+
+.circle {
+  width: 100vw;
+  height: auto;
+  aspect-ratio: 1;
+  background: blue;
+  border-radius: 50%;
+  position: relative;
+  top: percentage(151, 948);
+  left: calc(50vw - 662px);
+}

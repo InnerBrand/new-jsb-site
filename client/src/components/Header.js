@@ -25,6 +25,7 @@ const Header = props => {
 
   useEffect(() => {
     navbarOpen ? disableBodyScroll(scrollRef) : enableBodyScroll(scrollRef);
+    return () => clearAllBodyScrollLocks(scrollRef);
   }, [navbarOpen]);
 
   return (
