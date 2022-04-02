@@ -13,6 +13,8 @@ import IndustryLogos from 'components/IndustryLogos';
 import * as styles from 'styles/modules/pages/Home.module.scss';
 
 import figLogos from 'assets/images/fig-logos.png';
+import CircleButton from 'components/CircleButton';
+import madeOf from 'assets/images/made-of.png';
 
 const Home = ({ data }) => {
   console.log(data);
@@ -29,6 +31,12 @@ const Home = ({ data }) => {
       </div>
       {/* <IndustryLogos /> */}
       <Quote />
+      <div className={styles.circleButton}>
+        <CircleButton ctaText='Read more stories' />
+      </div>
+      <div className={styles.madeOf}>
+        <img src={madeOf} />
+      </div>
     </Layout>
   );
 };

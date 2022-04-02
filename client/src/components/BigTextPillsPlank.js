@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {GatsbyImage, getImage} from 'gatsby-plugin-image';
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 // Styes
 import * as styles from 'styles/modules/BigTextPillsPlank.module.scss';
 import Container from './Container';
 
-const BigTextPillsPlank = ({imageData}) => {
+const BigTextPillsPlank = ({ imageData }) => {
   const barryImageData = imageData[0];
   const josephImageData = imageData[1];
   const barryImg = getImage(barryImageData.childImageSharp);
@@ -24,9 +24,8 @@ const BigTextPillsPlank = ({imageData}) => {
           </div>
         </div>
         <p className={styles.text}>
-          “From the beginning, we've always put people at the center of what we
-          do. We're not interested in just placing someone—we want to see them
-          flourish and reach their full potential.”
+          “We put ourselves in our client's shoes. Where would we want to work?
+          “
         </p>
         <div className={[styles.imageWrapper, styles.right].join(' ')}>
           <GatsbyImage className={styles.image} image={barryImg} />

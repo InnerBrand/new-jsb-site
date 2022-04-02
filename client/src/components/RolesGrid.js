@@ -59,11 +59,9 @@ const RolesGrid = ({ roles }) => {
                 ))}
             </div>
           </div>
-          <CircleButton
-            className={styles.rolesBtn}
-            ctaText='See all roles we place'
-            showArrow={false}
-          />
+        </div>
+        <div className={styles.circleButton}>
+          <CircleButton ctaText='See all roles we place' showArrow={false} />
         </div>
       </Container>
     </section>

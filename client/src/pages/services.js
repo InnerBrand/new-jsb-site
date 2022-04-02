@@ -26,12 +26,11 @@ const ServicesPage = ({ data }) => {
             alt='NYC Skyline'
           />
           <h3 className={styles.heroSubhead}>
-            We want to be a part of our customers' career from beginning to end.
-            We don't want to just place people and move on.
+            Not everybody does these things. Fortunately for you, we do.
           </h3>
         </section>
         <div className={styles.bigText}>
-          <h1>We're here to help.</h1>
+          <h1>We place:</h1>
         </div>
       </Container>
       <CardSlider
@@ -81,7 +80,7 @@ const ServicesPage = ({ data }) => {
         contourColor='reallyDark'>
         <Container>
           <div className={styles.content}>
-            <h2>Ready to get started?</h2>
+            <h2 className={styles.servicesCTA}>Ready to get started?</h2>
             <CircleButton ctaText='Contact Us' />
           </div>
         </Container>

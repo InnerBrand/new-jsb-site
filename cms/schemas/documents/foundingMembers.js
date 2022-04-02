@@ -2,8 +2,8 @@ import {BsFillPersonLinesFill as icon} from 'react-icons/fa';
 
 export default {
   type: 'document',
-  name: 'teamMember',
-  title: 'Team Member',
+  name: 'foundingMember',
+  title: 'Founding Members',
   icon,
   fields: [
     {

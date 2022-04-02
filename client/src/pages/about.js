@@ -31,8 +31,7 @@ const AboutPage = ({ data }) => {
             alt='NYC Skyline'
           />
           <h3 className={styles.heroSubhead}>
-            We want to be a part of our customers' career from beginning to end.
-            We don't want to just place people and move on.
+            A company founded by CPA's that now helps place them.
           </h3>
           <div className={styles.heroMeta}>
             <p>Founded 1998</p>
@@ -41,12 +40,11 @@ const AboutPage = ({ data }) => {
         </section>
         <section className={styles.offsetText}>
           <h2 className={styles.offsetLeftHeading}>
-            Navigating the job market isn't easy, especially at the executive
-            level.
+            We deal directly with owners, CFOS, the decision-makers.
           </h2>
           <p className={styles.centerBlurb}>
-            Which is where or story begins—at helping you navigate an infinitely
-            complex and constantly changing job market.
+            And we put ourselves in our client's shoes. Where would we want to
+            work?
           </p>
         </section>
         <section className={styles.storyMission}>
@@ -56,15 +54,13 @@ const AboutPage = ({ data }) => {
             </div>
             <div className={styles.bodyCol}>
               <p>
-                It all started in 1998 when Joseph S. Barr and Barry Taitz sat
-                down at their kitchen table etc. Lorem ipsum dolor sit amet,
-                consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-                nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                commodo consequat. Duis aute irure dolor in reprehenderit in
-                voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                Excepteur sint occaecat cupidatat non proident, sunt in culpa
-                qui officia deserunt mollit anim id est laborum.
+                With a passion for the hedge fund world, we started JSB Partners
+                in 1994 to have a meaningful impact on our clients' lives. We
+                intentionally work with many boutique firms because we get to
+                deal directly with the decision-makers. We don't have patience
+                for big, bureaucratic places where you’re just another number.
+                We want you placed somewhere that can’t run without you. Where
+                you make a difference.
               </p>
             </div>
           </div>
@@ -73,12 +69,10 @@ const AboutPage = ({ data }) => {
               <h6>Our Mission</h6>
             </div>
             <div className={[styles.bodyCol, styles.fourGrid].join(' ')}>
-              <p>To be at your side from day 1 to day 1095.</p>
-              <p>
-                To keep you up to date with the latest changes in the market.
-              </p>
-              <p>To have the best industry experts as your ally.</p>
-              <p>Some other super interesting thing.</p>
+              <p>To be at your side, always, as a trusted ally.</p>
+              <p>To be an expert in the field.</p>
+              <p>To make a meaningful impact on your life.</p>
+              <p>To make sure we help firms grow with the best people.</p>
             </div>
           </div>
         </section>
@@ -86,9 +80,11 @@ const AboutPage = ({ data }) => {
       <CardSlider
         bigHeading='How we support you.'
         cardData={[
-          'Our experts can help you navigate Employment agreements.',
-          'We will keep you up to date on the latest compliance issues.',
-          'Our strategists will help you to develop investor relations strategies.',
+          'We can help you get jobs that no one else knows about.',
+          'We stay in touch with you, keeping you up to date on industry trends.',
+          'We’ll help you navigate complex compensation packages and employee agreements.',
+          'We’ll help you understand the latest in compliance issues...',
+          '...as well as the latest in operational requirements, tax & accounting, and investor relations strategies',
         ]}
         className={styles.firstCardSlider}
         eyebrow='When'
@@ -97,17 +93,21 @@ const AboutPage = ({ data }) => {
       />
       <CardSlider
         cardData={[
-          'We sure you are able to fill C-Level and executives positions in less than 3 weeks.',
-          'We make sure all of our talent is up to date on the latest Tax & accounting mandates.',
-          'Our strategists will help you to develop investor relations strategies.',
+          'We make sure you grow with only the best people.',
+          'With 255 years of combined experience, we know your needs.',
+          'Having placed over 1k CFOs, there’s no role too small or too large for us.',
         ]}
+        className={styles.secondCardSlider}
         eyebrow='When'
         headerHighlight='talent'
         headerPre='Looking for'
       />
       <BigTextPillsPlank imageData={bigTextPillsImageData} />
       <Container className={styles.ctaBtnContainer}>
-        <CircleButton ctaText='Meet the whole team' />
+        <CircleButton
+          className={styles.circleButton}
+          ctaText='Meet the whole team'
+        />
       </Container>
       <ContouredSection
         className={styles.bottomSection}

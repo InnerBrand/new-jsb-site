@@ -1,12 +1,13 @@
-import React, {useState, useLayoutEffect, useRef} from 'react';
-import {gsap} from 'gsap';
+import React, { useState, useLayoutEffect, useRef } from 'react';
+import { gsap } from 'gsap';
 import PropTypes from 'prop-types';
+import { Link } from 'gatsby';
 // SVG
 import FancyArrowRight from 'assets/svg/fancy-arrow-right.inline.svg';
 // Styles
 import * as styles from 'styles/modules/CircleButton.module.scss';
 
-const CircleButton = ({ctaText, showArrow, ease, duration}) => {
+const CircleButton = ({ ctaText, showArrow, ease, duration, to }) => {
   const buttonRef = useRef(null);
   const circleRef = useRef(null);
   const ctaTextRef = useRef(null);
@@ -68,11 +69,18 @@ const CircleButton = ({ctaText, showArrow, ease, duration}) => {
       () => circleRef.current.classList.remove(styles.mouseOn),
       duration * 1000
     );
-    gsap.to(circleRef.current, {x: 0, y: 0, scale: 0.8, duration, ease});
-    gsap.to(ctaTextRef.current, {x: 0, y: 0, duration, ease});
+    gsap.to(circleRef.current, { x: 0, y: 0, scale: 0.8, duration, ease });
+    gsap.to(ctaTextRef.current, { x: 0, y: 0, duration, ease });
   }
 
-  return (
+  return to ? (
+    <Link to={to}>
+      <div className={styles.circle} ref={circleRef} />
+      <span ref={ctaTextRef}>
+        {ctaText} {showArrow && <FancyArrowRight />}
+      </span>
+    </Link>
+  ) : (
     <button className={styles.button} type='submit' ref={buttonRef}>
       <div className={styles.circle} ref={circleRef} />
       <span ref={ctaTextRef}>

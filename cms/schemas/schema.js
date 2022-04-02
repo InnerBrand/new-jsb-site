@@ -15,6 +15,7 @@ import fact from './objects/fact';
 import role from './documents/role';
 import bigClaim from './objects/bigClaim';
 import industryLogos from './documents/industryLogos';
+import foundingMembers from './documents/foundingMembers';
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -24,6 +25,7 @@ export default createSchema({
   // to the ones provided by any plugins that are installed
   types: schemaTypes.concat([
     bigClaim,
+    foundingMembers,
     homepage,
     industryLogos,
     teamPage,

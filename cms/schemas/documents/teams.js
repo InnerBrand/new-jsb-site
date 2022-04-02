@@ -30,5 +30,16 @@ export default {
         },
       ],
     },
+    {
+      title: 'Founding Members',
+      name: 'foundingMembers',
+      type: 'array',
+      of: [
+        {
+          type: 'reference',
+          to: [{type: 'foundingMember'}],
+        },
+      ],
+    },
   ],
 };
