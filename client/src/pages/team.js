@@ -28,7 +28,7 @@ const TeamPage = ({ data }) => {
           <h1 className={styles.heroHeadline}>{headline}</h1>
           <Space unit={10} />
         </Container>
-        <TeamMembers members={members} />
+        {/* <TeamMembers members={members} /> */}
         {/* <div className={styles.tMemb}>
           <img src={tMemb} />
         </div> */}
