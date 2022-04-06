@@ -8,6 +8,7 @@ import Quote from 'components/Quote';
 import RolesGrid from 'components/RolesGrid';
 import BigClaim from 'components/BigClaim';
 import IndustryLogos from 'components/IndustryLogos';
+import ContouredSection from 'components/ContouredSection';
 
 // Styles
 import * as styles from 'styles/modules/pages/Home.module.scss';
@@ -26,10 +27,10 @@ const Home = ({ data }) => {
       <HomepageHero />
       <RolesGrid roles={roles} />
       <BigClaim />
-      <div className={styles.figLogos}>
+      {/* <div className={styles.figLogos}>
         <img src={figLogos} />
-      </div>
-      {/* <IndustryLogos /> */}
+      </div> */}
+      <IndustryLogos />
       <Quote />
       <div className={styles.circleButton}>
         <CircleButton ctaText='Read more stories' />
@@ -37,6 +38,7 @@ const Home = ({ data }) => {
       <div className={styles.madeOf}>
         <img src={madeOf} />
       </div>
+      <ContouredSection />
     </Layout>
   );
 };

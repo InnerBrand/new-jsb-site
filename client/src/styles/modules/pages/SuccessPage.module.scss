@@ -1,0 +1,24 @@
+@import 'core';
+
+.section {
+  background-color: $color__black;
+  margin: -20px;
+  padding: 20px;
+}
+
+.ready {
+  color: $color__lime;
+  // @include header_jumbo;
+}
+
+.adjective {
+  font-family: $font__special;
+  font-size: 16px;
+  color: white;
+}
+
+.define {
+  color: white;
+  font-family: $font__special;
+  font-size: 24px;
+}

@@ -74,7 +74,7 @@ const CircleButton = ({ ctaText, showArrow, ease, duration, to }) => {
   }
 
   return to ? (
-    <Link to={to}>
+    <Link to={to} className={styles.button} ref={buttonRef}>
       <div className={styles.circle} ref={circleRef} />
       <span ref={ctaTextRef}>
         {ctaText} {showArrow && <FancyArrowRight />}

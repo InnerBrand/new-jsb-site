@@ -104,10 +104,7 @@ const AboutPage = ({ data }) => {
       />
       <BigTextPillsPlank imageData={bigTextPillsImageData} />
       <Container className={styles.ctaBtnContainer}>
-        <CircleButton
-          className={styles.circleButton}
-          ctaText='Meet the whole team'
-        />
+        <CircleButton ctaText='Meet the whole team' to='/team' />
       </Container>
       <ContouredSection
         className={styles.bottomSection}
