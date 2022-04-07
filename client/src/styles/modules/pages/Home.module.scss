@@ -30,5 +30,23 @@
 
 .circleButton {
   text-align: center;
-  margin-top: 100px;
+  margin: 100px 0;
+}
+
+.bottomSection {
+  background-color: $color__black;
+
+  .question,
+  .cta {
+    color: white;
+  }
+  .content {
+    margin-top: space(6);
+    text-align: center;
+  }
+
+  .btnGroup {
+    margin-top: space(6);
+    justify-content: center;
+  }
 }

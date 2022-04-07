@@ -1,6 +1,6 @@
-import React, {useEffect, useRef, useState} from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
-import {Link} from 'gatsby';
+import { Link } from 'gatsby';
 import {
   disableBodyScroll,
   enableBodyScroll,
@@ -84,9 +84,6 @@ const Header = props => {
                 </div>
                 <div className={styles.menuMoreInfo}>
                   <div className={styles.menuSecondaryLinks}>
-                    <Link to='/about' className={styles.navItem}>
-                      Contact us
-                    </Link>
                     <Link to='/about' className={styles.navItem}>
                       About the company
                     </Link>

@@ -81,7 +81,7 @@ const ServicesPage = ({ data }) => {
         <Container>
           <div className={styles.content}>
             <h2 className={styles.servicesCTA}>Ready to get started?</h2>
-            <CircleButton ctaText='Contact Us' />
+            <CircleButton ctaText='Contact Us' to='/submit-resume' />
           </div>
         </Container>
       </ContouredSection>

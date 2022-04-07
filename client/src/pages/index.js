@@ -9,6 +9,8 @@ import RolesGrid from 'components/RolesGrid';
 import BigClaim from 'components/BigClaim';
 import IndustryLogos from 'components/IndustryLogos';
 import ContouredSection from 'components/ContouredSection';
+import Button, { ButtonGroup } from 'components/Button';
+import Container from 'components/Container';
 
 // Styles
 import * as styles from 'styles/modules/pages/Home.module.scss';
@@ -40,7 +42,24 @@ const Home = ({ data }) => {
       <div className={styles.circleButton}>
         <CircleButton ctaText='Meet our experts' to='/team' />
       </div>
-      <ContouredSection />
+      <ContouredSection className={styles.bottomSection}>
+        <Container>
+          <div className={styles.content}>
+            <h2 className={styles.question}>
+              Are you ready for your next job?
+            </h2>
+            <p className={styles.cta}>
+              Send us your resume and let's get started, together.
+            </p>
+            <ButtonGroup className={styles.btnGroup}>
+              <Button to='/submit-resume'>Submit resume</Button>
+              <Button uiType='secondary' href='tel:1234567890'>
+                Call us
+              </Button>
+            </ButtonGroup>
+          </div>
+        </Container>
+      </ContouredSection>
     </Layout>
   );
 };
