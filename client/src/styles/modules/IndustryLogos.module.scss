@@ -2,7 +2,7 @@
 
 .section {
   position: relative;
-  margin-bottom: 200px;
+  margin-bottom: 550px;
 }
 
 .wrapper {
@@ -11,13 +11,72 @@
 
 .text {
   text-align: center;
-  // background-color: cyan;
   position: absolute;
+  margin-top: 100px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
 
 .singleLogo {
-  max-width: 300px;
+  max-width: 180px;
+  position: absolute;
+  animation-name: floating;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+
+  // 3rd Point
+  &:nth-child(1) {
+    top: 220px;
+    left: 20px;
+    animation-duration: 3.1s;
+  }
+  // Cerberus
+  &:nth-child(2) {
+    top: -150px;
+    left: 50px;
+    animation-duration: 2.1s;
+  }
+  // Tiger
+  &:nth-child(3) {
+    top: 280px;
+    left: 330px;
+    animation-duration: 2.4s;
+  }
+  // SilverPoint
+  &:nth-child(4) {
+    top: -160px;
+    left: 360px;
+    animation-duration: 3.8s;
+  }
+  // Two Sigma
+  &:nth-child(5) {
+    top: 260px;
+    left: 600px;
+    animation-duration: 3.2s;
+  }
+  // Lightyear
+  &:nth-child(6) {
+    top: -60px;
+    left: 640px;
+    animation-duration: 4s;
+  }
+  // Lightyear
+  &:nth-child(7) {
+    top: 60px;
+    left: 680px;
+    animation-duration: 3.6s;
+  }
+}
+
+@keyframes floating {
+  0% {
+    transform: translate(0, 0px);
+  }
+  50% {
+    transform: translate(0, 15px);
+  }
+  100% {
+    transform: translate(0, -0px);
+  }
 }

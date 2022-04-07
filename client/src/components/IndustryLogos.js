@@ -4,6 +4,7 @@ import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 
 // Styles
 import * as styles from 'styles/modules/IndustryLogos.module.scss';
+import Container from './Container';
 
 function SingleLogo({ imgData }) {
   const logoImg = getImage(imgData.asset);
@@ -37,12 +38,14 @@ const IndustryLogos = () => {
 
   return (
     <section className={styles.section}>
-      <div className={styles.wrapper}>
-        {logos.map(logo => {
-          return <SingleLogo key={logo.id} imgData={logo} />;
-        })}
-      </div>
-      <h1 className={styles.text}>{centerText}</h1>
+      <Container>
+        <div className={styles.wrapper}>
+          {logos.map(logo => {
+            return <SingleLogo key={logo.id} imgData={logo} />;
+          })}
+        </div>
+        <h1 className={styles.text}>{centerText}</h1>
+      </Container>
     </section>
   );
 };

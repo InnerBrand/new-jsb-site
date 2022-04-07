@@ -29,16 +29,16 @@ const Home = ({ data }) => {
       <h1 className={styles.heroBio}>{bioHeadline}</h1>
       <RolesGrid roles={roles} />
       <BigClaim />
-      {/* <div className={styles.figLogos}>
-        <img src={figLogos} />
-      </div> */}
       <IndustryLogos />
-      <Quote />
-      <div className={styles.circleButton}>
+      <Quote className={styles.homeQuote} />
+      {/* <div className={styles.circleButton}>
         <CircleButton ctaText='Read more stories' />
-      </div>
+      </div> */}
       <div className={styles.madeOf}>
         <img src={madeOf} />
+      </div>
+      <div className={styles.circleButton}>
+        <CircleButton ctaText='Meet our experts' to='/team' />
       </div>
       <ContouredSection />
     </Layout>
