@@ -10,14 +10,17 @@
 
   span {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top: 0;
+    bottom: 0;
+    left: -22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     @include header_m;
     font-family: $font__special;
     align-items: center;
     pointer-events: none;
-    width: 130%;
+    width: 200px;
     background: #000;
     color: #fff;
     mix-blend-mode: exclusion;
@@ -44,6 +47,10 @@
     }
   }
 }
+
+// .text {
+
+// }
 
 .circle {
   width: 166px;

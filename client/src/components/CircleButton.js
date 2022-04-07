@@ -1,13 +1,13 @@
-import React, { useState, useLayoutEffect, useRef } from 'react';
-import { gsap } from 'gsap';
+import React, {useState, useLayoutEffect, useRef} from 'react';
+import {gsap} from 'gsap';
 import PropTypes from 'prop-types';
-import { Link } from 'gatsby';
+import {Link} from 'gatsby';
 // SVG
 import FancyArrowRight from 'assets/svg/fancy-arrow-right.inline.svg';
 // Styles
 import * as styles from 'styles/modules/CircleButton.module.scss';
 
-const CircleButton = ({ ctaText, showArrow, ease, duration, to }) => {
+const CircleButton = ({ctaText, showArrow, ease, duration, to}) => {
   const buttonRef = useRef(null);
   const circleRef = useRef(null);
   const ctaTextRef = useRef(null);
@@ -45,10 +45,10 @@ const CircleButton = ({ ctaText, showArrow, ease, duration, to }) => {
     const mousePercentageY =
       Math.round(1000 * (mouseProjectY / (h / 2))) / 1000;
 
-    const circleMoveX = 12 * mousePercentageX;
-    const circleMoveY = 12 * mousePercentageY;
-    const textMoveX = 6 * mousePercentageX;
-    const textMoveY = 6 * mousePercentageY;
+    const circleMoveX = 18 * mousePercentageX;
+    const circleMoveY = 18 * mousePercentageY;
+    const textMoveX = 10 * mousePercentageX;
+    const textMoveY = 10 * mousePercentageY;
 
     gsap.to(circleRef.current, {
       x: -circleMoveX,
@@ -69,8 +69,8 @@ const CircleButton = ({ ctaText, showArrow, ease, duration, to }) => {
       () => circleRef.current.classList.remove(styles.mouseOn),
       duration * 1000
     );
-    gsap.to(circleRef.current, { x: 0, y: 0, scale: 0.8, duration, ease });
-    gsap.to(ctaTextRef.current, { x: 0, y: 0, duration, ease });
+    gsap.to(circleRef.current, {x: 0, y: 0, scale: 0.8, duration, ease});
+    gsap.to(ctaTextRef.current, {x: 0, y: 0, duration, ease});
   }
 
   return to ? (
@@ -83,9 +83,11 @@ const CircleButton = ({ ctaText, showArrow, ease, duration, to }) => {
   ) : (
     <button className={styles.button} type='submit' ref={buttonRef}>
       <div className={styles.circle} ref={circleRef} />
+      {/* <div className={styles.text}> */}
       <span ref={ctaTextRef}>
         {ctaText} {showArrow && <FancyArrowRight />}
       </span>
+      {/* </div> */}
     </button>
   );
 };

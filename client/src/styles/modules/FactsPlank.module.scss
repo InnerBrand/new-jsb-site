@@ -1,0 +1,20 @@
+@import 'core';
+
+.wrapper {
+  padding: space(20) 0;
+}
+
+.headingWrapper {
+  width: percentage(8, 12);
+  margin: auto;
+  margin-bottom: space(12);
+}
+
+.eyebrow {
+  color: $color__coral-dark;
+  margin-bottom: space(3);
+}
+
+.headline {
+  @include header_xxl;
+}

@@ -1,4 +1,3 @@
-
 export default {
   type: 'document',
   name: 'teamPage',
@@ -19,6 +18,16 @@ export default {
           to: [{type: 'teamMember'}],
         },
       ],
+    },
+    {
+      title: 'Facts Eyebrow Heading',
+      name: 'factsEyebrow',
+      type: 'string',
+    },
+    {
+      title: 'Facts Heading',
+      name: 'factsHeadline',
+      type: 'string',
     },
     {
       title: 'Facts',
