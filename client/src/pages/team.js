@@ -1,5 +1,5 @@
 import React from 'react';
-import {graphql} from 'gatsby';
+import { graphql } from 'gatsby';
 // Components
 import Blob from 'components/Blob';
 import Container from 'components/Container';
@@ -17,7 +17,7 @@ import FactsPic from 'assets/images/facts .png';
 import tMemb from 'assets/images/t-memb.png';
 import fMemb from 'assets/images/f-memb.png';
 
-const TeamPage = ({data}) => {
+const TeamPage = ({ data }) => {
   const {
     heroHeadline,
     teamMembers,
@@ -41,9 +41,8 @@ const TeamPage = ({data}) => {
           headline={factsHeadline}
           facts={facts}
         />
-
-        <Quote />
         <FoundingMembers founders={foundingMembers} />
+        <Quote />
       </Layout>
     </>
   );

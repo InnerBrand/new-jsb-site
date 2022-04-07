@@ -7,13 +7,6 @@
 
 .homeHeroContent {
   position: relative;
-  margin-bottom: 260px;
-}
-
-.heroHeadline {
-  @include header_xxl;
-
-  // TODO: remove once type for mobile
 }
 
 .heroImg {
@@ -38,9 +31,10 @@
 .heroBtn {
   position: absolute;
   right: 20px;
-  bottom: 0;
+  bottom: -120;
 }
 
 .heroBio {
+  margin-top: 560px;
   text-align: center;
 }

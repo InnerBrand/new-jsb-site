@@ -20,11 +20,13 @@ import madeOf from 'assets/images/made-of.png';
 const Home = ({ data }) => {
   console.log(data);
 
+  const { bioHeadline } = data.allSanityHomepage.nodes[0].homepageContent;
   const roles = data.allSanityHomepage.nodes[0].rolesPlaced;
 
   return (
     <Layout>
       <HomepageHero />
+      <h1 className={styles.heroBio}>{bioHeadline}</h1>
       <RolesGrid roles={roles} />
       <BigClaim />
       {/* <div className={styles.figLogos}>
@@ -47,6 +49,9 @@ export const query = graphql`
   {
     allSanityHomepage {
       nodes {
+        homepageContent {
+          bioHeadline
+        }
         rolesPlaced {
           name
           image {

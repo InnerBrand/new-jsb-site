@@ -29,7 +29,7 @@ const HomepageHero = () => {
     }
   `);
 
-  const { featuredImage, bioHeadline, heroHeadline, subhead } =
+  const { featuredImage, heroHeadline } =
     data.allSanityHomepage.nodes[0].homepageContent;
   const featImg = getImage(featuredImage.asset.gatsbyImageData);
 
@@ -41,14 +41,14 @@ const HomepageHero = () => {
 
           <GatsbyImage className={styles.heroImg} image={featImg} />
 
-          <p className={styles.heroSubtext}>
-            We find the right match between people and business.
-          </p>
           <div className={styles.heroBtn}>
-            <CircleButton ctaText='Contact Us' showArrow={false} />
+            <CircleButton
+              ctaText='Contact Us'
+              showArrow={false}
+              to='/submit-resume'
+            />
           </div>
         </div>
-        <h1 className={styles.heroBio}>{bioHeadline}</h1>
       </Container>
     </section>
   );
