@@ -9,6 +9,8 @@ import Layout from 'components/Layout';
 import Quote from 'components/Quote';
 import Space from 'components/Space';
 import TeamMembers from 'components/TeamMembers';
+import ContouredSection from 'components/ContouredSection';
+import Button, { ButtonGroup } from 'components/Button';
 
 // Styles
 import * as styles from 'styles/modules/pages/Team.module.scss';
@@ -43,6 +45,19 @@ const TeamPage = ({ data }) => {
         />
         <FoundingMembers founders={foundingMembers} />
         <Quote />
+        <ContouredSection className={styles.bottomSection}>
+          <Container>
+            <div className={styles.content}>
+              <h2 className={styles.question}>Want to work at JSB?</h2>
+              <p className={styles.cta}>We're hiring.</p>
+              <ButtonGroup className={styles.btnGroup}>
+                <Button to='/submit-resume' className={styles.submitBtn}>
+                  Submit resume
+                </Button>
+              </ButtonGroup>
+            </div>
+          </Container>
+        </ContouredSection>
       </Layout>
     </>
   );
