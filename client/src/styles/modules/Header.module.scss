@@ -11,13 +11,11 @@
 
   &.menuIsOpen {
     .circleWrapper {
-      transform: translate(0, 0);
+      transform: translateY(50%);
     }
 
     .circle {
-      transform: translate(-35%, -50%);
-      width: 1440px;
-      height: 1440px;
+      transform: translate(-35%, -50%) scale(1);
     }
 
     .overlayWrapper {
@@ -92,21 +90,21 @@
   left: 0;
   top: 0;
   z-index: 1;
-  transform: translate(0, -50%);
+  // transform: translate(0, -50%);
   width: 100%;
   height: 100vh;
-  transition: 0.5s $motion__cubic-ease--1;
+  transition: all 0.5s $motion__cubic-ease--1;
 }
 
 .circle {
   position: absolute;
-  top: 50%;
+  top: 0;
   left: 0;
-  width: 0;
-  height: 0;
-  transform: translate(-50%, -50%);
+  width: 1440px;
+  height: 1440px;
+  transform: translate(-50%, -50%) scale(0);
   transform-origin: 50% 50%;
-  transition: 0.5s $motion__cubic-ease--1;
+  transition: all 0.5s $motion__cubic-ease--1;
   border-radius: 50%;
   background: $color__lime;
 }
@@ -121,6 +119,11 @@
   color: inherit;
   padding: 0;
   z-index: 2;
+
+  &:focus-visible {
+    outline: 4px solid $focus-ring;
+    outline-offset: 0;
+  }
 
   .btnTextWrapper {
     overflow: hidden;

@@ -25,17 +25,13 @@ $btn-height: 60px;
   line-height: $btn-height;
   padding: 0 space(4);
   margin: 0;
-  outline: none;
   border: none;
   cursor: pointer;
   text-decoration: none;
+  transition: 0.5s $motion__cubic-ease--1;
 
   &:hover {
-    // background: $color__pink_panther--5;
-  }
-
-  &:active {
-    // background: $color__pink_panther--7;
+    padding: 0 space(5);
   }
 
   &:focus,
@@ -44,7 +40,7 @@ $btn-height: 60px;
   }
 
   &:focus-visible {
-    // @include focus-ring-shadow;
+    @include focus-ring-shadow;
   }
 
   &.small {
@@ -80,10 +76,6 @@ $btn-height: 60px;
       color: var(--background);
     }
 
-    &:focus-visible {
-      @include focus-ring-shadow;
-    }
-
     &.small {
       padding: 3px space(2) - 1;
     }
@@ -100,57 +92,9 @@ $btn-height: 60px;
     &:active {
       // background: rgba($color__gray--10, 0.8);
     }
-
-    &:focus {
-      box-shadow: 0 0 0 4px rgba(26, 20, 24, 0.2);
-    }
   }
 
-  &.underline {
-    background: transparent;
-    position: relative;
-    padding-left: 0;
-    padding-right: 0;
-    color: var(--color);
-
-    &:after {
-      content: '';
-      display: block;
-      background: currentColor;
-      height: 2px;
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: 5px;
-    }
-
-    svg {
-      margin-right: -3px;
-    }
-
-    &:hover {
-      opacity: 0.8;
-    }
-
-    &:active {
-      opacity: 0.6;
-    }
-
-    &.small {
-      &:after {
-        bottom: 2px;
-      }
-    }
-
-    &.large {
-      &:after {
-        bottom: 15px;
-      }
-    }
-  }
-
-  &.secondary,
-  &.underline {
+  &.secondary {
     .loadingSpinner {
       border-color: rgba(var(--color-rgb), 0.2);
       border-left-color: rgba(var(--color-rgb), 0.8);

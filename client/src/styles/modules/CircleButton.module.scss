@@ -22,7 +22,6 @@
     align-items: center;
     pointer-events: none;
     width: 200px;
-    background: #000;
     color: #fff;
     mix-blend-mode: exclusion;
 
@@ -30,6 +29,11 @@
       margin-left: space(1);
       position: relative;
       top: 3px;
+
+      line,
+      path {
+        stroke: #fff;
+      }
     }
   }
 

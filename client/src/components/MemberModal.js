@@ -20,8 +20,10 @@ const MemberModal = ({data, isOpen, handler}) => {
   const scrollRef = useRef(null);
 
   useEffect(() => {
-    isOpen ? disableBodyScroll(scrollRef) : enableBodyScroll(scrollRef);
-    return () => clearAllBodyScrollLocks(scrollRef);
+    isOpen
+      ? disableBodyScroll(scrollRef.current)
+      : enableBodyScroll(scrollRef.current);
+    return () => clearAllBodyScrollLocks(scrollRef.current);
   }, [isOpen]);
 
   function handleClose() {

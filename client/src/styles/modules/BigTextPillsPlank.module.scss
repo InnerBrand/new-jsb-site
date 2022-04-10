@@ -70,6 +70,7 @@
   border-radius: 300px;
   height: 277px;
   aspect-ratio: 3/4;
+  @include safari-border-radius-overflow-bugfix;
 
   @include breakpoint('desktop') {
     height: 555px;

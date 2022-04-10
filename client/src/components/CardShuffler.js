@@ -18,7 +18,6 @@ const CardShuffler = ({className, data}) => {
 
   function handlePrev() {
     setSlideIndex(s => {
-      // cardsRef[s].classList.add(styles.)
       return s - 1;
     });
   }

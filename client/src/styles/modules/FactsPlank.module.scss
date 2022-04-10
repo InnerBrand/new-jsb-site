@@ -18,3 +18,11 @@
 .headline {
   @include header_xxl;
 }
+
+.cardShuffler {
+  padding-top: space(4);
+
+  @include breakpoint('desktop') {
+    padding-top: space(6);
+  }
+}

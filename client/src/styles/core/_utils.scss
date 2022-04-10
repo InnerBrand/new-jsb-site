@@ -17,9 +17,16 @@
 }
 
 @mixin focus-ring-shadow {
-  box-shadow: 0 0 0 4px $focus-ring;
+  box-shadow: 0 0 0 6px $focus-ring;
 }
 
 @function percentage($num, $denom) {
   @return math.percentage(math.div($num, $denom));
+}
+
+@mixin safari-border-radius-overflow-bugfix {
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
 }

@@ -96,12 +96,9 @@ a {
     text-decoration: none;
   }
 
-  outline: none;
-
   &:focus-visible {
     outline: 4px solid $focus-ring;
     outline-offset: 0;
-    border-radius: 4px;
   }
 }
 

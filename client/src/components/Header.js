@@ -1,6 +1,6 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'gatsby';
+import {Link} from 'gatsby';
 import {
   disableBodyScroll,
   enableBodyScroll,
@@ -24,10 +24,12 @@ const Header = props => {
   };
 
   useEffect(() => {
-    navbarOpen ? disableBodyScroll(scrollRef) : enableBodyScroll(scrollRef);
+    navbarOpen
+      ? disableBodyScroll(scrollRef.current)
+      : enableBodyScroll(scrollRef.current);
     return () => {
       console.log('header cleanup');
-      clearAllBodyScrollLocks(scrollRef);
+      clearAllBodyScrollLocks(scrollRef.current);
     };
   }, [navbarOpen]);
 

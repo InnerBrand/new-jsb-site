@@ -58,8 +58,8 @@
   bottom: 8vh;
   left: calc(50% - 720px);
   right: 0;
-  margin-left: 10vw;
-  margin-right: 100px;
+  padding-left: 10vw;
+  padding-right: 100px;
   margin-top: space(2);
 
   @include breakpoint('tablet', 'max') {
@@ -70,9 +70,9 @@
 
   @media screen and (max-width: 1440px) {
     left: 0;
-    width: calc(100vw - 12vw);
-    margin-left: 6vw;
-    margin-right: 6vw;
+    width: 100%;
+    padding-left: 6vw;
+    padding-right: 6vw;
   }
 }
 
@@ -102,6 +102,7 @@
   height: auto;
   aspect-ratio: 300/411;
   border-radius: 200px;
+  @include safari-border-radius-overflow-bugfix;
   overflow: hidden;
   background: $color__lime;
   margin-bottom: space(3);
