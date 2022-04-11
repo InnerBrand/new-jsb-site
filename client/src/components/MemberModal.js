@@ -20,6 +20,7 @@ const MemberModal = ({data, isOpen, handler}) => {
   const scrollRef = useRef(null);
 
   useEffect(() => {
+    if (!scrollRef.current) return;
     isOpen
       ? disableBodyScroll(scrollRef.current)
       : enableBodyScroll(scrollRef.current);

@@ -5,9 +5,17 @@
 }
 
 .headingWrapper {
-  width: percentage(8, 12);
   margin: auto;
-  margin-bottom: space(12);
+  margin-bottom: space(8);
+  width: percentage(10, 12);
+
+  @include breakpoint('tablet') {
+    margin-bottom: space(12);
+  }
+
+  @include breakpoint('desktop') {
+    width: percentage(8, 12);
+  }
 }
 
 .eyebrow {
@@ -16,7 +24,15 @@
 }
 
 .headline {
-  @include header_xxl;
+  @include header_l;
+
+  @include breakpoint('tablet') {
+    @include header_xl;
+  }
+
+  @include breakpoint('desktop') {
+    @include header_xxl;
+  }
 }
 
 .cardShuffler {

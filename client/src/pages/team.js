@@ -1,16 +1,15 @@
 import React from 'react';
-import { graphql } from 'gatsby';
+import {graphql} from 'gatsby';
 // Components
 import Blob from 'components/Blob';
 import Container from 'components/Container';
 import FactsPlank from 'components/FactsPlank';
-import FoundingMembers from 'components/FoundingMembers';
 import Layout from 'components/Layout';
-import Quote from 'components/Quote';
+import BigQuote from 'components/BigQuote';
 import Space from 'components/Space';
 import TeamMembers from 'components/TeamMembers';
 import ContouredSection from 'components/ContouredSection';
-import Button, { ButtonGroup } from 'components/Button';
+import Button, {ButtonGroup} from 'components/Button';
 
 // Styles
 import * as styles from 'styles/modules/pages/Team.module.scss';
@@ -19,7 +18,7 @@ import FactsPic from 'assets/images/facts .png';
 import tMemb from 'assets/images/t-memb.png';
 import fMemb from 'assets/images/f-memb.png';
 
-const TeamPage = ({ data }) => {
+const TeamPage = ({data}) => {
   const {
     heroHeadline,
     teamMembers,
@@ -35,7 +34,7 @@ const TeamPage = ({ data }) => {
       <Layout>
         <Container>
           <h1 className={styles.heroHeadline}>{heroHeadline}</h1>
-          <Space unit={10} />
+          <Space unit={8} />
         </Container>
         <TeamMembers members={teamMembers} />
         <FactsPlank
@@ -43,8 +42,8 @@ const TeamPage = ({ data }) => {
           headline={factsHeadline}
           facts={facts}
         />
-        <FoundingMembers founders={foundingMembers} />
-        <Quote />
+        <TeamMembers members={foundingMembers} />
+        <BigQuote />
         <ContouredSection className={styles.bottomSection}>
           <Container>
             <div className={styles.content}>

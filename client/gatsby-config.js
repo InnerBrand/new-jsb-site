@@ -6,6 +6,7 @@ module.exports = {
     title: 'jsb gatsby 2022',
   },
   plugins: [
+    `gatsby-plugin-gatsby-cloud`,
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {

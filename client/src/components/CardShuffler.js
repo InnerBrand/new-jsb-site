@@ -10,20 +10,18 @@ const CardShuffler = ({className, data}) => {
   const [slideIndex, setSlideIndex] = useState(0);
   const cardsRef = useMemo(() => data.map(_ => React.createRef()), []);
 
-  console.log(cardsRef);
-
   useEffect(() => {
     cardsRef[0].current.style.zIndex = 1;
   });
 
   function handlePrev() {
-    setSlideIndex(s => {
-      return s - 1;
+    setSlideIndex(currIndex => {
+      return currIndex - 1;
     });
   }
 
   function handleNext() {
-    setSlideIndex(s => s + 1);
+    setSlideIndex(currIndex => currIndex + 1);
   }
 
   function topToBottom(el) {}

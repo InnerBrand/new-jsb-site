@@ -1,0 +1,77 @@
+@import 'core';
+
+.wrapper {
+  margin: 0 16px;
+  background-color: $color__black;
+
+  @include breakpoint('mobile') {
+    margin: 0 percentage(1, 24);
+  }
+
+  @include breakpoint('tablet-lg') {
+    margin-top: space(12);
+  }
+}
+
+.content {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding-bottom: 92px;
+}
+
+.image {
+  width: percentage(6, 8);
+  height: auto;
+  aspect-ratio: 6/8;
+  margin-top: space(8);
+
+  @include breakpoint('mobile') {
+    width: percentage(6, 12);
+  }
+
+  @include breakpoint('tablet-lg') {
+    margin-top: -(space(12));
+  }
+
+  @include breakpoint('desktop') {
+    width: percentage(4, 12);
+  }
+
+  img {
+    width: 100%;
+    margin-bottom: -(space(6));
+    // position: relative;
+  }
+}
+
+.info {
+  max-width: 780px;
+  margin: auto;
+  margin-top: -(space(6));
+  padding: 0 space(3);
+
+  @include breakpoint('mobile') {
+    padding: 0 space(3);
+  }
+
+  h4 {
+    @include header_m;
+
+    @include breakpoint('mobile') {
+      @include header_l;
+    }
+  }
+
+  h5 {
+    margin-top: space(3);
+    font-family: $font__special;
+    @include body-l;
+
+    @include breakpoint('tablet') {
+      @include header_s;
+    }
+  }
+}

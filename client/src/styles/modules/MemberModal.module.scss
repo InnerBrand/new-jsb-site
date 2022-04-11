@@ -32,13 +32,19 @@
   button {
     position: absolute;
     z-index: 1;
-    width: 91px;
-    height: 91px;
+    width: 64px;
+    height: 64px;
     top: -24px;
-    left: calc(50% - 43px);
+    left: calc(50% - 32px);
     background: transparent;
     padding: 0;
     cursor: pointer;
+
+    @include breakpoint('tablet-lg') {
+      width: 91px;
+      height: 91px;
+      left: calc(50% - 43px);
+    }
 
     svg {
       transition: transform 0.3s $motion__cubic-ease--1;

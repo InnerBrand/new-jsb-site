@@ -1,7 +1,7 @@
-import React, { useLayoutEffect, useRef, useState } from 'react';
-import { GatsbyImage, getImage } from 'gatsby-plugin-image';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import React, {useLayoutEffect, useRef, useState} from 'react';
+import {GatsbyImage, getImage} from 'gatsby-plugin-image';
+import {gsap} from 'gsap';
+import {ScrollTrigger} from 'gsap/ScrollTrigger';
 // Components
 import MemberModal from 'components/MemberModal';
 // Styles
@@ -9,36 +9,42 @@ import * as styles from 'styles/modules/TeamMembers.module.scss';
 // SVG
 import Arrow from 'assets/svg/fancy-arrow-right.inline.svg';
 
-const TeamMembers = ({ members }) => {
+const TeamMembers = ({members}) => {
   const [activeMember, setActiveMember] = useState({});
   const [memberModalOpen, setMemberModalOpen] = useState(false);
+  console.log(members.length);
 
-  gsap.registerPlugin(ScrollTrigger);
+  if (members.length > 2) {
+    gsap.registerPlugin(ScrollTrigger);
+  }
   const section = useRef(null);
   const sliderWrapper = useRef(null); // our 'pin-wrap'
   const slider = useRef(null); // our 'animation-wrap'
 
   useLayoutEffect(() => {
-    const getToValue = () => -(slider.current.scrollWidth - window.innerWidth);
-    const scrollAnimation = gsap.fromTo(
-      slider.current,
-      { x: 0 },
-      {
-        x: () => getToValue(),
-        ease: 'none',
-        scrollTrigger: {
-          trigger: section.current,
-          start: 'top top',
-          end: () => '+=' + (slider.current.scrollWidth - window.innerWidth),
-          pin: sliderWrapper.current,
-          anticipatePin: 0.5,
-          invalidateOnRefresh: true,
-          scrub: true,
-          // markers: true,
-        },
-      }
-    );
-    return () => scrollAnimation.kill();
+    if (members.length > 2) {
+      const getToValue = () =>
+        -(slider.current.scrollWidth - window.innerWidth);
+      const scrollAnimation = gsap.fromTo(
+        slider.current,
+        {x: 0},
+        {
+          x: () => getToValue(),
+          ease: 'none',
+          scrollTrigger: {
+            trigger: section.current,
+            start: 'top top',
+            end: () => '+=' + (slider.current.scrollWidth - window.innerWidth),
+            pin: sliderWrapper.current,
+            // anticipatePin: 0.5,
+            invalidateOnRefresh: true,
+            scrub: true,
+            // markers: true,
+          },
+        }
+      );
+      return () => scrollAnimation.kill();
+    }
   }, []);
 
   function handleClick() {
@@ -46,7 +52,12 @@ const TeamMembers = ({ members }) => {
   }
 
   return (
-    <section className={styles.wrapper} ref={section}>
+    <section
+      className={[
+        styles.wrapper,
+        members.length < 3 ? styles.noSlider : '',
+      ].join(' ')}
+      ref={section}>
       {/* <Container> */}
       <div className={styles.sliderWrapper} ref={sliderWrapper}>
         <div className={styles.slider} ref={slider}>
@@ -81,7 +92,7 @@ const TeamMembers = ({ members }) => {
       <MemberModal
         data={activeMember}
         isOpen={memberModalOpen}
-        handler={{ setMemberModalOpen }}
+        handler={{setMemberModalOpen}}
       />
       {/* </Container> */}
     </section>
