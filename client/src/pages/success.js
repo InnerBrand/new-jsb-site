@@ -7,17 +7,25 @@ import Container from 'components/Container';
 // Styles
 import * as styles from 'styles/modules/pages/SuccessPage.module.scss';
 
+// Imgs
+import Stories from 'assets/images/sstories.png';
+
 const SuccessPage = () => {
   return (
     <Layout>
       <Container>
         <section className={styles.section}>
-          <h1 className={styles.ready}>ready</h1>
-          <p className={styles.adjective}>Adjective</p>
-          <p className={styles.define}>
-            1. Prepared mentally or physically for immediate action.
-          </p>
+          <div className={styles.content}>
+            <h1 className={styles.ready}>ready</h1>
+            <p className={styles.adjective}>Adjective</p>
+            <p className={styles.define}>
+              1. Prepared mentally or physically for immediate action.
+            </p>
+          </div>
         </section>
+        <div className={styles.stories}>
+          <img src={Stories} />
+        </div>
       </Container>
     </Layout>
   );

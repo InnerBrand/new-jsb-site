@@ -1,9 +1,19 @@
 @import 'core';
 
 .section {
+  position: relative;
   background-color: $color__black;
-  margin: -20px;
-  padding: 20px;
+  height: 782px;
+
+}
+
+.content {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  left: percentage(147, 1440);
+ margin-top: 200px;
+
 }
 
 .ready {
@@ -21,4 +31,9 @@
   color: white;
   font-family: $font__special;
   font-size: 24px;
+}
+
+.stories {
+  text-align: center;
+  margin-top: 200px;
 }

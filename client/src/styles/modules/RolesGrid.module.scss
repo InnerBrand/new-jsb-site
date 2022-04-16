@@ -6,7 +6,10 @@
 
 .content {
   display: grid;
-  grid-template-columns: 41.6% 58.3%;
+  @include breakpoint('tablet') {
+
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 .introText {
@@ -22,8 +25,16 @@
 
 .wrapper {
   display: flex;
-  gap: 0 8rem;
+  gap: 0 17px;
+  @include breakpoint('mobile') {
+    gap: percentage(17, 375)
+  }
+
+  @include breakpoint('tablet') {
+    gap: percentage(136, 1440)
+  }
 }
+
 
 .leftWrap {
 }
@@ -35,10 +46,13 @@
 .singleRole {
   position: relative;
   margin-bottom: 8rem;
+
 }
 
 .roleName {
   display: none;
+  transform:rotate(-90deg);
+
 }
 .singleRole:hover {
   .singleOverlay {

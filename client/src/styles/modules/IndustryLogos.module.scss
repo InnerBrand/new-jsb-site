@@ -2,7 +2,14 @@
 
 .section {
   position: relative;
-  margin-bottom: 550px;
+  height: 740px;
+
+  @include breakpoint('tablet') {
+  height: 1228px;  }
+}
+
+.container {
+  position: initial;
 }
 
 .wrapper {
@@ -12,59 +19,67 @@
 .text {
   text-align: center;
   position: absolute;
-  margin-top: 100px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
 
 .singleLogo {
-  max-width: 180px;
+  max-width: 90px;
   position: absolute;
   animation-name: floating;
   animation-iteration-count: infinite;
   animation-timing-function: ease-in-out;
 
+  @include breakpoint('tablet') {
+    max-width: 180px;
+  }
+
+  @include breakpoint('desktop') {
+    max-width: 220px;
+  }
+
+
   // 3rd Point
   &:nth-child(1) {
-    top: 220px;
-    left: 20px;
+    top: percentage(645,1228);
+    left: percentage(44, 1440);
     animation-duration: 3.1s;
   }
   // Cerberus
   &:nth-child(2) {
-    top: -150px;
-    left: 50px;
+    top: percentage(90,1228);
+    left: percentage(112, 1440);
     animation-duration: 2.1s;
   }
   // Tiger
   &:nth-child(3) {
-    top: 280px;
-    left: 330px;
+    top: percentage(892,1228);
+    left: percentage(340,1228);
     animation-duration: 2.4s;
   }
   // SilverPoint
   &:nth-child(4) {
-    top: -160px;
-    left: 360px;
+    top: percentage(157,1228);
+    left: percentage(559, 1440);
     animation-duration: 3.8s;
   }
   // Two Sigma
   &:nth-child(5) {
-    top: 260px;
-    left: 600px;
+    top: percentage(928,1228);
+    left: percentage(974, 1440);
     animation-duration: 3.2s;
   }
   // Lightyear
   &:nth-child(6) {
-    top: -60px;
-    left: 640px;
+    top: percentage(350,1228);
+    left: percentage(1100, 1440);
     animation-duration: 4s;
   }
-  // Lightyear
+  // Centerbridge
   &:nth-child(7) {
-    top: 60px;
-    left: 680px;
+    top: percentage(5,1228);
+    left: percentage(1111, 1440);
     animation-duration: 3.6s;
   }
 }

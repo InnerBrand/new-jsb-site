@@ -1,0 +1,39 @@
+@import 'core';
+
+.wrapper {
+  padding: 0 2rem;
+}
+
+.content {
+  background-color: $color__black;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding-bottom: 92px;
+}
+
+.image {
+  width: percentage(416, 1296);
+
+  img {
+    width: 100%;
+    // position: relative;
+    margin-top: -4rem;
+  }
+}
+
+.info {
+  h4 {
+    @include header_l;
+    margin-top: -3rem;
+    padding: 0 4rem;
+  }
+
+  h5 {
+    margin-top: 24px;
+    font-family: $font__special;
+    @include header_s;
+  }
+}

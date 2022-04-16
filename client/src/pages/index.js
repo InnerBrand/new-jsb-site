@@ -11,12 +11,12 @@ import IndustryLogos from 'components/IndustryLogos';
 import ContouredSection from 'components/ContouredSection';
 import Button, {ButtonGroup} from 'components/Button';
 import Container from 'components/Container';
+import CircleButton from 'components/CircleButton';
 
 // Styles
 import * as styles from 'styles/modules/pages/Home.module.scss';
 
-import figLogos from 'assets/images/fig-logos.png';
-import CircleButton from 'components/CircleButton';
+// Imgs
 import madeOf from 'assets/images/made-of.png';
 
 const Home = ({data}) => {
@@ -32,16 +32,23 @@ const Home = ({data}) => {
       <RolesGrid roles={roles} />
       <BigClaim />
       <IndustryLogos />
+<<<<<<< Updated upstream
       <BigQuote className={styles.homeQuote} />
       {/* <div className={styles.circleButton}>
         <CircleButton ctaText='Read more stories' />
       </div> */}
+=======
+>>>>>>> Stashed changes
       <div className={styles.madeOf}>
         <img src={madeOf} />
       </div>
       <div className={styles.circleButton}>
         <CircleButton ctaText='Meet our experts' to='/team' />
       </div>
+      <BigQuote className={styles.homeQuote} />
+      {/* <div className={styles.circleButton}>
+        <CircleButton ctaText='Read more stories' />
+      </div> */}
       <ContouredSection className={styles.bottomSection}>
         <Container>
           <div className={styles.content}>

@@ -31,7 +31,7 @@ const AboutPage = ({ data }) => {
             alt='NYC Skyline'
           />
           <h3 className={styles.heroSubhead}>
-            A company founded by CPA's that now helps place them.
+            An executive search firm that now helps place them.
           </h3>
           <div className={styles.heroMeta}>
             <p>Founded 1998</p>

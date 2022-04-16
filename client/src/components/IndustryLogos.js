@@ -38,7 +38,7 @@ const IndustryLogos = () => {
 
   return (
     <section className={styles.section}>
-      <Container>
+      <Container className={styles.container}>
         <div className={styles.wrapper}>
           {logos.map(logo => {
             return <SingleLogo key={logo.id} imgData={logo} />;
