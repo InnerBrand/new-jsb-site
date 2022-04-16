@@ -71,7 +71,7 @@ const Header = props => {
                     Looking for talent?
                     <FancyArrowRight className={styles.linkArrow} />
                   </Link>
-                  <Link to='/about' className={styles.navItem}>
+                  <Link to='/success' className={styles.navItem}>
                     Success stories
                     <FancyArrowRight className={styles.linkArrow} />
                   </Link>
