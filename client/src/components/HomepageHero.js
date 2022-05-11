@@ -41,6 +41,10 @@ const HomepageHero = () => {
 
           <GatsbyImage className={styles.heroImg} image={featImg} />
 
+          <p className={styles.heroSubtext}>
+            We match the right person with the right position
+          </p>
+
           <div className={styles.heroBtn}>
             <CircleButton
               ctaText='Contact Us'

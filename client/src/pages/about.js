@@ -24,14 +24,15 @@ const AboutPage = ({ data }) => {
     <Layout header theme='dark'>
       <Container>
         <section className={styles.hero}>
-          <h1 className={`jumbo ${styles.heroHeading}`}>Who we are.</h1>
+          <h1 className={`jumbo ${styles.heroHeading}`}>Who we are</h1>
           <GatsbyImage
             className={styles.heroImg}
             image={heroImg}
             alt='NYC Skyline'
           />
           <h3 className={styles.heroSubhead}>
-            An executive search firm that now helps place them.
+            We are executive search experts with deep-rooted relationships in
+            the financial community.
           </h3>
           <div className={styles.heroMeta}>
             <p>Founded 1998</p>
@@ -43,8 +44,8 @@ const AboutPage = ({ data }) => {
             We deal directly with owners, CFOS, the decision-makers.
           </h2>
           <p className={styles.centerBlurb}>
-            And we put ourselves in our client's shoes. Where would we want to
-            work?
+            Recognized throughout the industry for our unique ability to
+            effectively match clients and candidates.
           </p>
         </section>
         <section className={styles.storyMission}>
@@ -54,13 +55,18 @@ const AboutPage = ({ data }) => {
             </div>
             <div className={styles.bodyCol}>
               <p>
-                With a passion for the hedge fund world, we started JSB Partners
-                in 1994 to have a meaningful impact on our clients' lives. We
-                intentionally work with many boutique firms because we get to
-                deal directly with the decision-makers. We don't have patience
-                for big, bureaucratic places where you’re just another number.
-                We want you placed somewhere that can’t run without you. Where
-                you make a difference.
+                Starting out in the financial industry, we continue to cultivate
+                deep relationships with people and firms in this micro been a
+                leader in executive search for Alternative Asset Management and
+                Family Office since 1998. Recognized for our ability to help
+                talent find the jobs they are truly ready for, while supporting
+                companies to find their next great employee. We place
+                accounting, operations, tax, valuations, compliance and investor
+                relations professionals at all levels. Our clients are both
+                large companies and boutiques, where we deal with the decision
+                makers. We appreciate the importance of the person beyond the
+                resume, as do our clients. As a result, we often fill the jobs
+                no one else knows about.
               </p>
             </div>
           </div>
@@ -69,10 +75,13 @@ const AboutPage = ({ data }) => {
               <h6>Our Mission</h6>
             </div>
             <div className={[styles.bodyCol, styles.fourGrid].join(' ')}>
-              <p>To be at your side, always, as a trusted ally.</p>
-              <p>To be an expert in the field.</p>
-              <p>To make a meaningful impact on your life.</p>
-              <p>To make sure we help firms grow with the best people.</p>
+              <p>To be a trusted ally, at your side throughout the journey.</p>
+              <p>
+                To always be an expert in the field and on the pulse of the
+                financial community.
+              </p>
+              <p>To make sure firms grow with the best people.</p>
+              <p>To find the right Next for you.</p>
             </div>
           </div>
         </section>
@@ -83,8 +92,7 @@ const AboutPage = ({ data }) => {
           'We can help you get jobs that no one else knows about.',
           'We stay in touch with you, keeping you up to date on industry trends.',
           'We’ll help you navigate complex compensation packages and employee agreements.',
-          'We’ll help you understand the latest in compliance issues...',
-          '...as well as the latest in operational requirements, tax & accounting, and investor relations strategies',
+          'We help find your next greatest career opportunity.',
         ]}
         className={styles.firstCardSlider}
         eyebrow='When'
@@ -94,7 +102,7 @@ const AboutPage = ({ data }) => {
       <CardSlider
         cardData={[
           'We make sure you grow with only the best people.',
-          'With 255 years of combined experience, we know your needs.',
+          'With 278 years of combined experience, we know your needs.',
           'Having placed over 1k CFOs, there’s no role too small or too large for us.',
         ]}
         className={styles.secondCardSlider}
@@ -112,7 +120,7 @@ const AboutPage = ({ data }) => {
         <Container>
           <div className={styles.content}>
             <h2>Are you ready for your next job?</h2>
-            <p>Send us your resume and let's get started, together.</p>
+            <p>Let's find your next</p>
             <ButtonGroup className={styles.btnGroup}>
               <Button to='/submit-resume'>Submit resume</Button>
               <Button uiType='secondary' href='tel:1234567890'>

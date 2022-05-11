@@ -26,7 +26,8 @@ const ServicesPage = ({ data }) => {
             alt='NYC Skyline'
           />
           <h3 className={styles.heroSubhead}>
-            Not everybody does these things. Fortunately for you, we do.
+            We help match companies with the right talent across an array of
+            roles in the financial community.
           </h3>
         </section>
         <div className={styles.bigText}>
@@ -49,7 +50,7 @@ const ServicesPage = ({ data }) => {
       />
       <CardSlider
         cardData={[
-          'Accounting Support',
+          'Accounting',
           'Bookkeeping',
           'Accounts Payable',
           'Payroll',
@@ -81,6 +82,7 @@ const ServicesPage = ({ data }) => {
         <Container>
           <div className={styles.content}>
             <h2 className={styles.servicesCTA}>Ready to get started?</h2>
+            <h3 className={styles.servicesCTA}>Let's find your next</h3>
             <CircleButton ctaText='Contact Us' to='/submit-resume' />
           </div>
         </Container>

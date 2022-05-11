@@ -16,10 +16,9 @@ const BigQuote = () => {
         </div>
         <div className={styles.info}>
           <h4>
-            "Joe goes above and beyond helping our company find the best talent
-            out there"
+            "It was an absolute pleasure working with Eva to find a new role."
           </h4>
-          <h5>John, hiring executive & repeat client</h5>
+          <h5>Chris, Senior Accountant</h5>
           {/* <Link to='/'> Read more success stories</Link> */}
         </div>
       </Container>

@@ -1,6 +1,6 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import {useForm} from 'react-hook-form';
+import { useForm } from 'react-hook-form';
 import validation from 'libs/validation';
 // Components
 import Blob from 'components/Blob';
@@ -16,12 +16,12 @@ import * as styles from 'styles/modules/pages/SubmitResume.module.scss';
 
 const SubmitResume = props => {
   const contactMethodData = [
-    {id: 'phone', value: 'Phone', label: 'Phone'},
-    {id: 'email', value: 'Email', label: 'Email', defaultChecked: true},
-    {id: 'either', value: 'Either', label: 'Either'},
+    { id: 'phone', value: 'Phone', label: 'Phone' },
+    { id: 'email', value: 'Email', label: 'Email', defaultChecked: true },
+    { id: 'either', value: 'Either', label: 'Either' },
   ];
   const employmentStatusData = [
-    {id: 'employed', value: 'Employed', label: 'Yes'},
+    { id: 'employed', value: 'Employed', label: 'Yes' },
     {
       id: 'unemployed',
       value: 'Unemployed',
@@ -42,9 +42,9 @@ const SubmitResume = props => {
 
   const {
     register,
-    formState: {errors},
+    formState: { errors },
     handleSubmit,
-  } = useForm({mode: 'onSubmit'});
+  } = useForm({ mode: 'onSubmit' });
 
   const onSubmit = (data, e) => console.log('Submitting: ', data);
   const onError = (errors, e) => console.log('Errors: ', errors);
@@ -55,7 +55,7 @@ const SubmitResume = props => {
         <Container>
           <section className={styles.hero}>
             <Space unit={40} />
-            <h1>Let's get started, together</h1>
+            <h1>Let's get started finding your next opportunity</h1>
             <Space unit={30} />
           </section>
           <form

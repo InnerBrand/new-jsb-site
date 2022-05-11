@@ -9,10 +9,7 @@
 }
 
 .heroHeading {
-  color: $color__really-dark;
-  text-shadow: -1px -1px 0 $color__lime, 1px -1px 0 $color__lime,
-    -1px 1px 0 $color__lime, 1px 1px 0 $color__lime;
-  mix-blend-mode: lighten;
+  color: $color__lime;
 }
 
 .heroImg {

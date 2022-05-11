@@ -83,12 +83,12 @@ const Header = props => {
                     Services
                     <FancyArrowRight className={styles.linkArrow} />
                   </Link>
+                  <Link to='/about' className={styles.navItem}>
+                    About the company
+                  </Link>
                 </div>
                 <div className={styles.menuMoreInfo}>
                   <div className={styles.menuSecondaryLinks}>
-                    <Link to='/about' className={styles.navItem}>
-                      About the company
-                    </Link>
                     <Link to='/submit-resume' className={styles.navItem}>
                       Send us your resume
                     </Link>

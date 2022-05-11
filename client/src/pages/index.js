@@ -12,6 +12,7 @@ import ContouredSection from 'components/ContouredSection';
 import Button, { ButtonGroup } from 'components/Button';
 import Container from 'components/Container';
 import CircleButton from 'components/CircleButton';
+import MadeOf from 'components/MadeOf';
 
 // Styles
 import * as styles from 'styles/modules/pages/Home.module.scss';
@@ -32,9 +33,7 @@ const Home = ({ data }) => {
       <RolesGrid roles={roles} />
       <BigClaim />
       <IndustryLogos />
-      <div className={styles.madeOf}>
-        <img src={madeOf} />
-      </div>
+      <MadeOf />
       <div className={styles.circleButton}>
         <CircleButton ctaText='Meet our experts' to='/team' />
       </div>
