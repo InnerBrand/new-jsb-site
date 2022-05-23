@@ -39,12 +39,13 @@ const IndustryLogos = () => {
   return (
     <section className={styles.section}>
       <Container className={styles.container}>
+        <div className={styles.upperText}></div>
         <div className={styles.wrapper}>
           {logos.map(logo => {
             return <SingleLogo key={logo.id} imgData={logo} />;
           })}
         </div>
-        <h1 className={styles.text}>{centerText}</h1>
+        <h2 className={styles.text}>{centerText}</h2>
       </Container>
     </section>
   );

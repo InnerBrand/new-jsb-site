@@ -42,6 +42,12 @@ const BigClaim = () => {
           </div>
           <div className={styles.bigText}>
             <h1>{bigText}</h1>
+            <h6 className={styles.lowerText}>
+              With a track record of uniquely matching clients with candidates,
+              we find the next opportunities across accounting, operations, tax,
+              valuations, compliance and investor relations professionals at all
+              levels
+            </h6>
           </div>
         </div>
       </Container>
