@@ -1,6 +1,6 @@
 import React from 'react';
-import { graphql, useStaticQuery } from 'gatsby';
-import { GatsbyImage, getImage } from 'gatsby-plugin-image';
+import {graphql, useStaticQuery} from 'gatsby';
+import {GatsbyImage, getImage} from 'gatsby-plugin-image';
 // Components
 import CircleButton from 'components/CircleButton';
 import Container from 'components/Container';
@@ -29,7 +29,7 @@ const HomepageHero = () => {
     }
   `);
 
-  const { featuredImage, heroHeadline } =
+  const {featuredImage, heroHeadline} =
     data.allSanityHomepage.nodes[0].homepageContent;
   const featImg = getImage(featuredImage.asset.gatsbyImageData);
 
@@ -47,7 +47,7 @@ const HomepageHero = () => {
 
           <div className={styles.heroBtn}>
             <CircleButton
-              ctaText='Contact Us'
+              ctaText='Find your next'
               showArrow={false}
               to='/submit-resume'
             />

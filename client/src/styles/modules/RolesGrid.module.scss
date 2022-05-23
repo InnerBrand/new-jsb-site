@@ -7,7 +7,6 @@
 .content {
   display: grid;
   @include breakpoint('tablet') {
-
     grid-template-columns: 1fr 1fr;
   }
 }
@@ -16,7 +15,7 @@
   font-family: $font__special;
   align-items: center;
   margin-top: 450px;
-  max-width: 416px;
+  max-width: 380px;
 
   p {
     @include header_l;
@@ -27,14 +26,13 @@
   display: flex;
   gap: 0 17px;
   @include breakpoint('mobile') {
-    gap: percentage(17, 375)
+    gap: percentage(17, 375);
   }
 
   @include breakpoint('tablet') {
-    gap: percentage(136, 1440)
+    gap: percentage(136, 1440);
   }
 }
-
 
 .leftWrap {
 }
@@ -46,13 +44,11 @@
 .singleRole {
   position: relative;
   margin-bottom: 8rem;
-
 }
 
 .roleName {
   display: none;
-  transform:rotate(-90deg);
-
+  transform: rotate(-90deg);
 }
 .singleRole:hover {
   .singleOverlay {
