@@ -1,6 +1,6 @@
 import React from 'react';
-import {Link} from 'gatsby';
-import {useForm} from 'react-hook-form';
+import { Link } from 'gatsby';
+import { useForm } from 'react-hook-form';
 // Components
 import Input from 'components/Input';
 import Container from 'components/Container';
@@ -24,10 +24,10 @@ const Footer = () => {
       <section className={styles.footerSection}>
         <Container className={styles.container}>
           <div className={styles.subscribeDiv}>
-            <h3>Subscribe</h3>
-            <p>
+            <h3>Follow On Social</h3>
+            {/* <p>
               Get info on how to land the perfect job and other helpful tips
-            </p>
+            </p> */}
             <div className={styles.subscribeBtn}>
               {/* <form>
                 <Input placeholder='email address'
@@ -37,24 +37,24 @@ const Footer = () => {
                 <button class="button">Subscribe</button>
               </form> */}
             </div>
-            <p>Our newsletter is bi-weekly</p>
+            {/* <p>Our newsletter is bi-weekly</p> */}
             <div className={styles.socialLinks}>
               <a
-                href='https://facebook.com'
+                href='https://facebook.com/jsbpartners'
                 title='Visit us on Facebook'
                 target='_blank'
                 rel='noreferrer'>
                 <FacebookIcon />
               </a>
               <a
-                href='https://instagram.com'
+                href='https://instagram.com/jsbpartners'
                 title='Visit us on Instagram'
                 target='_blank'
                 rel='noreferrer'>
                 <InstagramIcon />
               </a>
               <a
-                href='https://linkedin.com'
+                href='https://www.linkedin.com/company/jsb-partners'
                 title='Visit us on Linkedin'
                 target='_blank'
                 rel='noreferrer'>

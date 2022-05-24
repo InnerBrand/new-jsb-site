@@ -3,7 +3,7 @@
 .section {
   position: relative;
   background-color: $color__black;
-  height: 782px;
+  height: 700px;
 
 }
 
@@ -13,7 +13,14 @@
   flex-direction: column;
   left: percentage(147, 1440);
   margin-top: 150px;
+}
 
+.introText {
+  color: white;
+  font-family: $font__special;
+  font-size: 24px;
+  margin-bottom: 40px;
+  max-width: 800px;
 }
 
 .ready {
@@ -35,5 +42,35 @@
 
 .stories {
   text-align: center;
+  margin-top: 180px;
+}
+
+.storyWrapper {
+  margin: 50px 0;
+  padding: 45px;
+  border: 2px dotted $color__lime;
+  border-radius: 20px;
+}
+
+.storyBody {
+  text-align: left;
+}
+
+.bottomSection {
+  background-color: $color__black;
   margin-top: 200px;
+
+  .question,
+  .cta {
+    color: white;
+  }
+  .content {
+    margin-top: space(6);
+    text-align: center;
+  }
+
+  .btnGroup {
+    margin-top: space(6);
+    justify-content: center;
+  }
 }

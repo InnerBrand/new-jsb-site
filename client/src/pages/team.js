@@ -5,7 +5,7 @@ import Blob from 'components/Blob';
 import Container from 'components/Container';
 import FactsPlank from 'components/FactsPlank';
 import Layout from 'components/Layout';
-import BigQuote from 'components/BigQuote';
+import LadyQuote from 'components/LadyQuote';
 import Space from 'components/Space';
 import TeamMembers from 'components/TeamMembers';
 import ContouredSection from 'components/ContouredSection';
@@ -39,7 +39,7 @@ const TeamPage = ({ data }) => {
           facts={facts}
         />
         <TeamMembers members={foundingMembers} />
-        <BigQuote />
+        <LadyQuote />
         <ContouredSection className={styles.bottomSection}>
           <Container>
             <div className={styles.content}>
