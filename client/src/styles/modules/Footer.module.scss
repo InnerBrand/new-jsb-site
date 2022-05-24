@@ -1,121 +1,195 @@
 @import 'core';
 
+.wrapper {
+  box-shadow: inset 0 1px 0 0 $color__black;
+
+  :global(body.theme_dark) & {
+    box-shadow: unset;
+  }
+}
+
 .footerSection {
+  .container {
     display: flex;
     justify-content: space-between;
-    padding: 119px 0;
     font-family: $font__special;
+    flex-flow: column;
 
-    .subscribeDiv {
-
-        h3 {
-            font-family: $font__special;
-            font-weight: 700;
-            @include header_m;
-        }
-
-        .subscribeBtn {
-            display: flex;
-            margin: 24px 0 10px;
-
-            form {
-
-                input {
-                    font-family: $font__special;
-                    background: transparent;
-                    padding: 15px 132px 16px 24px;
-                    border-radius: 30px;
-                    border-width: 2px;
-                    
-                    .text {
-                        color: $color__black;
-                    }
-                }
-            }
-
-            button {
-                font-family: $font__special;
-                font-weight: 600;
-                font-size: 18px;
-                border-radius: 30px;
-                background: $color__lime;
-                padding: 0 16px;
-                left: 10px;
-            }
-
-        }
-
-        p {
-            
-            &:first-child {
-                font-size: 18px;
-            }
-            &:last-child {
-                font-size: 14px;
-            }
-        }
-
-        .socialLinks {
-            display: flex;
-
-            img {
-                background: $color__lime;
-                padding: 9px;
-                margin-right: 16px;
-                border-radius: 50%;
-                max-width: 39px;
-                margin-top: 32px;
-            }
-        }
-
-
+    @include breakpoint('tablet') {
+      flex-flow: row;
+      padding: space(5) 0;
     }
+  }
+}
 
-    .contactDiv {
+.subscribeDiv {
+  padding: space(4) 0;
 
-        h3 {
-            font-family: $font__special;
-            font-weight: 700;
-            @include header_m;
-        }
+  @include breakpoint('tablet') {
+    margin-right: percentage(1, 8);
+    padding-bottom: 0;
+  }
 
-        .infoText {
-            display: flex;
-            align-items: center;
-            margin-top: 32px;
+  h3 {
+    font-family: $font__special;
+    font-weight: 700;
+    @include header_m;
+    margin-bottom: space(3);
+  }
 
-            img {
-                max-width: 18px;
-                max-height: 18px;
-            }
-            p {
-                margin-left: 20px;
-            }
-        }
-      }
+  p {
+    &:first-child {
+      font-size: 18px;
+    }
+    &:last-child {
+      font-size: 14px;
+    }
+  }
+}
 
-      
+.socialLinks {
+  a {
+    width: 40px;
+    height: 40px;
+    background: $color__lime;
+    margin-right: 16px;
+    border-radius: 50%;
+    margin-top: 32px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.subscribeBtn {
+  display: flex;
+  margin: 24px 0 10px;
+
+  input {
+    font-family: $font__special;
+    background: transparent;
+    padding: 15px 132px 16px 24px;
+    border-radius: 30px;
+    border-width: 2px;
+
+    .text {
+      color: $color__black;
+    }
+  }
+
+  button {
+    font-family: $font__special;
+    font-weight: 600;
+    font-size: 18px;
+    border-radius: 30px;
+    background: $color__lime;
+    padding: 0 16px;
+    left: 10px;
+  }
+}
+
+.contactDiv {
+  background: rgba(#fff, 0.4);
+  margin: 0 -16px;
+  padding: space(4) 16px;
+  text-align: center;
+
+  :global(body.theme_dark) & {
+    background: rgb(#fff, 0.1);
+  }
+
+  @include breakpoint('tablet') {
+    background: none;
+    text-align: left;
+
+    :global(body.theme_dark) & {
+      background: none;
+    }
+  }
+
+  h3 {
+    font-family: $font__special;
+    font-weight: 700;
+    @include header_m;
+    margin-bottom: space(3);
+  }
+}
+
+.infoText {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:not(:last-child) {
+    margin-bottom: space(2);
+
+    @include breakpoint('desktop') {
+      margin-bottom: space(3);
+    }
+  }
+
+  @include breakpoint('tablet') {
+    justify-content: flex-start;
+  }
+
+  .icon {
+    width: 24px;
+  }
+
+  .text {
+    margin-left: 20px;
+    text-decoration: none;
+    color: inherit;
+  }
 }
 
 .bottomText {
-    font-family: $font__special;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 12px;
-    margin-bottom: 96px;
+  @include breakpoint('tablet') {
+    background: rgb(#fff, 0.4);
 
-    .termsLinks {
-        display: flex;
-    
-        .termsLink {
-            text-transform: none;
-            margin-right: 10px;
-    
-            span {
-                text-decoration: none;
-                margin-left: 10px;
-            }
-        }
+    :global(body.theme_dark) & {
+      background: rgb(#fff, 0.1);
     }
+  }
+
+  @include breakpoint('desktop') {
+    background: none;
+
+    :global(body.theme_dark) & {
+      background: none;
+    }
+  }
+
+  .container {
+    display: flex;
+    flex-flow: column;
+    padding-top: 56px;
+    padding-bottom: 72px;
+    font-size: 12px;
+    @include helper;
+    font-family: $font__special;
+    gap: space(2);
+
+    @include breakpoint('tablet') {
+      align-items: center;
+    }
+
+    @include breakpoint('desktop') {
+      flex-flow: row;
+      justify-content: space-between;
+    }
+  }
+}
+
+.termsLinks {
+  display: flex;
+
+  span {
+    margin: 0 10px;
+  }
+}
+
+.termsLink {
+  text-transform: none;
+  color: inherit;
 }

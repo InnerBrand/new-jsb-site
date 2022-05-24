@@ -1,6 +1,6 @@
 import React from 'react';
-import { graphql } from 'gatsby';
-import { GatsbyImage, getImage } from 'gatsby-plugin-image';
+import {graphql} from 'gatsby';
+import {GatsbyImage, getImage} from 'gatsby-plugin-image';
 
 // Components
 import Layout from 'components/Layout';
@@ -12,7 +12,7 @@ import * as styles from 'styles/modules/pages/ServicesPage.module.scss';
 import ContouredSection from 'components/ContouredSection';
 import CircleButton from 'components/CircleButton';
 
-const ServicesPage = ({ data }) => {
+const ServicesPage = ({data}) => {
   const heroImgData = data.heroFiles.nodes[0].childImageSharp;
   const heroImg = getImage(heroImgData);
   return (
@@ -47,6 +47,7 @@ const ServicesPage = ({ data }) => {
         eyebrow='With'
         headerHighlight='searches'
         headerPre='Executive'
+        variant='slider'
       />
       <CardSlider
         cardData={[
@@ -93,7 +94,7 @@ const ServicesPage = ({ data }) => {
 
 export const query = graphql`
   {
-    heroFiles: allFile(filter: { name: { eq: "services-hero" } }) {
+    heroFiles: allFile(filter: {name: {eq: "services-hero"}}) {
       nodes {
         childImageSharp {
           gatsbyImageData

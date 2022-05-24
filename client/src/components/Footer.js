@@ -1,28 +1,28 @@
 import React from 'react';
 import {Link} from 'gatsby';
 import {useForm} from 'react-hook-form';
-
 // Components
 import Input from 'components/Input';
 import Container from 'components/Container';
-
-// Imgs
-import FacebookLogo from 'assets/images/fb-icon.png';
-import InstaLogo from 'assets/images/ig-icon.png';
-import LinkedLogo from 'assets/images/li-icon.png';
-import MailIcon from 'assets/images/mail-icon.png';
-import PhoneIcon from 'assets/images/phone-icon.png';
-import PinIcon from 'assets/images/pin-icon.png';
-import TimeIcon from 'assets/images/clock-icon.png';
+// SVG
+import FacebookIcon from 'assets/svg/facebook.inline.svg';
+import InstagramIcon from 'assets/svg/instagram.inline.svg';
+import LinkedInIcon from 'assets/svg/linkedin.inline.svg';
+import {
+  ClockIcon,
+  LocationMarkerIcon,
+  MailIcon,
+  PhoneIcon,
+} from '@heroicons/react/outline';
 
 // Styles
 import * as styles from '../styles/modules/Footer.module.scss';
 
 const Footer = () => {
   return (
-    <div>
-      <Container>
-        <section className={styles.footerSection}>
+    <footer className={styles.wrapper}>
+      <section className={styles.footerSection}>
+        <Container className={styles.container}>
           <div className={styles.subscribeDiv}>
             <h3>Subscribe</h3>
             <p>
@@ -30,58 +30,95 @@ const Footer = () => {
             </p>
             <div className={styles.subscribeBtn}>
               {/* <form>
-              <Input placeholder='email address'
-              
-              >
+                <Input placeholder='email address'
+                
+                >
 
-               <button class="button">Subscribe</button>
-            </form> */}
+                <button class="button">Subscribe</button>
+              </form> */}
             </div>
             <p>Our newsletter is bi-weekly</p>
             <div className={styles.socialLinks}>
-              <img src={FacebookLogo} />
-              <img src={InstaLogo} />
-              <img src={LinkedLogo} />
+              <a
+                href='https://facebook.com'
+                title='Visit us on Facebook'
+                target='_blank'
+                rel='noreferrer'>
+                <FacebookIcon />
+              </a>
+              <a
+                href='https://instagram.com'
+                title='Visit us on Instagram'
+                target='_blank'
+                rel='noreferrer'>
+                <InstagramIcon />
+              </a>
+              <a
+                href='https://linkedin.com'
+                title='Visit us on Linkedin'
+                target='_blank'
+                rel='noreferrer'>
+                <LinkedInIcon />
+              </a>
             </div>
           </div>
           <div className={styles.contactDiv}>
             <h3>Contact</h3>
             <div className={styles.infoText}>
-              <img src={MailIcon} />
-              <p>info@jsbpartners.com</p>
+              <MailIcon className={styles.icon} />
+              <a
+                className={styles.text}
+                href='mailto:info@jsbpartners.com'
+                target='_blank'
+                rel='noreferrer'>
+                info@jsbpartners.com
+              </a>
             </div>
             <div className={styles.infoText}>
-              <img src={PhoneIcon} />
-              <p>(212) 750-7007</p>
+              <PhoneIcon className={styles.icon} />
+
+              <a className={styles.text} href='tel:2127507007'>
+                (212) 750-7007
+              </a>
             </div>
             <div className={styles.infoText}>
-              <img src={PinIcon} />
-              <p>747 Third Ave, 15th Floor, NYC</p>
+              <LocationMarkerIcon className={styles.icon} />
+              <a
+                className={styles.text}
+                href='https://goo.gl/maps/x3FCj9JBc6Z2UNif9'
+                target='_blank'
+                rel='noreferrer'>
+                747 Third Ave, 15th Floor, NYC
+              </a>
               {/* <p>New York, New York 10017</p> */}
             </div>
             <div className={styles.infoText}>
-              <img src={TimeIcon} />
-              <p>25/7 Hustling</p>
+              <ClockIcon className={styles.icon} />
+              <p className={styles.text}>25/7 Hustling</p>
             </div>
           </div>
-        </section>
-        <div className={styles.bottomText}>
+        </Container>
+      </section>
+      <div className={styles.bottomText}>
+        <Container className={styles.container}>
           <p>© Copyright - JSB Partners 2022</p>
           <p>JSB Partners, Consultants in Executive Search Since 1998</p>
           <div className={styles.termsLinks}>
             <Link to='/' className={styles.termsLink}>
               Terms of Use
             </Link>
+            <span>|</span>
             <Link to='/' className={styles.termsLink}>
               Privacy Policy
             </Link>
+            <span>|</span>
             <Link to='/' className={styles.termsLink}>
               Disclaimer
             </Link>
           </div>
-        </div>
-      </Container>
-    </div>
+        </Container>
+      </div>
+    </footer>
   );
 };
 

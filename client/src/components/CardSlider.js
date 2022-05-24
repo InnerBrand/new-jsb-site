@@ -1,5 +1,4 @@
-import React, {useEffect, useRef} from 'react';
-import PropTypes from 'prop-types';
+import React from 'react';
 // Components
 import Container from 'components/Container';
 // Styles
@@ -13,22 +12,6 @@ const CardSlider = ({
   headerHighlight,
   headerPre,
 }) => {
-  const sliderRef = useRef(null);
-
-  useEffect(() => {
-    sliderRef.current.addEventListener('wheel', handleWheel);
-  }, []);
-
-  function handleWheel(e) {
-    const target = e.currentTarget;
-    console.log(target.scrollLeft);
-    const maxScroll = target.scrollWidth - target.clientWidth;
-    target.scrollLeft += e.deltaY + e.deltaX;
-    if (target.scrollLeft > 0 && target.scrollLeft < maxScroll) {
-      e.preventDefault();
-    }
-  }
-
   return (
     <section className={[styles.wrapper, className ? className : ''].join(' ')}>
       <Container>
@@ -44,18 +27,16 @@ const CardSlider = ({
             <span>{headerHighlight}</span>
           </h3>
         </div>
-      </Container>
-      <div className={styles.slider} ref={sliderRef}>
-        <div className={styles.sliderInner}>
-          {cardData.map(card => (
-            <div className={styles.card}>{card}</div>
+        <div className={styles.cards}>
+          {cardData.map((card, i) => (
+            <div key={i} className={styles.card}>
+              {card}
+            </div>
           ))}
         </div>
-      </div>
+      </Container>
     </section>
   );
 };
-
-CardSlider.propTypes = {};
 
 export default CardSlider;
