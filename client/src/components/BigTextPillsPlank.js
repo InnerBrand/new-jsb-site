@@ -22,16 +22,11 @@ const BigTextPillsPlank = ({ imageData }) => {
           </div>
         </div>
         <p className={styles.text}>
-          “Our understanding of the financial community and the needs of our
-          clients, helps us find that next match between people and businesses"
-          -Joe
+          “Our relationships and understanding of the industry give us access to
+          jobs no one else knows about, so we find the next match between people
+          and businesses"
         </p>
 
-        <p className={styles.text}>
-          “Our relationships in the industry give us access to jobs no one else
-          knows about, and you can’t find them on linked-in or big employment
-          websites” -Barry
-        </p>
         <div className={[styles.imageWrapper, styles.right].join(' ')}>
           <GatsbyImage className={styles.image} image={barryImg} />
           <div className={styles.titleWrapper}>

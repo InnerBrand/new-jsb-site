@@ -39,7 +39,7 @@ const TeamPage = ({ data }) => {
           facts={facts}
         />
         <TeamMembers members={foundingMembers} />
-        <LadyQuote />
+        <LadyQuote className={styles.ladyQuote} />
         <ContouredSection className={styles.bottomSection}>
           <Container>
             <div className={styles.content}>

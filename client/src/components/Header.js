@@ -62,7 +62,8 @@ const Header = props => {
               <div className={styles.scrollContainer} ref={scrollRef}>
                 <div className={styles.menuNavLinks}>
                   <Link
-                    to={'https://jobs.vivahr.com/6965-aktiv-insight/jobs'}
+                    to={''}
+                    // to={'https://jobs.vivahr.com/6965-aktiv-insight/jobs'}
                     className={styles.navItem}>
                     Job listings
                     <FancyArrowRight className={styles.linkArrow} />
