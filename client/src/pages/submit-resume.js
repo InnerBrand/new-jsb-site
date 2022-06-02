@@ -11,6 +11,7 @@ import Input from 'components/Input';
 import Layout from 'components/Layout';
 import Space from 'components/Space';
 import TabSelector from 'components/TabSelector';
+import apiAxios from '../../api.config';
 // Styles
 import * as styles from 'styles/modules/pages/SubmitResume.module.scss';
 
@@ -20,25 +21,12 @@ const SubmitResume = props => {
     {id: 'email', value: 'Email', label: 'Email', defaultChecked: true},
     {id: 'either', value: 'Either', label: 'Either'},
   ];
-  const employmentStatusData = [
-    {id: 'employed', value: 'Employed', label: 'Yes'},
-    {
-      id: 'unemployed',
-      value: 'Unemployed',
-      label: 'No',
-      defaultChecked: true,
-    },
-  ];
 
   const getDefaultContactMethod = () =>
     contactMethodData.find(item => item.defaultChecked).id;
-  const getDefaultEmploymentStatus = () =>
-    employmentStatusData.find(item => item.defaultChecked).id;
 
   const [contactMethod, setContactMethod] = useState(getDefaultContactMethod);
-  const [employmentStatus, setEmploymentStatus] = useState(
-    getDefaultEmploymentStatus
-  );
+  const [file, setFile] = useState(null);
 
   const {
     register,
@@ -46,7 +34,15 @@ const SubmitResume = props => {
     handleSubmit,
   } = useForm({mode: 'onSubmit'});
 
-  const onSubmit = async (data, e) => {};
+  const onSubmit = async (data, e) => {
+    data.file = file;
+    console.log(data);
+    const res = await apiAxios.request({
+      url: '/send-mail',
+      method: 'post',
+      data,
+    });
+  };
 
   const onError = (errors, e) => console.log('Errors: ', errors);
 
@@ -131,48 +127,8 @@ const SubmitResume = props => {
             </div>
 
             <div className={styles.formItem}>
-              <h3 className={styles.formQuestion}>
-                Are you currently employed?
-              </h3>
-              <div className={styles.inputWrapper}>
-                <TabSelector
-                  name='employmentStatus'
-                  register={register}
-                  data={employmentStatusData}
-                  onChange={setEmploymentStatus}
-                />
-              </div>
-              <Space unit={16} />
-              <div className={styles.inputWrapper}>
-                {employmentStatus === 'employed' && (
-                  <>
-                    <Input
-                      wrapperClass={styles.input}
-                      name='currentCompany'
-                      id='currentCompany'
-                      type='text'
-                      placeholder='Current Company*'
-                      errors={errors}
-                      register={register}
-                      validation={validation.generalRequired}
-                    />
-                    <Input
-                      wrapperClass={styles.input}
-                      name='currentPosition'
-                      id='currentPosition'
-                      type='text'
-                      placeholder='Current Position*'
-                      errors={errors}
-                      register={register}
-                      validation={validation.generalRequired}
-                    />
-                  </>
-                )}
-              </div>
-            </div>
-            <div className={styles.formItem}>
               <h3 className={styles.formQuestion}>Upload your resume</h3>
-              <Dropzone />
+              <Dropzone setFile={setFile} />
               <Blob className={styles.blob} />
             </div>
 

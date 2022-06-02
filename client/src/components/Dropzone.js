@@ -13,18 +13,9 @@ const Dropzone = props => {
   const [status, setStatus] = useState(INIT_STATUS);
   console.log(status);
 
-  const getUploadParams = () => {
-    return {url: 'https://httpbin.org/post'};
-  };
-
   const handleChangeStatus = ({meta}, status, remove) => {
     console.log(status, meta);
     setStatus(status);
-  };
-
-  const handleSubmit = (files, allFiles) => {
-    console.log(files.map(f => f.meta));
-    allFiles.forEach(f => f.remove());
   };
 
   return (
@@ -68,8 +59,12 @@ const Dropzone = props => {
           </>
         )}
         PreviewComponent={props => <Preview {...props} setStatus={setStatus} />}
-        SubmitButtonComponent={null}
-        getUploadParams={getUploadParams}
+        // SubmitButtonComponent={null}
+        getUploadParams={fileWithMeta => {
+          console.log(fileWithMeta);
+          // props.setFile(fileWithMeta);
+          return {url: 'http://localhost:8000/api/upload'};
+        }}
         onChangeStatus={handleChangeStatus}
         maxFiles={1}
         accept='.docx,application/msword,.pdf'
