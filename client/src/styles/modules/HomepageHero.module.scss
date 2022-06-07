@@ -10,7 +10,7 @@
 }
 
 .heroImg {
-  position: absolute;
+  position: absolute !important;
   z-index: -1;
   border-radius: 999px;
   top: 40px;
