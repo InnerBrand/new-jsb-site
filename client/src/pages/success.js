@@ -29,6 +29,7 @@ const SuccessPage = () => {
           </div>
         </section>
         <div className={styles.stories}>
+          <h1> Here's some of our wins</h1>
           <div className={styles.storyWrapper}>
             <h4 className={styles.storyBody}>
               JSB Partners was hired by a Las Vegas casino magnet to find a CFO

@@ -17,8 +17,8 @@ const BigTextPillsPlank = ({ imageData }) => {
         <div className={[styles.imageWrapper, styles.left].join(' ')}>
           <GatsbyImage className={styles.image} image={josephImg} />
           <div className={styles.titleWrapper}>
-            <p>Joseph Barr Co-Founder</p>
-            <p>Co-Founder, CPA</p>
+            <p>Joseph Barr</p>
+            <p>Founder & Managing Director</p>
           </div>
         </div>
         <p className={styles.text}>
@@ -31,7 +31,7 @@ const BigTextPillsPlank = ({ imageData }) => {
           <GatsbyImage className={styles.image} image={barryImg} />
           <div className={styles.titleWrapper}>
             <p>Barry Taitz</p>
-            <p>Co-Founder, CPA</p>
+            <p>Founder & Managing Director</p>
           </div>
         </div>
       </Container>

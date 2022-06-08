@@ -32,13 +32,13 @@ const TeamPage = ({ data }) => {
           <h1 className={styles.heroHeadline}>{heroHeadline}</h1>
           <Space unit={8} />
         </Container>
+        <TeamMembers members={foundingMembers} />
         <TeamMembers members={teamMembers} />
         <FactsPlank
           eyebrow={factsEyebrow}
           headline={factsHeadline}
           facts={facts}
         />
-        <TeamMembers members={foundingMembers} />
         <LadyQuote className={styles.ladyQuote} />
         <ContouredSection className={styles.bottomSection}>
           <Container>

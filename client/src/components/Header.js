@@ -104,7 +104,7 @@ const Header = props => {
                     <a className={styles.navItem} href='tel:212-750-7007'>
                       212-750-7007
                     </a>
-                    <p className={styles.navItem}>info@jsbpartners.com</p>
+                    <p className={styles.navItem}>yourexpert@jsbpartners.com</p>
                   </div>
                 </div>
               </div>
