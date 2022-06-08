@@ -1,11 +1,11 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import ReactDropzoneUploader from 'react-dropzone-uploader';
 import ReactTooltip from 'react-tooltip';
 // Styles
 import * as styles from 'styles/modules/Dropzone.module.scss';
 // SVG
-import {ExclamationCircleIcon} from '@heroicons/react/solid';
-import {InformationCircleIcon} from '@heroicons/react/outline';
+import { ExclamationCircleIcon } from '@heroicons/react/solid';
+import { InformationCircleIcon } from '@heroicons/react/outline';
 import PageIcon from 'assets/svg/page-icon.inline.svg';
 
 const INIT_STATUS = 'init';
@@ -13,9 +13,15 @@ const Dropzone = props => {
   const [status, setStatus] = useState(INIT_STATUS);
   console.log(status);
 
-  const handleChangeStatus = ({meta}, status, remove) => {
+  const handleChangeStatus = ({ meta }, status, remove) => {
     console.log(status, meta);
     setStatus(status);
+
+    // const handleSubmit = e => {
+    //   e.preventDefault();
+
+    //   return;
+    // };
   };
 
   return (
@@ -63,27 +69,27 @@ const Dropzone = props => {
         getUploadParams={fileWithMeta => {
           console.log(fileWithMeta);
           // props.setFile(fileWithMeta);
-          return {url: 'http://localhost:8000/api/upload'};
+          return { url: 'http://localhost:8000/api/upload' };
         }}
         onChangeStatus={handleChangeStatus}
         maxFiles={1}
         accept='.docx,application/msword,.pdf'
-        onSubmit={handleSubmit}
+        // onSubmit={handleSubmit}
       />
       <div className={styles.captionWrapper}>
-        <InformationCircleIcon style={{width: 16, height: 16}} />
+        <InformationCircleIcon style={{ width: 16, height: 16 }} />
         <p>Word doc, docx or PDF Format</p>
       </div>
     </div>
   );
 };
 
-function Preview({fileWithMeta, setStatus}) {
+function Preview({ fileWithMeta, setStatus }) {
   const [hovering, setHovering] = useState(false);
   const [mousePos, setMousePos] = useState(() => {
-    return {x: 0, y: 0};
+    return { x: 0, y: 0 };
   });
-  const {name} = fileWithMeta.meta;
+  const { name } = fileWithMeta.meta;
 
   function handleClick() {
     fileWithMeta.remove();
@@ -94,7 +100,7 @@ function Preview({fileWithMeta, setStatus}) {
     const rect = e.currentTarget.getBoundingClientRect();
     var x = e.clientX - rect.left; // x position within the element.
     var y = e.clientY - rect.top; // y position within the element.
-    setMousePos({x, y});
+    setMousePos({ x, y });
   }
 
   return (
