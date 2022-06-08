@@ -68,10 +68,10 @@ const Footer = () => {
               <MailIcon className={styles.icon} />
               <a
                 className={styles.text}
-                href='mailto:info@jsbpartners.com'
+                href='mailto:yourexpert@jsbpartners.com'
                 target='_blank'
                 rel='noreferrer'>
-                info@jsbpartners.com
+                yourexpert@jsbpartners.com
               </a>
             </div>
             <div className={styles.infoText}>

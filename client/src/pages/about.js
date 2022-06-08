@@ -24,7 +24,7 @@ const AboutPage = ({ data }) => {
     <Layout header theme='dark'>
       <Container>
         <section className={styles.hero}>
-          <h1 className={`jumbo ${styles.heroHeading}`}>Who we are</h1>
+          {/* <h1 className={`jumbo ${styles.heroHeading}`}>Who we are</h1> */}
           <GatsbyImage
             className={styles.heroImg}
             image={heroImg}
@@ -36,12 +36,12 @@ const AboutPage = ({ data }) => {
           </h3>
           <div className={styles.heroMeta}>
             <p>Founded 1998</p>
-            <p>New York City, NY</p>
+            <p>New York, New York</p>
           </div>
         </section>
         <section className={styles.offsetText}>
           <h2 className={styles.offsetLeftHeading}>
-            We deal directly with owners, CFOS, the decision-makers.
+            We deal directly with Partners, CFO's, COO's, and Decision-Makers.
           </h2>
           <p className={styles.centerBlurb}>
             Recognized throughout the industry for our unique ability to
@@ -103,7 +103,7 @@ const AboutPage = ({ data }) => {
         cardData={[
           'We make sure you grow with only the best people.',
           'With 278 years of combined experience, we know your needs.',
-          'Having placed over 1k CFOs, there’s no role too small or too large for us.',
+          'Having placed over 1k CFOs our experience is second to none.',
         ]}
         className={styles.secondCardSlider}
         eyebrow='When'

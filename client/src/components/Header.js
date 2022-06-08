@@ -61,11 +61,15 @@ const Header = props => {
             <div className={styles.menuWrapper}>
               <div className={styles.scrollContainer} ref={scrollRef}>
                 <div className={styles.menuNavLinks}>
-                  <Link
-                    to={''}
-                    // to={'https://jobs.vivahr.com/6965-aktiv-insight/jobs'}
-                    className={styles.navItem}>
-                    Job listings
+                  <Link to='/about' className={styles.navItem}>
+                    About
+                  </Link>
+                  <Link to='/services' className={styles.navItem}>
+                    Services
+                    <FancyArrowRight className={styles.linkArrow} />
+                  </Link>
+                  <Link to='/team' className={styles.navItem}>
+                    Meet your experts
                     <FancyArrowRight className={styles.linkArrow} />
                   </Link>
                   <Link to='/services' className={styles.navItem}>
@@ -76,16 +80,12 @@ const Header = props => {
                     Success stories
                     <FancyArrowRight className={styles.linkArrow} />
                   </Link>
-                  <Link to='/team' className={styles.navItem}>
-                    Meet your experts
+                  <Link
+                    to={''}
+                    // to={'https://jobs.vivahr.com/6965-aktiv-insight/jobs'}
+                    className={styles.navItem}>
+                    Job listings
                     <FancyArrowRight className={styles.linkArrow} />
-                  </Link>
-                  <Link to='/services' className={styles.navItem}>
-                    Services
-                    <FancyArrowRight className={styles.linkArrow} />
-                  </Link>
-                  <Link to='/about' className={styles.navItem}>
-                    About the company
                   </Link>
                 </div>
                 <div className={styles.menuMoreInfo}>
