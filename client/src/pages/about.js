@@ -40,48 +40,56 @@ const AboutPage = ({ data }) => {
           </div>
         </section>
         <section className={styles.offsetText}>
-          <h2 className={styles.offsetLeftHeading}>
-            We deal directly with Partners, CFO's, COO's, and Decision-Makers.
-          </h2>
-          <p className={styles.centerBlurb}>
-            Recognized throughout the industry for our unique ability to
-            effectively match clients and candidates.
-          </p>
+          <div className={styles.dashedBorder}>
+            <h2 className={styles.offsetLeftHeading}>
+              We deal directly with Partners, CFO's, COO's, and Decision-Makers.
+            </h2>
+            <p className={styles.centerBlurb}>
+              Recognized throughout the industry for our unique ability to
+              effectively match clients and candidates.
+            </p>
+          </div>
         </section>
         <section className={styles.storyMission}>
-          <div className={styles.block}>
-            <div className={styles.titleCol}>
-              <h6>Our Story</h6>
-            </div>
-            <div className={styles.bodyCol}>
-              <p>
-                Starting out in the financial industry, we continue to cultivate
-                deep relationships with people and firms in this micro been a
-                leader in executive search for Alternative Asset Management and
-                Family Office since 1998. Recognized for our ability to help
-                talent find the jobs they are truly ready for, while supporting
-                companies to find their next great employee. We place
-                accounting, operations, tax, valuations, compliance and investor
-                relations professionals at all levels. Our clients are both
-                large companies and boutiques, where we deal with the decision
-                makers. We appreciate the importance of the person beyond the
-                resume, as do our clients. As a result, we often fill the jobs
-                no one else knows about.
-              </p>
+          <div className={styles.dashedBorder}>
+            <div className={styles.block}>
+              <div className={styles.titleCol}>
+                <h6>Our Story</h6>
+              </div>
+              <div className={styles.bodyCol}>
+                <p>
+                  Starting out in the financial industry, we continue to
+                  cultivate deep relationships with people and firms in this
+                  micro been a leader in executive search for Alternative Asset
+                  Management and Family Office since 1998. Recognized for our
+                  ability to help talent find the jobs they are truly ready for,
+                  while supporting companies to find their next great employee.
+                  We place accounting, operations, tax, valuations, compliance
+                  and investor relations professionals at all levels. Our
+                  clients are both large companies and boutiques, where we deal
+                  with the decision makers. We appreciate the importance of the
+                  person beyond the resume, as do our clients. As a result, we
+                  often fill the jobs no one else knows about.
+                </p>
+              </div>
             </div>
           </div>
-          <div className={styles.block}>
-            <div className={styles.titleCol}>
-              <h6>Our Mission</h6>
-            </div>
-            <div className={[styles.bodyCol, styles.fourGrid].join(' ')}>
-              <p>To be a trusted ally, at your side throughout the journey.</p>
-              <p>
-                To always be an expert in the field and on the pulse of the
-                financial community.
-              </p>
-              <p>To make sure firms grow with the best people.</p>
-              <p>To find the right Next for you.</p>
+          <div className={styles.dashedBorder}>
+            <div className={styles.block}>
+              <div className={styles.titleCol}>
+                <h6>Our Mission</h6>
+              </div>
+              <div className={[styles.bodyCol, styles.fourGrid].join(' ')}>
+                <p>
+                  To be a trusted ally, at your side throughout the journey.
+                </p>
+                <p>
+                  To always be an expert in the field and on the pulse of the
+                  financial community.
+                </p>
+                <p>To make sure firms grow with the best people.</p>
+                <p>To find the right Next for you.</p>
+              </div>
             </div>
           </div>
         </section>

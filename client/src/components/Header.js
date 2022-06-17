@@ -72,7 +72,7 @@ const Header = props => {
                     Meet your experts
                     <FancyArrowRight className={styles.linkArrow} />
                   </Link>
-                  <Link to='/services' className={styles.navItem}>
+                  <Link to='/looking-for-talent' className={styles.navItem}>
                     Looking for talent?
                     <FancyArrowRight className={styles.linkArrow} />
                   </Link>
@@ -80,13 +80,13 @@ const Header = props => {
                     Success stories
                     <FancyArrowRight className={styles.linkArrow} />
                   </Link>
-                  <Link
+                  {/* <Link
                     to={''}
                     // to={'https://jobs.vivahr.com/6965-aktiv-insight/jobs'}
                     className={styles.navItem}>
                     Job listings
                     <FancyArrowRight className={styles.linkArrow} />
-                  </Link>
+                  </Link> */}
                 </div>
                 <div className={styles.menuMoreInfo}>
                   <div className={styles.menuSecondaryLinks}>

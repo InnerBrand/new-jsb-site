@@ -101,18 +101,18 @@ const Footer = () => {
       </section>
       <div className={styles.bottomText}>
         <Container className={styles.container}>
-          <p>JSB Partners © 1998 - 2022</p>
-          <p>JSB Partners, Consultants in Executive Search Since 1998</p>
+          <p>JSB Partners © 2007 - 2022</p>
+          <p>Consultants in Executive Search Since 1998</p>
           <div className={styles.termsLinks}>
-            <Link to='/' className={styles.termsLink}>
+            <Link to='/terms-of-use' className={styles.termsLink}>
               Terms of Use
             </Link>
             <span>|</span>
-            <Link to='/' className={styles.termsLink}>
+            <Link to='/privacy-policy' className={styles.termsLink}>
               Privacy Policy
             </Link>
             <span>|</span>
-            <Link to='/' className={styles.termsLink}>
+            <Link to='/disclaimer' className={styles.termsLink}>
               Disclaimer
             </Link>
           </div>

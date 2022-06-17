@@ -56,6 +56,12 @@
   }
 }
 
+.dashedBorder {
+  padding: 60px 0;
+  border: 2px dotted $color__lime;
+  border-radius: 20px;
+}
+
 .offsetLeftHeading {
   color: $color__lime;
 
