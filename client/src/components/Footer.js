@@ -101,7 +101,7 @@ const Footer = () => {
       </section>
       <div className={styles.bottomText}>
         <Container className={styles.container}>
-          <p>JSB Partners © 2007 - 2022</p>
+          <p>JSB Partners © 2007</p>
           <p>Consultants in Executive Search Since 1998</p>
           <div className={styles.termsLinks}>
             <Link to='/terms-of-use' className={styles.termsLink}>

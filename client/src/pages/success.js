@@ -67,9 +67,9 @@ const SuccessPage = () => {
               to find their first Controller. At that time New Mountain had 1
               private equity fund and today they manage in excess of 35B of
               capital across Private Equity, Real Estate and Credit. JSB’s
-              placement is still is now the firms CFO. Today he serves as the
-              Head of Firm Operations and Chief Financial Officer, and now
-              partners with the Founder/CEO to oversee and manage the Firm.
+              placement is now the firms CFO. Today he serves as the Head of
+              Firm Operations and Chief Financial Officer, and now partners with
+              the Founder/CEO to oversee and manage the Firm.
             </h4>
           </div>
         </div>
