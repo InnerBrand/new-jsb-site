@@ -10,6 +10,7 @@ const Logo = () => {
   return (
     <Link title='JSB Logo' to='/' className={styles.linkWrapper}>
       <SVG />
+      <p className={styles.logoText}>Executive Search Experts</p>
     </Link>
   );
 };

@@ -1,6 +1,6 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'gatsby';
+import {Link} from 'gatsby';
 import {
   disableBodyScroll,
   enableBodyScroll,
@@ -113,7 +113,6 @@ const Header = props => {
         </div>
         <div className={styles.logoWrapper}>
           <Logo className={styles.logo} />
-          <p className={styles.logoText}>Executive Search Experts</p>
         </div>
       </Container>
     </header>
