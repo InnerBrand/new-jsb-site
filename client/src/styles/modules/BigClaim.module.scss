@@ -3,6 +3,11 @@
 .section {
   position: relative;
   margin: 100px 0;
+
+  @include breakpoint('mobile') {
+    margin-left: 3vw;
+    margin-right: 3vw;
+  }
 }
 
 .inner {
@@ -40,7 +45,7 @@
   height: 100%;
 }
 
-.claimText {
+.textContent {
   position: relative;
   width: percentage(6, 8);
   margin: 0 auto;
@@ -56,23 +61,48 @@
   }
 }
 
-.subText {
+.eyebrow {
   font-family: $font__special;
   @include body-l;
   color: white;
-  margin-bottom: 1rem;
+  margin: auto;
 
   @include breakpoint('tablet') {
     @include special_s;
+    width: 80%;
+  }
+
+  @include breakpoint('desktop') {
+    width: 60%;
   }
 }
 
 .bigText {
-  @include header_jumbo;
+  @include header_l;
   color: $color__lime;
+  margin: space(2) 0;
+
+  @include breakpoint('tablet') {
+    @include header_xl;
+    margin: space(4) 0;
+  }
+
+  @include breakpoint('desktop') {
+    @include header_xxl;
+  }
 }
 
 .lowerText {
   color: white;
-  margin-top: 1rem;
+  @include body-l;
+  font-family: $font__special;
+  margin-top: space(4);
+
+  @include breakpoint('tablet') {
+    margin-top: space(6);
+  }
+
+  @include breakpoint('desktop') {
+    @include body-xl;
+  }
 }

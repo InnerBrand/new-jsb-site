@@ -1,19 +1,17 @@
 @import 'core';
 
-.wrapper {
-  // mobile styles go header
+.heroBio {
+  text-align: center;
+  margin: 60px auto 0;
 
   @include breakpoint('tablet') {
-    // tablet styles go here
+    margin: 160px auto 0;
   }
 
   @include breakpoint('desktop') {
-    // desktop styles go here
+    max-width: percentage(6, 8);
+    margin: 260px auto 0;
   }
-}
-.heroBio {
-  margin-top: 260px;
-  text-align: center;
 }
 
 .figLogos {
@@ -23,14 +21,7 @@
 }
 
 .madeOf {
-  width: 100%;
-  text-align: center;
-  margin: 100px 0;
-}
-
-.circleButton {
-  text-align: center;
-  margin: 100px 0 250px 0;
+  padding-bottom: 120px;
 }
 
 .bottomSection {

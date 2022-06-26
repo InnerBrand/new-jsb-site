@@ -15,7 +15,7 @@ const BigQuote = () => {
           <img src={GuyQuotePic} />
         </div>
         <div className={styles.info}>
-          <h4>
+          <h4 className={styles.quoteText}>
             "I will be forever grateful for Liz Fried and her guidance in
             helping me find my next career opportunity. She has extensive
             industry knowledge and a true talent for helping candidates find
@@ -23,7 +23,7 @@ const BigQuote = () => {
             opportunities for highly sought-after positions, she acted as a
             trusted advisor by answering any questions I had with honesty."
           </h4>
-          <h5>Dylan, Senior Accountant</h5>
+          <h5 className={styles.quoteName}>Dylan, Senior Accountant</h5>
           {/* <Link to='/'> Read more success stories</Link> */}
         </div>
       </Container>

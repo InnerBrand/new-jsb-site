@@ -32,22 +32,20 @@ const BigClaim = () => {
 
   return (
     <section className={styles.section}>
+      <div className={styles.imgWrapper}>
+        <GatsbyImage className={styles.claimImg} image={claimImg} />
+      </div>
       <Container>
         <div className={styles.inner}>
-          <div className={styles.imgWrapper}>
-            <GatsbyImage className={styles.claimImg} image={claimImg} />
-          </div>
-          <div className={styles.claimText}>
-            <p className={styles.subText}>{subText}</p>
-            <div className={styles.bigText}>
-              <h1>{bigText}</h1>
-              <h6 className={styles.lowerText}>
-                With a track record of uniquely matching clients with
-                candidates, we find the next opportunities across accounting,
-                operations, tax, valuations, compliance and investor relations
-                professionals at all levels
-              </h6>
-            </div>
+          <div className={styles.textContent}>
+            <p className={styles.eyebrow}>{subText}</p>
+            <h1 className={styles.bigText}>{bigText}</h1>
+            <p className={styles.lowerText}>
+              With a track record of uniquely matching clients with candidates,
+              we find the next opportunities across accounting, operations, tax,
+              valuations, compliance and investor relations professionals at all
+              levels
+            </p>
           </div>
         </div>
       </Container>

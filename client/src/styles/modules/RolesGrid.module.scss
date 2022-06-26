@@ -6,72 +6,114 @@
 
 .content {
   display: grid;
+
   @include breakpoint('tablet') {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
 .introText {
+  @include header_s;
   font-family: $font__special;
   align-items: center;
-  margin-top: 450px;
-  max-width: 380px;
-
-  p {
-    @include header_l;
-  }
-}
-
-.wrapper {
-  margin-top: 50px;
-  display: flex;
-  gap: 0 17px;
-  @include breakpoint('mobile') {
-    gap: percentage(17, 375);
-  }
 
   @include breakpoint('tablet') {
-    gap: percentage(136, 1440);
+    @include header_m;
+    margin-top: 230px;
+    max-width: 330px;
+  }
+
+  @include breakpoint('desktop') {
+    max-width: 480px;
   }
 }
 
-.leftWrap {
+.imgGridWrapper {
+  margin-top: 50px;
+  display: flex;
+  gap: 0 16px;
+
+  @include breakpoint('tablet') {
+    gap: 40px;
+  }
+
+  @include breakpoint('desktop') {
+    gap: 80px;
+  }
+
+  @include breakpoint('desktop-lg') {
+    gap: 136px;
+  }
 }
 
-.rightWrap {
-  margin-top: 10rem;
+.imgGridColumn {
+  flex: 1;
+
+  &.right {
+    margin-top: 10rem;
+  }
 }
 
 .singleRole {
   position: relative;
-  margin-bottom: 8rem;
+
+  &:not(:last-child) {
+    margin-bottom: 16px;
+
+    @include breakpoint('tablet') {
+      margin-bottom: 60px;
+    }
+
+    @include breakpoint('desktop') {
+      margin-bottom: 100px;
+    }
+  }
+}
+
+.roleImg {
+  aspect-ratio: 3/5;
+  width: 100%;
+
+  @include breakpoint('tablet') {
+    aspect-ratio: 3/4;
+    max-width: unset;
+  }
 }
 
 .roleName {
-  display: none;
+  display: flex;
+  position: absolute;
+  font-family: $font__special;
+  @include header_s;
+  color: white;
   transform: rotate(-90deg);
-}
+  transform-origin: top left;
+  bottom: 0;
+  left: 16px;
 
-.singleRole {
-  .singleOverlay {
-    background-color: rgba($color__black, 0.5);
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-  }
-
-  .roleName {
-    display: flex;
-    position: absolute;
-    font-family: $font__special;
-    @include header_s;
+  @include breakpoint('tablet') {
     text-align: center;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: white;
+    bottom: unset;
+  }
+}
+
+.singleOverlay {
+  background: linear-gradient(
+    65.59deg,
+    rgba($color__black, 0.8) 13.99%,
+    rgba($color__black, 0) 89.72%
+  );
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  @include breakpoint('tablet') {
+    background: rgba($color__black, 0.5);
   }
 }
 

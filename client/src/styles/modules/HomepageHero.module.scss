@@ -3,36 +3,97 @@
 .wrapper {
   position: relative;
   width: 100%;
+  padding-top: 20px;
+  overflow-x: clip;
 }
 
 .homeHeroContent {
   position: relative;
+  height: 740px;
+
+  @include breakpoint('mobile') {
+    height: 760px;
+  }
+
+  @include breakpoint('tablet') {
+    height: unset;
+  }
+}
+
+.heroHeadline {
+  @include breakpoint('mobile', 'max') {
+    font-size: 40px;
+  }
 }
 
 .heroImg {
   position: absolute !important;
   z-index: -1;
   border-radius: 999px;
-  top: 40px;
+  top: 50px;
+  height: 610px;
+  max-width: 400px;
+
+  @include breakpoint('mobile') {
+    height: 700px;
+    max-width: 80%;
+    left: 10%;
+  }
 
   @include breakpoint('tablet') {
-    left: 371px;
-    top: -20px;
+    max-width: unset;
+    margin-left: unset;
+    left: 270px;
+    top: 0px;
+  }
+
+  @include breakpoint('tablet-lg') {
+    left: 320px;
+  }
+
+  @include breakpoint('desktop') {
+    top: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 555px;
+    height: 864px;
   }
 }
 
 .heroSubtext {
   font-family: $font__special;
-  @include header_m;
+  @include body-l;
+  line-height: 1.4;
   max-width: 536px;
-  margin-top: 317px;
+  margin-top: space(3);
+  margin-left: 45px;
+
+  @include breakpoint('tablet') {
+    @include header_m;
+    margin-top: 265px;
+    margin-left: 0;
+    max-width: 410px;
+  }
+
+  @include breakpoint('desktop') {
+    margin-top: 317px;
+    max-width: 470px;
+  }
 }
 
 .heroBtn {
   position: absolute;
   text-align: center;
-  right: 20px;
+  right: 0;
   bottom: 20px;
+
+  @include breakpoint('mobile') {
+    bottom: -16px;
+  }
+
+  @include breakpoint('tablet') {
+    bottom: -40px;
+  }
 }
 
 .heroBio {

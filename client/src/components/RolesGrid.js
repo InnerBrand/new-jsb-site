@@ -1,5 +1,5 @@
 import React from 'react';
-import { GatsbyImage, getImage } from 'gatsby-plugin-image';
+import {GatsbyImage, getImage} from 'gatsby-plugin-image';
 
 // Components
 import Container from './Container';
@@ -8,7 +8,7 @@ import CircleButton from './CircleButton';
 // Styles
 import * as styles from '../styles/modules/RolesGrid.module.scss';
 
-function SingleRole({ role }) {
+function SingleRole({role}) {
   const roleImg = getImage(role.image.asset.gatsbyImageData);
 
   return (
@@ -21,20 +21,18 @@ function SingleRole({ role }) {
   );
 }
 
-const RolesGrid = ({ roles }) => {
+const RolesGrid = ({roles}) => {
   return (
     <section className={styles.section}>
       <Container>
         <div className={styles.content}>
-          <div className={styles.introText}>
-            <h6>
-              Everyone has a next. An exciting new challenge or a change in
-              work-life balance. Whatever you're ready for, wherever you are in
-              your career, we can help you find that next opportunity
-            </h6>
-          </div>
-          <div className={styles.wrapper}>
-            <div className={styles.leftWrap}>
+          <h4 className={styles.introText}>
+            Everyone has a next. An exciting new challenge or a change in
+            work-life balance. Whatever you're ready for, wherever you are in
+            your career, we can help you find that next opportunity
+          </h4>
+          <div className={styles.imgGridWrapper}>
+            <div className={styles.imgGridColumn}>
               {roles
                 .filter((role, i) => {
                   console.log(i % 2);
@@ -48,7 +46,7 @@ const RolesGrid = ({ roles }) => {
                   />
                 ))}
             </div>
-            <div className={styles.rightWrap}>
+            <div className={[styles.imgGridColumn, styles.right].join(' ')}>
               {roles
                 .filter((role, i) => {
                   console.log(i % 2);

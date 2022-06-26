@@ -1,12 +1,11 @@
 @import 'core';
 
 .wrapper {
-  margin: 0 16px;
-  background-color: $color__black;
-
   @include breakpoint('mobile') {
-    margin: 0 percentage(1, 24);
+    margin-left: 3vw;
+    margin-right: 3vw;
   }
+  background-color: $color__black;
 
   @include breakpoint('tablet-lg') {
     margin-top: space(12);
@@ -43,35 +42,39 @@
   img {
     width: 100%;
     margin-bottom: -(space(6));
-    // position: relative;
   }
 }
 
 .info {
-  max-width: 780px;
+  max-width: 900px;
   margin: auto;
   margin-top: -(space(6));
-  padding: 0 space(3);
+  padding: 0 space(2);
 
   @include breakpoint('mobile') {
+    max-width: 1100px;
     padding: 0 space(3);
   }
+}
 
-  h4 {
+.quoteText {
+  @include header_s;
+
+  @include breakpoint('mobile') {
     @include header_m;
-
-    @include breakpoint('mobile') {
-      @include header_l;
-    }
   }
 
-  h5 {
-    margin-top: space(3);
-    font-family: $font__special;
-    @include body-l;
+  @include breakpoint('desktop') {
+    @include header_l;
+  }
+}
 
-    @include breakpoint('tablet') {
-      @include header_s;
-    }
+.quoteName {
+  margin-top: space(3);
+  font-family: $font__special;
+  @include body-l;
+
+  @include breakpoint('tablet') {
+    @include header_s;
   }
 }

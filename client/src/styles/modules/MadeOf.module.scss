@@ -1,21 +1,85 @@
 @import 'core';
 
+.wrapper {
+  overflow: hidden;
+}
+
 .content {
   text-align: center;
 }
 
 .text {
   padding: 0 20px;
+}
 
-  h5 {
-    margin: 20px;
+.heading {
+  @include header_l;
+  margin: 0 auto;
+  margin-bottom: space(6);
+  max-width: 1000px;
+
+  @include breakpoint('tablet') {
+    @include header_xl;
+  }
+
+  @include breakpoint('desktop') {
+    @include header_xl;
+  }
+}
+
+.subhead {
+  font-family: $font__special;
+  @include special_s;
+  margin-bottom: space(6);
+
+  @include breakpoint('tablet') {
+    @include special_m;
   }
 }
 
 .people {
-  padding: 20px;
+  gap: space(3);
+  display: flex;
+  flex-flow: row;
+  align-items: flex-start;
+  justify-content: center;
+
+  @include breakpoint('tablet') {
+    gap: space(6);
+  }
 }
 
 .cpa {
-  padding: 5px 20px;
+  width: 100%;
+  max-width: 240px;
+  flex: 1;
+
+  @include breakpoint('mobile') {
+    max-width: 300px;
+  }
+
+  @include breakpoint('desktop') {
+    max-width: 400px;
+  }
+
+  &:first-child {
+    margin-left: -40px;
+    padding-top: space(4);
+
+    @include breakpoint('tablet') {
+      margin-left: unset;
+    }
+  }
+
+  &:last-child {
+    margin-right: -40px;
+
+    @include breakpoint('tablet') {
+      margin-right: unset;
+    }
+  }
+}
+
+.circleButton {
+  text-align: center;
 }

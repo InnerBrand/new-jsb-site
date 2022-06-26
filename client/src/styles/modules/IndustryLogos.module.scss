@@ -2,10 +2,16 @@
 
 .section {
   position: relative;
-  height: 740px;
+  margin-bottom: 80px;
+  overflow: hidden;
 
   @include breakpoint('tablet') {
-  height: 1228px;  }
+    margin-bottom: 100px;
+  }
+
+  @include breakpoint('desktop') {
+    margin-bottom: 120px;
+  }
 }
 
 .container {
@@ -13,12 +19,16 @@
 }
 
 .wrapper {
-  display: flex;
-  
-}
+  position: relative;
+  height: 560px;
 
-.upperText {
-  text-align: center;
+  @include breakpoint('tablet') {
+    height: 660px;
+  }
+
+  @include breakpoint('desktop') {
+    height: 930px;
+  }
 }
 
 .text {
@@ -27,6 +37,19 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  width: 100%;
+  max-width: 60%;
+  @include header_m;
+
+  @include breakpoint('tablet') {
+    max-width: 560px;
+    @include header_l;
+  }
+
+  @include breakpoint('desktop') {
+    max-width: 800px;
+    @include header_xl;
+  }
 }
 
 .singleLogo {
@@ -36,56 +59,68 @@
   animation-name: floating;
   animation-iteration-count: infinite;
   animation-timing-function: ease-in-out;
+  filter: grayscale(1);
+
+  @include breakpoint('mobile') {
+    max-width: 110px;
+  }
 
   @include breakpoint('tablet') {
-    max-width: 180px;
+    max-width: 140px;
   }
 
   @include breakpoint('desktop') {
-    max-width: 220px;
+    max-width: 190px;
   }
-
 
   // 3rd Point
   &:nth-child(1) {
-    top: percentage(645,1228);
-    left: percentage(44, 1440);
+    top: 50%;
+    left: -30px;
     animation-duration: 3.1s;
   }
   // Cerberus
   &:nth-child(2) {
-    top: percentage(90,1228);
+    top: 0;
     left: percentage(112, 1440);
     animation-duration: 2.1s;
+
+    @include breakpoint('tablet') {
+      max-width: 120px;
+    }
+
+    @include breakpoint('desktop') {
+      max-width: 150px;
+    }
   }
   // Tiger
   &:nth-child(3) {
-    top: percentage(892,1228);
-    left: percentage(340,1228);
+    left: 22.687296%;
     animation-duration: 2.4s;
+    bottom: 0;
   }
   // SilverPoint
   &:nth-child(4) {
-    top: percentage(157,1228);
+    top: percentage(157, 1228);
     left: percentage(559, 1440);
     animation-duration: 3.8s;
   }
   // Two Sigma
   &:nth-child(5) {
-    top: percentage(928,1228);
-    left: percentage(974, 1440);
+    bottom: 15%;
+    left: 67.6388888889%;
     animation-duration: 3.2s;
   }
   // Lightyear
   &:nth-child(6) {
-    top: percentage(350,1228);
-    left: percentage(1100, 1440);
+    top: 48.501629%;
+    right: -30px;
     animation-duration: 4s;
   }
   // Centerbridge
   &:nth-child(7) {
-    top: percentage(5,1228);
-    left: percentage(1111, 1440);
+    top: 3.407166%;
+    right: 7.152778%;
     animation-duration: 3.6s;
   }
 }
