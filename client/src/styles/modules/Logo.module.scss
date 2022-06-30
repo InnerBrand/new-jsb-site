@@ -6,7 +6,11 @@
   text-decoration: none;
 
   svg {
-    height: 26px;
+    height: 30px;
+
+    @include breakpoint('tablet') {
+      height: 40px;
+    }
 
     :global(body.theme_light) & {
       fill: $color__black;
@@ -20,6 +24,10 @@
 
 .logoText {
   font-family: $font__special;
-  font-size: 10px;
+  font-size: 11.7px;
   line-height: 10px;
+
+  @include breakpoint('tablet') {
+    font-size: 15.4px;
+  }
 }

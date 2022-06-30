@@ -12,6 +12,7 @@ import Layout from 'components/Layout';
 import Space from 'components/Space';
 import TabSelector from 'components/TabSelector';
 import apiAxios from '../../api.config';
+// import {useGoogleApis} from 'hooks/useGoogleApis';
 // Styles
 import * as styles from 'styles/modules/pages/SubmitResume.module.scss';
 
@@ -28,6 +29,9 @@ const SubmitResume = props => {
   const [contactMethod, setContactMethod] = useState(getDefaultContactMethod);
   const [file, setFile] = useState(null);
 
+  // Add gapi script to head
+  // useGoogleApis();
+
   const {
     register,
     formState: {errors},
@@ -35,13 +39,40 @@ const SubmitResume = props => {
   } = useForm({mode: 'onSubmit'});
 
   const onSubmit = async (data, e) => {
-    data.file = file;
-    console.log(data);
-    const res = await apiAxios.request({
-      url: '/send-mail',
-      method: 'post',
-      data,
-    });
+    e.preventDefault();
+
+    const fileData = new FormData();
+    fileData.append(file, file);
+    console.log(file);
+
+    try {
+      // Upload file
+      const res = await apiAxios.request({
+        url: '/upload-file',
+        method: 'post',
+        data: fileData,
+        headers: {
+          'Content-Type': 'multipart/form-data',
+        },
+      });
+
+      console.log(res);
+
+      // const uploadRes = await uploadFile(name, type, stream());
+      // const res = await apiAxios.request({
+      //   url: '/send-mail',
+      //   method: 'post',
+      //   data,
+      //   headers: {
+      //     'Content-Type': 'multipart/form-data',
+      //   },
+      // });
+      // console.log(res);
+
+      // console.log(res);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   const onError = (errors, e) => console.log('Errors: ', errors);

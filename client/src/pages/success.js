@@ -1,10 +1,11 @@
 import React from 'react';
 
 // Components
-import Layout from 'components/Layout';
+import Button, {ButtonGroup} from 'components/Button';
 import Container from 'components/Container';
 import ContouredSection from 'components/ContouredSection';
-import Button, { ButtonGroup } from 'components/Button';
+import DefineHero from 'components/DefineHero';
+import Layout from 'components/Layout';
 
 // Styles
 import * as styles from 'styles/modules/pages/SuccessPage.module.scss';
@@ -12,22 +13,8 @@ import * as styles from 'styles/modules/pages/SuccessPage.module.scss';
 const SuccessPage = () => {
   return (
     <Layout>
+      <DefineHero />
       <Container>
-        <section className={styles.section}>
-          <div className={styles.content}>
-            <div className={styles.introText}>
-              <h4>
-                Success means finding the right job for the right candidate. The
-                job that they're ready for with a company that's ready for them.
-              </h4>
-            </div>
-            <h1 className={styles.ready}>ready</h1>
-            <p className={styles.adjective}>Adjective</p>
-            <p className={styles.define}>
-              1. Prepared mentally or physically for immediate action.
-            </p>
-          </div>
-        </section>
         <div className={styles.stories}>
           <h1> Here's some of our wins</h1>
           <div className={styles.storyWrapper}>
@@ -73,7 +60,9 @@ const SuccessPage = () => {
             </h4>
           </div>
         </div>
-        {/* <ContouredSection className={styles.bottomSection}>
+      </Container>
+      <ContouredSection className={styles.bottomSection}>
+        <Container>
           <div className={styles.content}>
             <h2 className={styles.question}>
               Ready to achieve success as a client?
@@ -88,8 +77,8 @@ const SuccessPage = () => {
               </Button>
             </ButtonGroup>
           </div>
-        </ContouredSection> */}
-      </Container>
+        </Container>
+      </ContouredSection>
     </Layout>
   );
 };

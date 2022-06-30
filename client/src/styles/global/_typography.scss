@@ -21,7 +21,11 @@ h1 {
   }
 
   &.jumbo {
-    @include header_xl;
+    @include header_l;
+
+    @include breakpoint('mobile') {
+      @include header_xl;
+    }
 
     @include breakpoint('desktop') {
       @include header_jumbo;

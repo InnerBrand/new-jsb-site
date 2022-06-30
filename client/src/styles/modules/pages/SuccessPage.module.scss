@@ -4,14 +4,11 @@
   position: relative;
   background-color: $color__black;
   height: 700px;
-
 }
 
 .content {
-  position: absolute;
   display: flex;
   flex-direction: column;
-  left: percentage(147, 1440);
   margin-top: 150px;
 }
 

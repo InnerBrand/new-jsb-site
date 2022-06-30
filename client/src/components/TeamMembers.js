@@ -1,7 +1,7 @@
-import React, { useLayoutEffect, useRef, useState } from 'react';
-import { GatsbyImage, getImage } from 'gatsby-plugin-image';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import React, {useLayoutEffect, useRef, useState} from 'react';
+import {GatsbyImage, getImage} from 'gatsby-plugin-image';
+import {gsap} from 'gsap';
+import {ScrollTrigger} from 'gsap/ScrollTrigger';
 // Components
 import MemberModal from 'components/MemberModal';
 // Styles
@@ -9,7 +9,7 @@ import * as styles from 'styles/modules/TeamMembers.module.scss';
 // SVG
 import Arrow from 'assets/svg/fancy-arrow-right.inline.svg';
 
-const TeamMembers = ({ members }) => {
+const TeamMembers = ({members, title}) => {
   const [activeMember, setActiveMember] = useState({});
   const [memberModalOpen, setMemberModalOpen] = useState(false);
   console.log(members.length);
@@ -27,7 +27,7 @@ const TeamMembers = ({ members }) => {
         -(slider.current.scrollWidth - window.innerWidth);
       const scrollAnimation = gsap.fromTo(
         slider.current,
-        { x: 0 },
+        {x: 0},
         {
           x: () => getToValue(),
           ease: 'none',
@@ -61,7 +61,7 @@ const TeamMembers = ({ members }) => {
       {/* <Container> */}
       <div className={styles.sliderWrapper} ref={sliderWrapper}>
         <div className={styles.slider} ref={slider}>
-          <h6 className={styles.verticalText}>Team Members</h6>
+          {title && <h6 className={styles.verticalText}>{title}</h6>}
           <div className={styles.members}>
             {members.map(member => {
               const memberImg = getImage(member.image.asset.gatsbyImageData);
@@ -92,7 +92,7 @@ const TeamMembers = ({ members }) => {
       <MemberModal
         data={activeMember}
         isOpen={memberModalOpen}
-        handler={{ setMemberModalOpen }}
+        handler={{setMemberModalOpen}}
       />
       {/* </Container> */}
     </section>

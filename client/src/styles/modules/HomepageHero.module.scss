@@ -67,6 +67,8 @@
   max-width: 536px;
   margin-top: space(3);
   margin-left: 45px;
+  color: white;
+  mix-blend-mode: exclusion;
 
   @include breakpoint('tablet') {
     @include header_m;

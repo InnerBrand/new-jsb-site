@@ -1,5 +1,5 @@
 import React from 'react';
-import { graphql } from 'gatsby';
+import {graphql} from 'gatsby';
 // Components
 import Blob from 'components/Blob';
 import Container from 'components/Container';
@@ -9,12 +9,12 @@ import LadyQuote from 'components/LadyQuote';
 import Space from 'components/Space';
 import TeamMembers from 'components/TeamMembers';
 import ContouredSection from 'components/ContouredSection';
-import Button, { ButtonGroup } from 'components/Button';
+import Button, {ButtonGroup} from 'components/Button';
 
 // Styles
 import * as styles from 'styles/modules/pages/Team.module.scss';
 
-const TeamPage = ({ data }) => {
+const TeamPage = ({data}) => {
   const {
     heroHeadline,
     teamMembers,
@@ -32,8 +32,8 @@ const TeamPage = ({ data }) => {
           <h1 className={styles.heroHeadline}>{heroHeadline}</h1>
           <Space unit={8} />
         </Container>
-        <TeamMembers members={foundingMembers} />
-        <TeamMembers members={teamMembers} />
+        <TeamMembers members={foundingMembers} title='Founding Members' />
+        <TeamMembers members={teamMembers} title='Team Members' />
         <FactsPlank
           eyebrow={factsEyebrow}
           headline={factsHeadline}
