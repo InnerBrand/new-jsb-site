@@ -42,12 +42,11 @@ const SubmitResume = props => {
     e.preventDefault();
 
     const fileData = new FormData();
-    fileData.append(file, file);
-    console.log(file);
+    fileData.append('resume', file);
 
     try {
       // Upload file
-      const res = await apiAxios.request({
+      const uploadRes = await apiAxios.request({
         url: '/upload-file',
         method: 'post',
         data: fileData,
@@ -56,20 +55,19 @@ const SubmitResume = props => {
         },
       });
 
-      console.log(res);
+      // Construct share link from uploaded file
+      // https://drive.google.com/file/d/1Z1FyGyRTrEaKy_E8WzqrKsvqzgYE2hJp/view?usp=sharing
+      const {id} = uploadRes.data;
+      const shareLink = `https://drive.google.com/file/d/${id}/view?usp=sharing`;
 
-      // const uploadRes = await uploadFile(name, type, stream());
-      // const res = await apiAxios.request({
-      //   url: '/send-mail',
-      //   method: 'post',
-      //   data,
-      //   headers: {
-      //     'Content-Type': 'multipart/form-data',
-      //   },
-      // });
-      // console.log(res);
+      data.shareLink = shareLink;
 
-      // console.log(res);
+      // Send an email to JSB including the uploaded file share link
+      const mailRes = await apiAxios.request({
+        url: '/send-mail',
+        method: 'post',
+        data,
+      });
     } catch (error) {
       console.log(error);
     }

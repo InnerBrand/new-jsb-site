@@ -1,54 +1,54 @@
 import {google} from 'googleapis';
-import {Readable} from 'stream';
-// import fs from 'fs';
+import stream from 'stream';
+import path from 'path';
 
-const OAuth2 = google.auth.OAuth2;
+// const oauth2Client = new google.auth.OAuth2(
+//   process.env.M_CLIENT_ID,
+//   process.env.M_CLIENT_SECRET,
+//   'https://developers.google.com/oauthplayground'
+// );
 
-const oauth2Client = new OAuth2(
-  process.env.G_CLIENT_ID,
-  process.env.G_CLIENT_SECRET,
-  'https://developers.google.com/oauthplayground'
-);
-
-oauth2Client.setCredentials({
-  refresh_token: process.env.G_REFRESH_TOKEN,
+const serviceAcctAuth = new google.auth.GoogleAuth({
+  keyFile: path.resolve(__dirname, '../../jsb-nodemailer-ec5c847679e8.json'),
+  scopes: ['https://www.googleapis.com/auth/drive'],
 });
+
+// oauth2Client.setCredentials({
+//   refresh_token: process.env.M_REFRESH_TOKEN,
+// });
 
 const drive = google.drive({
   version: 'v3',
-  auth: oauth2Client,
+  auth: serviceAcctAuth,
 });
+
+const handleFileUpload = async fileObj => {
+  const bufferStream = new stream.PassThrough();
+  bufferStream.end(fileObj.buffer);
+  const {data} = await drive.files.create({
+    requestBody: {
+      name: fileObj.originalname,
+      mimeType: fileObj.mimeType,
+      parents: ['1bmrEZEyREw6ZObnk9khvURRmKf9CT7n1'],
+    },
+    media: {
+      mimeType: fileObj.mimeType,
+      body: bufferStream,
+    },
+  });
+  return data;
+};
 
 export default async function uploadFile(req, res) {
   if (req.method === 'POST') {
     // Uploading file to google drive
-    console.log(req.files);
+    const file = req.files[0];
 
-    const {originalname, mimetype, buffer} = req.files[0];
     try {
-      // const buff = new Uint8Array(buffer);
-
-      const readable = new Readable();
-      readable.push(buffer);
-      readable.push(null);
-      console.log(typeof readable);
-
-      // const res = await drive.files.create({
-      //   requestBody: {
-      //     name: originalname,
-      //     mimeType: mimetype,
-      //   },
-      //   media: {
-      //     mimeType: mimetype,
-      //     body: readable,
-      //   },
-      // });
-
-      return res;
+      const uploadRes = await handleFileUpload(file);
+      res.json(uploadRes);
     } catch (err) {
       console.log(err);
     }
-
-    res.json(res);
   }
 }
