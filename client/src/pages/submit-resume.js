@@ -55,6 +55,8 @@ const SubmitResume = props => {
         },
       });
 
+      console.log(uploadRes);
+
       // Construct share link from uploaded file
       // https://drive.google.com/file/d/1Z1FyGyRTrEaKy_E8WzqrKsvqzgYE2hJp/view?usp=sharing
       const {id} = uploadRes.data;

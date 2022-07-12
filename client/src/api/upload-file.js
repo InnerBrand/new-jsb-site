@@ -2,20 +2,10 @@ import {google} from 'googleapis';
 import stream from 'stream';
 import path from 'path';
 
-// const oauth2Client = new google.auth.OAuth2(
-//   process.env.M_CLIENT_ID,
-//   process.env.M_CLIENT_SECRET,
-//   'https://developers.google.com/oauthplayground'
-// );
-
 const serviceAcctAuth = new google.auth.GoogleAuth({
   keyFile: path.resolve(__dirname, '../../jsb-nodemailer-ec5c847679e8.json'),
   scopes: ['https://www.googleapis.com/auth/drive'],
 });
-
-// oauth2Client.setCredentials({
-//   refresh_token: process.env.M_REFRESH_TOKEN,
-// });
 
 const drive = google.drive({
   version: 'v3',
