@@ -35,8 +35,9 @@ export default async function uploadFile(req, res) {
     const file = req.files[0];
 
     try {
-      const uploadRes = await handleFileUpload(file);
-      res.json(uploadRes);
+      // const uploadRes = await handleFileUpload(file);
+      // res.json(uploadRes);
+      res.send('success');
     } catch (err) {
       console.log(err);
     }
