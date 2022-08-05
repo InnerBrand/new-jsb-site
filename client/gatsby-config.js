@@ -2,8 +2,8 @@ require('dotenv').config({ path: '.env' });
 
 module.exports = {
   siteMetadata: {
-    siteUrl: 'https://jsb.com',
-    title: 'jsb gatsby 2022',
+    siteUrl: `https://${process.env.DOMAIN}`,
+    title: 'JSB project',
   },
   plugins: [
     `gatsby-plugin-gatsby-cloud`,
