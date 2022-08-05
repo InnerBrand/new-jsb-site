@@ -9,7 +9,7 @@ import cpa2 from 'assets/images/cpa2.png';
 import cpa3 from 'assets/images/cpa3.png';
 import Container from './Container';
 
-const MadeOf = ({className}) => {
+const MadeOf = ({ className }) => {
   return (
     <section className={[styles.wrapper, className ? className : ''].join(' ')}>
       <Container>
@@ -25,8 +25,8 @@ const MadeOf = ({className}) => {
             </h5>
           </div>
           <div className={styles.people}>
-            <img className={styles.cpa} src={cpa2} />
-            <img className={styles.cpa} src={cpa3} />
+            <img className={styles.cpa} src={cpa2} alt='' />
+            <img className={styles.cpa} src={cpa3} alt='' />
           </div>
         </div>
         <div className={styles.circleButton}>

@@ -1,5 +1,5 @@
 import React from 'react';
-import {graphql} from 'gatsby';
+import { graphql } from 'gatsby';
 
 // Components
 import Layout from 'components/Layout';
@@ -9,21 +9,17 @@ import RolesGrid from 'components/RolesGrid';
 import BigClaim from 'components/BigClaim';
 import IndustryLogos from 'components/IndustryLogos';
 import ContouredSection from 'components/ContouredSection';
-import Button, {ButtonGroup} from 'components/Button';
+import Button, { ButtonGroup } from 'components/Button';
 import Container from 'components/Container';
-import CircleButton from 'components/CircleButton';
 import MadeOf from 'components/MadeOf';
 
 // Styles
 import * as styles from 'styles/modules/pages/Home.module.scss';
 
-// Imgs
-import madeOf from 'assets/images/made-of.png';
-
-const Home = ({data}) => {
+const Home = ({ data }) => {
   console.log(data);
 
-  const {bioHeadline} = data.allSanityHomepage.nodes[0].homepageContent;
+  const { bioHeadline } = data.allSanityHomepage.nodes[0].homepageContent;
   const roles = data.allSanityHomepage.nodes[0].rolesPlaced;
 
   return (

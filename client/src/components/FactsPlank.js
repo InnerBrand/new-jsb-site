@@ -1,13 +1,12 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 // Components
 import CardShuffler from './CardShuffler';
 import Container from './Container';
 // Styles
 import * as styles from 'styles/modules/FactsPlank.module.scss';
 
-const FactsPlank = ({eyebrow, headline, facts}) => {
-  console.log({eyebrow, headline});
+const FactsPlank = ({ eyebrow, headline, facts }) => {
+  console.log({ eyebrow, headline });
   return (
     <section className={styles.wrapper}>
       <Container>

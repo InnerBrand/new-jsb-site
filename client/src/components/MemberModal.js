@@ -1,8 +1,7 @@
-import React, {useEffect, useRef} from 'react';
-import PropTypes from 'prop-types';
-import {GatsbyImage, getImage} from 'gatsby-plugin-image';
+import React, { useEffect, useRef } from 'react';
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import Block from '@sanity/block-content-to-react';
-import {AnimatePresence, motion} from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 import {
   disableBodyScroll,
   enableBodyScroll,
@@ -13,10 +12,10 @@ import {
 import * as styles from 'styles/modules/MemberModal.module.scss';
 // SVG
 import BigX from 'assets/svg/big-x.inline.svg';
-import {RiLinkedinBoxFill} from 'react-icons/ri';
-import {HiOutlineMail} from 'react-icons/hi';
+import { RiLinkedinBoxFill } from 'react-icons/ri';
+import { HiOutlineMail } from 'react-icons/hi';
 
-const MemberModal = ({data, isOpen, handler}) => {
+const MemberModal = ({ data, isOpen, handler }) => {
   const scrollRef = useRef(null);
 
   useEffect(() => {
@@ -55,26 +54,28 @@ const MemberModal = ({data, isOpen, handler}) => {
               initial={{
                 opacity: 0,
               }}
-              animate={{opacity: 1}}
-              exit={{opacity: 0}}
-              transition={{ease: [0.3, 0, 0, 1], duration: 0.5}}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ ease: [0.3, 0, 0, 1], duration: 0.5 }}
               className={styles.overlay}
             />
             <motion.div
               initial={{
                 y: '100%',
               }}
-              animate={{y: 0}}
-              exit={{y: '100%'}}
-              transition={{ease: [0.3, 0, 0, 1], duration: 0.5}}
-              className={styles.content}>
+              animate={{ y: 0 }}
+              exit={{ y: '100%' }}
+              transition={{ ease: [0.3, 0, 0, 1], duration: 0.5 }}
+              className={styles.content}
+            >
               <div className={styles.circle}>
                 <motion.button
-                  initial={{rotate: -45}}
-                  animate={{rotate: 0}}
-                  exit={{rotate: -45}}
-                  transition={{ease: 'easeInOut', duration: 0.5}}
-                  onClick={handleClose}>
+                  initial={{ rotate: -45 }}
+                  animate={{ rotate: 0 }}
+                  exit={{ rotate: -45 }}
+                  transition={{ ease: 'easeInOut', duration: 0.5 }}
+                  onClick={handleClose}
+                >
                   <BigX />
                 </motion.button>
               </div>
@@ -98,14 +99,16 @@ const MemberModal = ({data, isOpen, handler}) => {
                           href={`mailto:${email}`}
                           target='_blank'
                           rel='noreferrer'
-                          title={`Send ${name} an email`}>
+                          title={`Send ${name} an email`}
+                        >
                           {email}
                         </a>
                       )}
                       {phoneNumber && (
                         <a
                           href={`tel:${phoneNumber}`}
-                          title={`Give ${name} a call`}>
+                          title={`Give ${name} a call`}
+                        >
                           {phoneNumber}
                         </a>
                       )}
@@ -116,7 +119,8 @@ const MemberModal = ({data, isOpen, handler}) => {
                           href={`mailto:${email}`}
                           target='_blank'
                           rel='noreferrer'
-                          title={`Send ${name} an email`}>
+                          title={`Send ${name} an email`}
+                        >
                           <HiOutlineMail />
                         </a>
                       )}
@@ -125,7 +129,8 @@ const MemberModal = ({data, isOpen, handler}) => {
                           href={linkedInLink}
                           target='_blank'
                           rel='noreferrer'
-                          title={`Send ${name} an email`}>
+                          title={`Send ${name} an email`}
+                        >
                           <RiLinkedinBoxFill />
                         </a>
                       )}

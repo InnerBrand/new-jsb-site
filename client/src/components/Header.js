@@ -1,6 +1,5 @@
-import React, {useEffect, useRef, useState} from 'react';
-import PropTypes from 'prop-types';
-import {Link} from 'gatsby';
+import React, { useEffect, useRef, useState } from 'react';
+import { Link } from 'gatsby';
 import {
   disableBodyScroll,
   enableBodyScroll,
@@ -35,7 +34,8 @@ const Header = props => {
 
   return (
     <header
-      className={`${styles.header} ${navbarOpen ? styles.menuIsOpen : ''}`}>
+      className={`${styles.header} ${navbarOpen ? styles.menuIsOpen : ''}`}
+    >
       <div className={styles.overlayWrapper}>
         <div className={styles.circleWrapper}>
           <div className={styles.circle} />

@@ -1,8 +1,6 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import { useForm } from 'react-hook-form';
 // Components
-import Input from 'components/Input';
 import Container from 'components/Container';
 // SVG
 import FacebookIcon from 'assets/svg/facebook.inline.svg';
@@ -43,21 +41,24 @@ const Footer = () => {
                 href='https://facebook.com/jsbpartners'
                 title='Visit us on Facebook'
                 target='_blank'
-                rel='noreferrer'>
+                rel='noreferrer'
+              >
                 <FacebookIcon />
               </a>
               <a
                 href='https://instagram.com/jsbpartners'
                 title='Visit us on Instagram'
                 target='_blank'
-                rel='noreferrer'>
+                rel='noreferrer'
+              >
                 <InstagramIcon />
               </a>
               <a
                 href='https://www.linkedin.com/company/jsb-partners'
                 title='Visit us on Linkedin'
                 target='_blank'
-                rel='noreferrer'>
+                rel='noreferrer'
+              >
                 <LinkedInIcon />
               </a>
             </div>
@@ -70,7 +71,8 @@ const Footer = () => {
                 className={styles.text}
                 href='mailto:yourexpert@jsbpartners.com'
                 target='_blank'
-                rel='noreferrer'>
+                rel='noreferrer'
+              >
                 yourexpert@jsbpartners.com
               </a>
             </div>
@@ -87,7 +89,8 @@ const Footer = () => {
                 className={styles.text}
                 href='https://goo.gl/maps/x3FCj9JBc6Z2UNif9'
                 target='_blank'
-                rel='noreferrer'>
+                rel='noreferrer'
+              >
                 747 Third Ave, 15th Floor, NYC
               </a>
               {/* <p>New York, New York 10017</p> */}

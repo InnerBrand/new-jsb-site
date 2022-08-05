@@ -1,7 +1,7 @@
-import React, {useLayoutEffect, useRef, useState} from 'react';
-import {GatsbyImage, getImage} from 'gatsby-plugin-image';
-import {gsap} from 'gsap';
-import {ScrollTrigger} from 'gsap/ScrollTrigger';
+import React, { useLayoutEffect, useRef, useState } from 'react';
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 // Components
 import MemberModal from 'components/MemberModal';
 // Styles
@@ -9,7 +9,7 @@ import * as styles from 'styles/modules/TeamMembers.module.scss';
 // SVG
 import Arrow from 'assets/svg/fancy-arrow-right.inline.svg';
 
-const TeamMembers = ({members, title}) => {
+const TeamMembers = ({ members, title }) => {
   const [activeMember, setActiveMember] = useState({});
   const [memberModalOpen, setMemberModalOpen] = useState(false);
   console.log(members.length);
@@ -27,7 +27,7 @@ const TeamMembers = ({members, title}) => {
         -(slider.current.scrollWidth - window.innerWidth);
       const scrollAnimation = gsap.fromTo(
         slider.current,
-        {x: 0},
+        { x: 0 },
         {
           x: () => getToValue(),
           ease: 'none',
@@ -47,17 +47,14 @@ const TeamMembers = ({members, title}) => {
     }
   }, []);
 
-  function handleClick() {
-    setMemberModalOpen(true);
-  }
-
   return (
     <section
       className={[
         styles.wrapper,
         members.length < 3 ? styles.noSlider : '',
       ].join(' ')}
-      ref={section}>
+      ref={section}
+    >
       {/* <Container> */}
       <div className={styles.sliderWrapper} ref={sliderWrapper}>
         <div className={styles.slider} ref={slider}>
@@ -72,7 +69,8 @@ const TeamMembers = ({members, title}) => {
                   onClick={() => {
                     setMemberModalOpen(true);
                     setActiveMember(member);
-                  }}>
+                  }}
+                >
                   <GatsbyImage
                     alt=''
                     className={styles.memberImage}
@@ -92,7 +90,7 @@ const TeamMembers = ({members, title}) => {
       <MemberModal
         data={activeMember}
         isOpen={memberModalOpen}
-        handler={{setMemberModalOpen}}
+        handler={{ setMemberModalOpen }}
       />
       {/* </Container> */}
     </section>

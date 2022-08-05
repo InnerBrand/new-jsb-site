@@ -1,12 +1,9 @@
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
 import { useForm } from 'react-hook-form';
 import validation from 'libs/validation';
 // Components
-import Blob from 'components/Blob';
 import CircleButton from 'components/CircleButton';
 import Container from 'components/Container';
-import Dropzone from 'components/Dropzone';
 import Input from 'components/Input';
 import Layout from 'components/Layout';
 import Space from 'components/Space';
@@ -26,7 +23,7 @@ const Talent = props => {
     contactMethodData.find(item => item.defaultChecked).id;
 
   const [contactMethod, setContactMethod] = useState(getDefaultContactMethod);
-  const [file, setFile] = useState(null);
+  const [file] = useState(null);
 
   const {
     register,
@@ -37,7 +34,7 @@ const Talent = props => {
   const onSubmit = async (data, e) => {
     data.file = file;
     console.log(data);
-    const res = await apiAxios.request({
+    await apiAxios.request({
       url: '/send-mail',
       method: 'post',
       data,
@@ -58,7 +55,8 @@ const Talent = props => {
           <form
             className={styles.form}
             onSubmit={handleSubmit(onSubmit, onError)}
-            noValidate>
+            noValidate
+          >
             <div className={styles.formItem}>
               <h3 className={styles.formQuestion}>What's your name?</h3>
               <div className={styles.inputWrapper}>

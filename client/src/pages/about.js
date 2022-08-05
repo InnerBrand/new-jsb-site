@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 // Components
@@ -124,7 +123,8 @@ const AboutPage = ({ data }) => {
       </Container>
       <ContouredSection
         className={styles.bottomSection}
-        contourColor='reallyDark'>
+        contourColor='reallyDark'
+      >
         <Container>
           <div className={styles.content}>
             <h2>Are you ready for your next job?</h2>

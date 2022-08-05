@@ -1,6 +1,5 @@
-import React, {useState} from 'react';
-import PropTypes from 'prop-types';
-import {useForm} from 'react-hook-form';
+import React, { useState } from 'react';
+import { useForm } from 'react-hook-form';
 import validation from 'libs/validation';
 // Components
 import Blob from 'components/Blob';
@@ -18,9 +17,9 @@ import * as styles from 'styles/modules/pages/SubmitResume.module.scss';
 
 const SubmitResume = props => {
   const contactMethodData = [
-    {id: 'phone', value: 'Phone', label: 'Phone'},
-    {id: 'email', value: 'Email', label: 'Email', defaultChecked: true},
-    {id: 'either', value: 'Either', label: 'Either'},
+    { id: 'phone', value: 'Phone', label: 'Phone' },
+    { id: 'email', value: 'Email', label: 'Email', defaultChecked: true },
+    { id: 'either', value: 'Either', label: 'Either' },
   ];
 
   const getDefaultContactMethod = () =>
@@ -34,9 +33,9 @@ const SubmitResume = props => {
 
   const {
     register,
-    formState: {errors},
+    formState: { errors },
     handleSubmit,
-  } = useForm({mode: 'onSubmit'});
+  } = useForm({ mode: 'onSubmit' });
 
   const onSubmit = async (data, e) => {
     e.preventDefault();
@@ -59,13 +58,13 @@ const SubmitResume = props => {
 
       // Construct share link from uploaded file
       // https://drive.google.com/file/d/1Z1FyGyRTrEaKy_E8WzqrKsvqzgYE2hJp/view?usp=sharing
-      const {id} = uploadRes.data;
+      const { id } = uploadRes.data;
       const shareLink = `https://drive.google.com/file/d/${id}/view?usp=sharing`;
 
       data.shareLink = shareLink;
 
       // Send an email to JSB including the uploaded file share link
-      const mailRes = await apiAxios.request({
+      await apiAxios.request({
         url: '/send-mail',
         method: 'post',
         data,
@@ -89,7 +88,8 @@ const SubmitResume = props => {
           <form
             className={styles.form}
             onSubmit={handleSubmit(onSubmit, onError)}
-            noValidate>
+            noValidate
+          >
             <div className={styles.formItem}>
               <h3 className={styles.formQuestion}>What's your name?</h3>
               <div className={styles.inputWrapper}>
