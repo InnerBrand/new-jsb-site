@@ -18,6 +18,8 @@ import {
 // Styles
 import * as styles from '../styles/modules/Footer.module.scss';
 
+var today = new Date();
+var date = today.getFullYear();
 const Footer = () => {
   return (
     <footer className={styles.wrapper}>
@@ -43,21 +45,24 @@ const Footer = () => {
                 href='https://facebook.com/jsbpartners'
                 title='Visit us on Facebook'
                 target='_blank'
-                rel='noreferrer'>
+                rel='noreferrer'
+              >
                 <FacebookIcon />
               </a>
               <a
                 href='https://instagram.com/jsbpartners'
                 title='Visit us on Instagram'
                 target='_blank'
-                rel='noreferrer'>
+                rel='noreferrer'
+              >
                 <InstagramIcon />
               </a>
               <a
                 href='https://www.linkedin.com/company/jsb-partners'
                 title='Visit us on Linkedin'
                 target='_blank'
-                rel='noreferrer'>
+                rel='noreferrer'
+              >
                 <LinkedInIcon />
               </a>
             </div>
@@ -70,7 +75,8 @@ const Footer = () => {
                 className={styles.text}
                 href='mailto:yourexpert@jsbpartners.com'
                 target='_blank'
-                rel='noreferrer'>
+                rel='noreferrer'
+              >
                 yourexpert@jsbpartners.com
               </a>
             </div>
@@ -87,7 +93,8 @@ const Footer = () => {
                 className={styles.text}
                 href='https://goo.gl/maps/x3FCj9JBc6Z2UNif9'
                 target='_blank'
-                rel='noreferrer'>
+                rel='noreferrer'
+              >
                 747 Third Ave, 15th Floor, NYC
               </a>
               {/* <p>New York, New York 10017</p> */}
@@ -101,7 +108,7 @@ const Footer = () => {
       </section>
       <div className={styles.bottomText}>
         <Container className={styles.container}>
-          <p>JSB Partners © 2007</p>
+          <p>JSB Partners © {date}</p>
           <p>Consultants in Executive Search Since 1998</p>
           <div className={styles.termsLinks}>
             <Link to='/terms-of-use' className={styles.termsLink}>
