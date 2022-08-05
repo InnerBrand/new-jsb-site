@@ -1,4 +1,4 @@
-require('dotenv').config({path: '.env'});
+require('dotenv').config({ path: '.env' });
 
 module.exports = {
   siteMetadata: {
@@ -63,6 +63,18 @@ module.exports = {
       options: {
         name: `images`,
         path: `${__dirname}/src/assets/images/`,
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        sitemap: `${siteMetadata.siteUrl}/sitemap.xml`,
+        policy: [
+          {
+            userAgent: '*',
+            disallow: ['/'],
+          },
+        ],
       },
     },
   ],
