@@ -58,6 +58,7 @@
   font-family: $font__special;
   line-height: 1.4;
   mix-blend-mode: exclusion;
+  letter-spacing : -0.085em;
 
   @include breakpoint('desktop') {
     top: unset;
