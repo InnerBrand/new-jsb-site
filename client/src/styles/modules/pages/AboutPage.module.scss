@@ -13,7 +13,7 @@
 }
 
 .heroImg {
-  margin: -(space(3)) auto (-(space(6)));
+  margin: -(space(3)) auto (-(space(0)));
   height: 335px;
   width: 253px;
   border-radius: 210px;
@@ -64,10 +64,12 @@
 
 .offsetLeftHeading {
   color: $color__lime;
+  margin-left: 8px;
+  margin-right: 4px;
 
   @include breakpoint('mobile') {
-    margin-left: percentage(1, 12);
-    margin-right: percentage(3, 12);
+    margin-left: percentage(1, 4);
+    margin-right: percentage(1, 12);
   }
 }
 
@@ -76,6 +78,8 @@
   font-family: $font__heading;
   width: percentage(7, 8);
   margin: space(4) 0 0 auto;
+  margin-left: 8px;
+  margin-right: 4px;
 
   @include breakpoint('mobile') {
     @include header_m;
@@ -115,10 +119,13 @@
   .titleCol {
     margin-bottom: space(3);
     flex: 1 0 auto;
+    margin-left: 8px;
+    margin-right: 4px;
 
     @include breakpoint('mobile') {
       margin-left: percentage(1, 12);
       margin-right: percentage(3, 12);
+
     }
 
     @include breakpoint('tablet') {
