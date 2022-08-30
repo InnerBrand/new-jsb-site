@@ -4,8 +4,8 @@
     "name": "jsb sanity cms"
   },
   "api": {
-    "projectId": "9w4zo7wb",
-    "dataset": "jsb-cms"
+    "projectId": "jidt66or",
+    "dataset": "production"
   },
   "plugins": [
     "@sanity/base",
@@ -16,9 +16,7 @@
   ],
   "env": {
     "development": {
-      "plugins": [
-        "@sanity/vision"
-      ]
+      "plugins": ["@sanity/vision"]
     }
   },
   "parts": [
