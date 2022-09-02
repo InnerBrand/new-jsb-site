@@ -12,6 +12,7 @@ import ContouredSection from 'components/ContouredSection';
 import Button, { ButtonGroup } from 'components/Button';
 import Container from 'components/Container';
 import MadeOf from 'components/MadeOf';
+import { SEO } from '../components/Seo';
 
 // Styles
 import * as styles from 'styles/modules/pages/Home.module.scss';
@@ -80,3 +81,5 @@ export const query = graphql`
 `;
 
 export default Home;
+
+export const Head = () => <SEO />;

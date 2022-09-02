@@ -3,7 +3,8 @@ require('dotenv').config({ path: '.env' });
 module.exports = {
   siteMetadata: {
     siteUrl: `https://${process.env.DOMAIN}`,
-    title: 'JSB project',
+    title: 'JSB',
+    description: `JSB`,
   },
   plugins: [
     `gatsby-plugin-gatsby-cloud`,
@@ -75,6 +76,12 @@ module.exports = {
             disallow: ['/'],
           },
         ],
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-manifest',
+      options: {
+        icon: 'src/assets/images/icon.png',
       },
     },
   ],
