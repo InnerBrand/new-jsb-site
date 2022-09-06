@@ -18,7 +18,6 @@ const Header = props => {
   const [navbarOpen, setNavbarOpen] = useState(false);
 
   const handleToggle = () => {
-    console.log(handleToggle);
     setNavbarOpen(state => !state);
   };
 
@@ -27,7 +26,6 @@ const Header = props => {
       ? disableBodyScroll(scrollRef.current)
       : enableBodyScroll(scrollRef.current);
     return () => {
-      console.log('header cleanup');
       clearAllBodyScrollLocks(scrollRef.current);
     };
   }, [navbarOpen]);
@@ -104,9 +102,9 @@ const Header = props => {
                     <Link to='/submit-resume' className={styles.navItem}>
                       Send us your resume
                     </Link>
-                    <Link to='/submit-resume' className={styles.navItem}>
+                    {/* <Link to='/submit-resume' className={styles.navItem}>
                       Careers at JSB
-                    </Link>
+                    </Link> */}
                   </div>
                   <div className={styles.menuAddress}>
                     <p className={styles.navItem}>
