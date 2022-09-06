@@ -76,6 +76,17 @@ const Header = props => {
                     Looking for talent?
                     <FancyArrowRight className={styles.linkArrow} />
                   </Link>
+                  <div>
+                    <a
+                      className={styles.navItem}
+                      href='https://jsb.jobboardfire.com'
+                      target='_blank'
+                      rel='noopener noreferrer'
+                    >
+                      Job Board
+                      <FancyArrowRight className={styles.linkArrow} />
+                    </a>
+                  </div>
                   <Link to='/success' className={styles.navItem}>
                     Success stories
                     <FancyArrowRight className={styles.linkArrow} />
