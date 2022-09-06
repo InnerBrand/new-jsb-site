@@ -115,7 +115,16 @@ const Header = props => {
                     <a className={styles.navItem} href='tel:212-750-7007'>
                       212-750-7007
                     </a>
-                    <p className={styles.navItem}>yourexpert@jsbpartners.com</p>
+                    <p className={styles.navItem}>
+                      <a
+                        className={styles.text}
+                        href='mailto:yourexpert@jsbpartners.com'
+                        target='_blank'
+                        rel='noreferrer'
+                      >
+                        yourexpert@jsbpartners.com
+                      </a>
+                    </p>
                   </div>
                 </div>
               </div>
