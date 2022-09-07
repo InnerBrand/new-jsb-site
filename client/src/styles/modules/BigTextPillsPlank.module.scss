@@ -15,7 +15,6 @@
 
   &.left {
     bottom: calc(100% - space(3));
-
     @include breakpoint('desktop') {
       bottom: 117px;
     }
@@ -25,6 +24,8 @@
         transform-origin: bottom left;
         transform: rotate(90deg);
         width: max-content;
+        top: -7%;
+        mix-blend-mode: color-dodge;
       }
     }
   }
@@ -86,12 +87,17 @@
   z-index: 1;
   mix-blend-mode: exclusion;
 
+  @include breakpoint('mobile') {
+    @include special_l;
+    width: percentage(10, 15);
+  }
+
   @include breakpoint('tablet') {
     @include special_l;
-    width: percentage(10, 12);
+    width: percentage(10, 15);
   }
 
   @include breakpoint('desktop') {
-    width: percentage(8, 12);
+    width: percentage(8, 15);
   }
 }
