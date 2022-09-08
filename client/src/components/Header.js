@@ -76,6 +76,17 @@ const Header = props => {
                     Looking for talent?
                     <FancyArrowRight className={styles.linkArrow} />
                   </Link>
+                  <div>
+                    <a
+                      className={styles.navItem}
+                      href='https://jsb.jobboardfire.com'
+                      target='_blank'
+                      rel='noopener noreferrer'
+                    >
+                      Job Board
+                      <FancyArrowRight className={styles.linkArrow} />
+                    </a>
+                  </div>
                   <Link to='/success' className={styles.navItem}>
                     Success stories
                     <FancyArrowRight className={styles.linkArrow} />
@@ -104,7 +115,16 @@ const Header = props => {
                     <a className={styles.navItem} href='tel:212-750-7007'>
                       212-750-7007
                     </a>
-                    <p className={styles.navItem}>yourexpert@jsbpartners.com</p>
+                    <p className={styles.navItem}>
+                      <a
+                        className={styles.text}
+                        href='mailto:yourexpert@jsbpartners.com'
+                        target='_blank'
+                        rel='noreferrer'
+                      >
+                        yourexpert@jsbpartners.com
+                      </a>
+                    </p>
                   </div>
                 </div>
               </div>
