@@ -15,10 +15,10 @@
   color: $color__lime;
   text-align: center;
   max-width: 920px;
-  margin: 0 auto space(12);
+  margin: 0 auto space(10);
 
   @include breakpoint('tablet') {
-    margin-bottom: space(25);
+    margin-bottom: space(20);
   }
 }
 
@@ -26,14 +26,22 @@
   position: relative;
   left: calc(16vw - 16px);
   right: 0;
-  margin-bottom: space(4);
+  margin-bottom: space(5);
   top: 48px;
+
+  @include breakpoint('mobile') {
+    left: percentage(1, 12);
+    margin-bottom: space(5);
+    top: 32px;
+  }
 
   @include breakpoint('tablet') {
     left: percentage(1, 12);
-    margin-bottom: unset;
+    margin-bottom: space(5);
     top: 32px;
   }
+
+
 }
 
 .eyebrow {
