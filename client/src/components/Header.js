@@ -102,9 +102,6 @@ const Header = props => {
                     <Link to='/submit-resume' className={styles.navItem}>
                       Send us your resume
                     </Link>
-                    {/* <Link to='/submit-resume' className={styles.navItem}>
-                      Careers at JSB
-                    </Link> */}
                   </div>
                   <div className={styles.menuAddress}>
                     <p className={styles.navItem}>
