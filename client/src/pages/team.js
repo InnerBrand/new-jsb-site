@@ -9,6 +9,7 @@ import Space from 'components/Space';
 import TeamMembers from 'components/TeamMembers';
 import ContouredSection from 'components/ContouredSection';
 import Button, { ButtonGroup } from 'components/Button';
+import { SEO } from '../components/Seo';
 
 // Styles
 import * as styles from 'styles/modules/pages/Team.module.scss';
@@ -114,3 +115,5 @@ export const query = graphql`
 `;
 
 export default TeamPage;
+
+export const Head = () => <SEO title='Meet your Expert - JSB Partners' />;

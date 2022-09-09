@@ -1,11 +1,12 @@
 import React from 'react';
 
 // Components
-import Button, {ButtonGroup} from 'components/Button';
+import Button, { ButtonGroup } from 'components/Button';
 import Container from 'components/Container';
 import ContouredSection from 'components/ContouredSection';
 import DefineHero from 'components/DefineHero';
 import Layout from 'components/Layout';
+import { SEO } from '../components/Seo';
 
 // Styles
 import * as styles from 'styles/modules/pages/SuccessPage.module.scss';
@@ -84,3 +85,5 @@ const SuccessPage = () => {
 };
 
 export default SuccessPage;
+
+export const Head = () => <SEO title='Success Stories - JSB Partners' />;

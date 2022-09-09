@@ -3,6 +3,7 @@ import React from 'react';
 // Components
 import Layout from 'components/Layout';
 import Container from 'components/Container';
+import { SEO } from '../components/Seo';
 
 // Styles
 import * as styles from 'styles/modules/pages/Terms.module.scss';
@@ -56,3 +57,5 @@ const DisclaimerPage = () => {
 };
 
 export default DisclaimerPage;
+
+export const Head = () => <SEO title='Disclaimer - JSB Partners' />;

@@ -11,6 +11,7 @@ import Layout from 'components/Layout';
 import Space from 'components/Space';
 import TabSelector from 'components/TabSelector';
 import apiAxios from '../../api.config';
+import { SEO } from '../components/Seo';
 // import {useGoogleApis} from 'hooks/useGoogleApis';
 // Styles
 import * as styles from 'styles/modules/pages/SubmitResume.module.scss';
@@ -176,3 +177,5 @@ const SubmitResume = props => {
 SubmitResume.propTypes = {};
 
 export default SubmitResume;
+
+export const Head = () => <SEO title='Resume - JSB Partners' />;

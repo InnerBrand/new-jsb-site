@@ -9,6 +9,8 @@ import CardSlider from 'components/CardSlider';
 import Container from 'components/Container';
 import ContouredSection from 'components/ContouredSection';
 import Layout from 'components/Layout';
+import { SEO } from '../components/Seo';
+
 // Styles
 import * as styles from 'styles/modules/pages/AboutPage.module.scss';
 
@@ -167,3 +169,4 @@ export const query = graphql`
 AboutPage.propTypes = {};
 
 export default AboutPage;
+export const Head = () => <SEO title='About - JSB Partners' />;

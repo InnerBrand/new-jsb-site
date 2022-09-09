@@ -9,6 +9,7 @@ import Layout from 'components/Layout';
 import Space from 'components/Space';
 import TabSelector from 'components/TabSelector';
 import apiAxios from '../../api.config';
+import { SEO } from '../components/Seo';
 // Styles
 import * as styles from 'styles/modules/pages/SubmitResume.module.scss';
 
@@ -172,3 +173,5 @@ const Talent = props => {
 Talent.propTypes = {};
 
 export default Talent;
+
+export const Head = () => <SEO title='Looking for Talent - JSB Partners' />;

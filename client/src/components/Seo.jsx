@@ -9,6 +9,7 @@ export const SEO = ({ title, description, pathname, children }) => {
     siteUrl,
     twitterUsername,
   } = useSiteMetadata();
+  console.log('TITULO', title);
 
   const seo = {
     title: title || defaultTitle,

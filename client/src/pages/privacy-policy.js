@@ -3,6 +3,7 @@ import React from 'react';
 // Components
 import Layout from 'components/Layout';
 import Container from 'components/Container';
+import { SEO } from '../components/Seo';
 
 // Styles
 import * as styles from 'styles/modules/pages/Terms.module.scss';
@@ -35,3 +36,5 @@ const PrivacyPage = () => {
 };
 
 export default PrivacyPage;
+
+export const Head = () => <SEO title='Privacy Policy - JSB Partners' />;
