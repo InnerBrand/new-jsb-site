@@ -89,9 +89,14 @@
   @include special_s;
   font-family: $font__special;
   min-height: 200px;
- 
 
+ 
   @include breakpoint('xs') {
+    font-size: 22px;
+    padding: 0 space(1);
+  }
+
+  @include breakpoint('mobile') {
     font-size: 22px;
   }
 

@@ -116,6 +116,11 @@
     margin-bottom: space(3);
     flex: 1 0 auto;
 
+    @include breakpoint('xs') {
+      margin-left: percentage(1, 12);
+      margin-right: percentage(3, 12);
+    }
+
     @include breakpoint('mobile') {
       margin-left: percentage(1, 12);
       margin-right: percentage(3, 12);
