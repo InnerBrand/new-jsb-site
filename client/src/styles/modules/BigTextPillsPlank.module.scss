@@ -20,6 +20,7 @@
     }
 
     .titleWrapper {
+      mix-blend-mode: lighten;
       @include breakpoint('desktop', 'max') {
         transform-origin: bottom left;
         transform: rotate(90deg);
