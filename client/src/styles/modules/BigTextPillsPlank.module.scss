@@ -14,13 +14,16 @@
   position: absolute;
 
   &.left {
-    bottom: calc(100% - space(3));
-    @include breakpoint('desktop') {
-      bottom: 117px;
+    bottom: calc(100% - space(4));
+    @include breakpoint('xs') {
+      bottom: calc(100%);
     }
+    @include breakpoint('desktop') {
+      bottom: calc(100% - space(4));
+    }
+  
 
     .titleWrapper {
-      mix-blend-mode: lighten;
       @include breakpoint('desktop', 'max') {
         transform-origin: bottom left;
         transform: rotate(90deg);
@@ -32,11 +35,14 @@
   }
 
   &.right {
-    top: calc(100% - space(3));
+    top: calc(100% - space(6));
     right: 0;
 
+    @include breakpoint('xs') {
+      top: calc(100%);
+    }
     @include breakpoint('desktop') {
-      top: 77px;
+      top: calc(100% - space(5));
     }
 
     .titleWrapper {
@@ -59,7 +65,7 @@
   top: 0;
   font-family: $font__special;
   line-height: 1.4;
-  mix-blend-mode: exclusion;
+  mix-blend-mode: lighten;
 
   @include breakpoint('desktop') {
     top: unset;
@@ -88,6 +94,12 @@
   z-index: 1;
   mix-blend-mode: exclusion;
 
+  @include breakpoint('xs') {
+    @include special_l;
+    width: percentage(10, 15);
+    font-size: 30px
+  }
+
   @include breakpoint('mobile') {
     @include special_l;
     width: percentage(10, 15);
@@ -95,7 +107,7 @@
 
   @include breakpoint('tablet') {
     @include special_l;
-    width: percentage(10, 15);
+    width: percentage(10, 17);
   }
 
   @include breakpoint('desktop') {
