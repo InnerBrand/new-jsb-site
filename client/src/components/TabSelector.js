@@ -37,6 +37,7 @@ const TabSelector = ({ data, name, register, onChange }) => {
       {data.map((input, i) => {
         return (
           <label
+            key={i}
             className={`${styles.tab} ${
               checkedTab.id === input.id ? styles.checked : ''
             }`}

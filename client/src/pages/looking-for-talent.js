@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
+import axios from 'axios';
 import validation from 'libs/validation';
 // Components
 import CircleButton from 'components/CircleButton';
@@ -8,7 +9,6 @@ import Input from 'components/Input';
 import Layout from 'components/Layout';
 import Space from 'components/Space';
 import TabSelector from 'components/TabSelector';
-import apiAxios from '../../api.config';
 import { SEO } from '../components/Seo';
 // Styles
 import * as styles from 'styles/modules/pages/SubmitResume.module.scss';
@@ -24,25 +24,67 @@ const Talent = props => {
     contactMethodData.find(item => item.defaultChecked).id;
 
   const [contactMethod, setContactMethod] = useState(getDefaultContactMethod);
-  const [file] = useState(null);
+  const [message, setMessage] = useState('Submit');
 
   const {
     register,
     formState: { errors },
     handleSubmit,
+    reset,
   } = useForm({ mode: 'onSubmit' });
 
+  /**
+   * Change message after 5 seconds
+   */
+  useEffect(() => {
+    if (message === 'Success' || message === 'Error') {
+      setTimeout(() => {
+        setMessage('Submit');
+      }, 5000);
+    }
+  }, [message]);
+
   const onSubmit = async (data, e) => {
-    data.file = file;
-    console.log(data);
-    await apiAxios.request({
-      url: '/send-mail',
-      method: 'post',
-      data,
+    setMessage('Sending...');
+
+    const formData = new FormData();
+    Object.entries(data).forEach(([key, value]) => {
+      formData.append(key, value);
     });
+
+    axios
+      .post(process.env.GATSBY_GET_FORM_TALENT, formData, {
+        headers: { Accept: 'application/json' },
+      })
+      .then(function (response) {
+        setMessage('Success');
+      })
+      .catch(function (error) {
+        console.log(error);
+        alert(`Upss...!, Data has not been recorded`);
+        setMessage('Error');
+      })
+      .finally(() => {
+        resetForm();
+      });
   };
 
   const onError = (errors, e) => console.log('Errors: ', errors);
+
+  /**
+   * Clean fileds form
+   */
+  const resetForm = () => {
+    reset({
+      firstName: '',
+      lastName: '',
+      orgName: '',
+      email: '',
+      phone: '',
+      theNeeds: '',
+    });
+    setContactMethod('email');
+  };
 
   return (
     <Layout>
@@ -160,7 +202,11 @@ const Talent = props => {
               </div>
             </div>
 
-            <CircleButton ctaText='Submit' showArrow={true} />
+            <CircleButton
+              ctaText={`${message}`}
+              showArrow={true}
+              disabled={message !== 'Submit'}
+            />
 
             <Space unit={24} />
           </form>

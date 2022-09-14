@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import validation from 'libs/validation';
 // Components
@@ -10,9 +10,9 @@ import Input from 'components/Input';
 import Layout from 'components/Layout';
 import Space from 'components/Space';
 import TabSelector from 'components/TabSelector';
-import apiAxios from '../../api.config';
+import axios from 'axios';
 import { SEO } from '../components/Seo';
-// import {useGoogleApis} from 'hooks/useGoogleApis';
+
 // Styles
 import * as styles from 'styles/modules/pages/SubmitResume.module.scss';
 
@@ -28,54 +28,71 @@ const SubmitResume = props => {
 
   const [contactMethod, setContactMethod] = useState(getDefaultContactMethod);
   const [file, setFile] = useState(null);
-
-  // Add gapi script to head
-  // useGoogleApis();
+  const [message, setMessage] = useState('Submit');
 
   const {
     register,
     formState: { errors },
     handleSubmit,
+    reset,
   } = useForm({ mode: 'onSubmit' });
+
+  /**
+   * Change message after 5 seconds
+   */
+  useEffect(() => {
+    if (message === 'Success' || message === 'Error') {
+      setTimeout(() => {
+        setMessage('Submit');
+      }, 5000);
+    }
+  }, [message]);
 
   const onSubmit = async (data, e) => {
     e.preventDefault();
 
-    const fileData = new FormData();
-    fileData.append('resume', file);
+    setMessage('Sending...');
 
-    try {
-      // Upload file
-      const uploadRes = await apiAxios.request({
-        url: '/upload-file',
-        method: 'post',
-        data: fileData,
-        headers: {
-          'Content-Type': 'multipart/form-data',
-        },
+    const formData = new FormData();
+    formData.append('files', file);
+    Object.entries(data).forEach(([key, value]) => {
+      formData.append(key, value);
+    });
+
+    axios
+      .post(process.env.GATSBY_GET_FORM_RESUME, formData, {
+        headers: { Accept: 'application/json' },
+      })
+      .then(function (response) {
+        setMessage('Success');
+      })
+      .catch(function (error) {
+        console.log(error);
+        alert(`Upss...!, Data has not been recorded`);
+        setMessage('Error');
+      })
+      .finally(() => {
+        resetForm();
       });
-
-      console.log(uploadRes);
-
-      // Construct share link from uploaded file
-      // https://drive.google.com/file/d/1Z1FyGyRTrEaKy_E8WzqrKsvqzgYE2hJp/view?usp=sharing
-      const { id } = uploadRes.data;
-      const shareLink = `https://drive.google.com/file/d/${id}/view?usp=sharing`;
-
-      data.shareLink = shareLink;
-
-      // Send an email to JSB including the uploaded file share link
-      await apiAxios.request({
-        url: '/send-mail',
-        method: 'post',
-        data,
-      });
-    } catch (error) {
-      console.log(error);
-    }
   };
 
   const onError = (errors, e) => console.log('Errors: ', errors);
+
+  /**
+   * Clean fileds form
+   */
+  const resetForm = () => {
+    reset({
+      firstName: '',
+      lastName: '',
+      orgName: '',
+      email: '',
+      phone: '',
+      theNeeds: '',
+    });
+    setContactMethod('email');
+    setFile(null);
+  };
 
   return (
     <Layout>
@@ -164,7 +181,11 @@ const SubmitResume = props => {
               <Blob className={styles.blob} />
             </div>
 
-            <CircleButton ctaText='Submit' showArrow={true} />
+            <CircleButton
+              ctaText={`${message}`}
+              showArrow={true}
+              disabled={message !== 'Submit'}
+            />
 
             <Space unit={24} />
           </form>
