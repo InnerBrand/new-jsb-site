@@ -20,7 +20,6 @@ const AboutPage = ({ data }) => {
 
   const bigTextPillsImageData = data.bigTextPillsFiles.nodes;
 
-  console.log(heroImg);
   return (
     <Layout header theme='dark'>
       <Container>

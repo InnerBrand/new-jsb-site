@@ -12,7 +12,6 @@ import Arrow from 'assets/svg/fancy-arrow-right.inline.svg';
 const TeamMembers = ({ members, title }) => {
   const [activeMember, setActiveMember] = useState({});
   const [memberModalOpen, setMemberModalOpen] = useState(false);
-  console.log(members.length);
 
   if (members.length > 2) {
     gsap.registerPlugin(ScrollTrigger);

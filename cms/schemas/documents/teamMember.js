@@ -54,7 +54,6 @@ export default {
       title: "Biography",
       validation: (Rule) =>
         Rule.required().custom(({ data }) => {
-          console.log(data);
           const chars = data.reduce((acc, curr) => {
             return acc + curr.children[0].text.length;
           }, 0);

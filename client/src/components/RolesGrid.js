@@ -1,5 +1,5 @@
 import React from 'react';
-import {GatsbyImage, getImage} from 'gatsby-plugin-image';
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 
 // Components
 import Container from './Container';
@@ -8,7 +8,7 @@ import CircleButton from './CircleButton';
 // Styles
 import * as styles from '../styles/modules/RolesGrid.module.scss';
 
-function SingleRole({role}) {
+function SingleRole({ role }) {
   const roleImg = getImage(role.image.asset.gatsbyImageData);
 
   return (
@@ -21,7 +21,7 @@ function SingleRole({role}) {
   );
 }
 
-const RolesGrid = ({roles}) => {
+const RolesGrid = ({ roles }) => {
   return (
     <section className={styles.section}>
       <Container>
@@ -35,7 +35,6 @@ const RolesGrid = ({roles}) => {
             <div className={styles.imgGridColumn}>
               {roles
                 .filter((role, i) => {
-                  console.log(i % 2);
                   return i % 2 === 0;
                 })
                 .map(role => (
@@ -49,7 +48,6 @@ const RolesGrid = ({roles}) => {
             <div className={[styles.imgGridColumn, styles.right].join(' ')}>
               {roles
                 .filter((role, i) => {
-                  console.log(i % 2);
                   return i % 2 !== 0;
                 })
                 .map(role => (

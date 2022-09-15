@@ -18,8 +18,6 @@ import { SEO } from '../components/Seo';
 import * as styles from 'styles/modules/pages/Home.module.scss';
 
 const Home = ({ data }) => {
-  console.log(data);
-
   const { bioHeadline } = data.allSanityHomepage.nodes[0].homepageContent;
   const roles = data.allSanityHomepage.nodes[0].rolesPlaced;
 

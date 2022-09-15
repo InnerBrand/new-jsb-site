@@ -41,8 +41,6 @@ const MemberModal = ({ data, isOpen, handler }) => {
     title,
   } = data;
 
-  console.log(data);
-
   const img = getImage(image?.asset);
 
   return (

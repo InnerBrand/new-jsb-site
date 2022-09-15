@@ -60,7 +60,7 @@ const Talent = props => {
         setMessage('Success');
       })
       .catch(function (error) {
-        console.log(error);
+        console.error(error);
         alert(`Upss...!, Data has not been recorded`);
         setMessage('Error');
       })

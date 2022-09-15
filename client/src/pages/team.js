@@ -24,7 +24,6 @@ const TeamPage = ({ data }) => {
     facts,
   } = data.allSanityTeamPage.nodes[0];
 
-  console.log(data.allSanityTeamPage.nodes[0]);
   return (
     <>
       <Layout>

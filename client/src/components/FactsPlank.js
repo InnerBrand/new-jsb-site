@@ -6,7 +6,6 @@ import Container from './Container';
 import * as styles from 'styles/modules/FactsPlank.module.scss';
 
 const FactsPlank = ({ eyebrow, headline, facts }) => {
-  console.log({ eyebrow, headline });
   return (
     <section className={styles.wrapper}>
       <Container>
