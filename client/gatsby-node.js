@@ -8,10 +8,5 @@ exports.onCreateWebpackConfig = ({ stage, actions }) => {
         util: require.resolve('util/'),
       },
     },
-    plugins: [
-      plugins.define({
-        MY_FANCY_VARIABLE: 'the-value',
-      }),
-    ],
   });
 };
