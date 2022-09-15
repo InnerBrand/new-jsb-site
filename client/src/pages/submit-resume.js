@@ -6,6 +6,7 @@ import Blob from 'components/Blob';
 import CircleButton from 'components/CircleButton';
 import Container from 'components/Container';
 import Dropzone from 'components/Dropzone';
+import DropzoneEmpty from 'components/DropzoneEmpty';
 import Input from 'components/Input';
 import Layout from 'components/Layout';
 import Space from 'components/Space';
@@ -28,7 +29,9 @@ const SubmitResume = props => {
 
   const [contactMethod, setContactMethod] = useState(getDefaultContactMethod);
   const [file, setFile] = useState(null);
+  const [empty, setEmpty] = useState(null);
   const [message, setMessage] = useState('Submit');
+  const [showDropZone, setShowDropZone] = useState(true);
 
   const {
     register,
@@ -47,6 +50,17 @@ const SubmitResume = props => {
       }, 5000);
     }
   }, [message]);
+
+  /**
+   * Refresh dropZone after 1 seconds
+   */
+  useEffect(() => {
+    if (!showDropZone) {
+      setTimeout(() => {
+        setShowDropZone(true);
+      }, 100);
+    }
+  }, [showDropZone]);
 
   const onSubmit = async (data, e) => {
     e.preventDefault();
@@ -92,6 +106,7 @@ const SubmitResume = props => {
     });
     setContactMethod('email');
     setFile(null);
+    setShowDropZone(false);
   };
 
   return (
@@ -177,7 +192,11 @@ const SubmitResume = props => {
 
             <div className={styles.formItem}>
               <h3 className={styles.formQuestion}>Upload your resume</h3>
-              <Dropzone setFile={setFile} />
+              {showDropZone ? (
+                <Dropzone setFile={setFile} />
+              ) : (
+                <DropzoneEmpty />
+              )}
               <Blob className={styles.blob} />
             </div>
 
