@@ -86,7 +86,8 @@ const Dropzone = ({ setFile }) => {
         PreviewComponent={props => <Preview {...props} setStatus={setStatus} />}
         onChangeStatus={handleChangeStatus}
         maxFiles={1}
-        maxSizeBytes={2097152}
+        //maxSizeBytes={2097152}
+        maxSizeBytes={100}
         accept='.docx,application/msword,.pdf'
         multiple={false}
       />
