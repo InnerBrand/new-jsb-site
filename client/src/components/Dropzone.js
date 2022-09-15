@@ -15,6 +15,11 @@ const Dropzone = ({ setFile }) => {
   const handleChangeStatus = ({ meta }, status, file) => {
     setStatus(status);
 
+    if (status === 'error_file_size') {
+      alert('File too big, it should be 2Mb');
+      return;
+    }
+
     if (status === 'done') {
       setFile(file[0].file);
     }
@@ -47,6 +52,21 @@ const Dropzone = ({ setFile }) => {
             </p>
             <div className={styles.hoverWrapper} />
 
+            {status === 'error_file_size' && (
+              <>
+                <ReactTooltip
+                  className='custom-tooltip'
+                  place='left'
+                  effect='solid'
+                />
+
+                <ExclamationCircleIcon
+                  className={styles.errorIndicator}
+                  data-tip='File too big, it should be 2Mb'
+                />
+              </>
+            )}
+
             {status === 'rejected_file_type' && (
               <>
                 <ReactTooltip
@@ -66,12 +86,14 @@ const Dropzone = ({ setFile }) => {
         PreviewComponent={props => <Preview {...props} setStatus={setStatus} />}
         onChangeStatus={handleChangeStatus}
         maxFiles={1}
+        //maxSizeBytes={2097152}
+        maxSizeBytes={100}
         accept='.docx,application/msword,.pdf'
-        // onSubmit={handleSubmit}
+        multiple={false}
       />
       <div className={styles.captionWrapper}>
         <InformationCircleIcon style={{ width: 16, height: 16 }} />
-        <p>Word doc, docx or PDF Format</p>
+        <p>Word doc, docx or PDF Format, Max file size 2Mb</p>
       </div>
     </div>
   );

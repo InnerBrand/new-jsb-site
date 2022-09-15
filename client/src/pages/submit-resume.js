@@ -65,6 +65,10 @@ const SubmitResume = props => {
   const onSubmit = async (data, e) => {
     e.preventDefault();
 
+    if (!file) {
+      alert('You need to upload a resume');
+      return;
+    }
     setMessage('Sending...');
 
     const formData = new FormData();

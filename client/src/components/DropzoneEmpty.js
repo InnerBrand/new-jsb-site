@@ -1,17 +1,12 @@
 import React, { useState } from 'react';
 import ReactDropzoneUploader from 'react-dropzone-uploader';
-import ReactTooltip from 'react-tooltip';
+
 // Styles
 import * as styles from 'styles/modules/Dropzone.module.scss';
-// SVG
-import { ExclamationCircleIcon } from '@heroicons/react/solid';
+
 import { InformationCircleIcon } from '@heroicons/react/outline';
-import PageIcon from 'assets/svg/page-icon.inline.svg';
 
-const INIT_STATUS = 'init';
 const DropzoneEmpty = () => {
-  const [status, setStatus] = useState(INIT_STATUS);
-
   return (
     <div className={styles.wrapper}>
       <ReactDropzoneUploader
@@ -29,21 +24,6 @@ const DropzoneEmpty = () => {
               -or-
             </p>
             <div className={styles.hoverWrapper} />
-
-            {status === 'rejected_file_type' && (
-              <>
-                <ReactTooltip
-                  className='custom-tooltip'
-                  place='left'
-                  effect='solid'
-                />
-
-                <ExclamationCircleIcon
-                  className={styles.errorIndicator}
-                  data-tip='You need to upload a resume'
-                />
-              </>
-            )}
           </>
         )}
         PreviewComponent={props => <span />}
@@ -52,7 +32,7 @@ const DropzoneEmpty = () => {
       />
       <div className={styles.captionWrapper}>
         <InformationCircleIcon style={{ width: 16, height: 16 }} />
-        <p>Word doc, docx or PDF Format</p>
+        <p>Word doc, docx or PDF Format, Max file size 2Mb</p>
       </div>
     </div>
   );
