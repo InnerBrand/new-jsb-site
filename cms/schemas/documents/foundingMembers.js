@@ -57,7 +57,7 @@ export default {
           const chars = data.reduce((acc, curr) => {
             return acc + curr.children[0].text.length;
           }, 0);
-          return chars > 496 ? "Limit is 396 characters!" : true;
+          return chars > 800 ? "Limit is 800 characters!" : true;
         }),
     },
   ],
