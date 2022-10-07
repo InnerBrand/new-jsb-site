@@ -34,7 +34,7 @@ const SuccessPage = () => {
               was hired to conduct a COO search, effectively their first hire.
               Our placement was in charge of establishing a world class
               infrastructure, allowing them to go from an idea to 94B of AUM,
-              and was instrumental in the firm listing on the NASDQ. We are
+              and was instrumental in the firm listing on the NASDAQ. We are
               pleased to state our COO placement is still at Blue Owl.
             </h4>
           </div>
