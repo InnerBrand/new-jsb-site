@@ -58,18 +58,8 @@ const AboutPage = ({ data }) => {
               </div>
               <div className={styles.bodyCol}>
                 <p>
-                  Starting out in the financial industry, we continue to
-                  cultivate deep relationships with people and firms in this
-                  micro been a leader in executive search for Alternative Asset
-                  Management and Family Office since 1998. Recognized for our
-                  ability to help talent find the jobs they are truly ready for,
-                  while supporting companies to find their next great employee.
-                  We place accounting, operations, tax, valuations, compliance
-                  and investor relations professionals at all levels. Our
-                  clients are both large companies and boutiques, where we deal
-                  with the decision makers. We appreciate the importance of the
-                  person beyond the resume, as do our clients. As a result, we
-                  often fill the jobs no one else knows about.
+                Starting out in the financial industry, we continue to cultivate deep relationships with people and firms in this micro-community.  JSB Partners has been a leader in executive search for Alternative Asset Management and Family Offices since 1998. Known for our ability to help talent find the jobs they are truly ready for, while supporting companies to find their next great employee. We place accounting, operations, tax, valuations, compliance and investor relations professionals at all levels. Our clients are both large companies and boutiques, where we deal with the decision makers. We appreciate the importance of the person beyond the resume, as do our clients. As a result, we often fill the jobs no one else knows about.
+
                 </p>
               </div>
             </div>
