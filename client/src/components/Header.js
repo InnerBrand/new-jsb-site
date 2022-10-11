@@ -81,7 +81,7 @@ const Header = props => {
                       target='_blank'
                       rel='noopener noreferrer'
                     >
-                      Job Board
+                      Career Opportunities
                       <FancyArrowRight className={styles.linkArrow} />
                     </a>
                   </div>
