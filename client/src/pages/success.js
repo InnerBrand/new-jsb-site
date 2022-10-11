@@ -72,7 +72,7 @@ const SuccessPage = () => {
               Send us your resume and let’s get started
             </p>
             <ButtonGroup className={styles.btnGroup}>
-              <Button to='/submit-resume'>Submit resume</Button>
+              <Button to='/looking-for-talent'>Looking for Talent</Button>
               <Button uiType='secondary' href='tel:1234567890'>
                 Call us
               </Button>
