@@ -45,7 +45,6 @@ const ServicesPage = ({ data }) => {
           'Investor Relations',
         ]}
         className={styles.firstCardSlider}
-        eyebrow='With'
         headerHighlight='searches'
         headerPre='Executive'
         variant='slider'
@@ -63,7 +62,6 @@ const ServicesPage = ({ data }) => {
           'Estate Manager',
           'Facilities',
         ]}
-        eyebrow='With'
         headerHighlight='temporary staffing'
         headerPre='Administrative and'
       />

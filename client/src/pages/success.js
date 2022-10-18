@@ -69,7 +69,7 @@ const SuccessPage = () => {
               Ready to achieve success as a client?
             </h2>
             <p className={styles.cta}>
-              Send us your resume and let’s get started
+              Let's find your next hire
             </p>
             <ButtonGroup className={styles.btnGroup}>
               <Button to='/looking-for-talent'>Looking for Talent</Button>
