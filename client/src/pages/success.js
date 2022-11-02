@@ -73,7 +73,7 @@ const SuccessPage = () => {
             </p>
             <ButtonGroup className={styles.btnGroup}>
               <Button to='/looking-for-talent'>Looking for Talent</Button>
-              <Button uiType='secondary' href='tel:1234567890'>
+              <Button uiType='secondary' href='tel:2127507007'>
                 Call us
               </Button>
             </ButtonGroup>
