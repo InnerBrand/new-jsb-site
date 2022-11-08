@@ -1,4 +1,4 @@
-import {google} from 'googleapis';
+import { google } from 'googleapis';
 import stream from 'stream';
 import path from 'path';
 
@@ -15,7 +15,7 @@ const drive = google.drive({
 const handleFileUpload = async fileObj => {
   const bufferStream = new stream.PassThrough();
   bufferStream.end(fileObj.buffer);
-  const {data} = await drive.files.create({
+  const { data } = await drive.files.create({
     requestBody: {
       name: fileObj.originalname,
       mimeType: fileObj.mimeType,
@@ -35,11 +35,9 @@ export default async function uploadFile(req, res) {
     const file = req.files[0];
 
     try {
-      // const uploadRes = await handleFileUpload(file);
-      // res.json(uploadRes);
       res.send('success');
     } catch (err) {
-      console.log(err);
+      console.error(err);
     }
   }
 }

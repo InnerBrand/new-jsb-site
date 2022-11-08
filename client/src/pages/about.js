@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 // Components
@@ -10,6 +9,8 @@ import CardSlider from 'components/CardSlider';
 import Container from 'components/Container';
 import ContouredSection from 'components/ContouredSection';
 import Layout from 'components/Layout';
+import { SEO } from '../components/Seo';
+
 // Styles
 import * as styles from 'styles/modules/pages/AboutPage.module.scss';
 
@@ -19,7 +20,6 @@ const AboutPage = ({ data }) => {
 
   const bigTextPillsImageData = data.bigTextPillsFiles.nodes;
 
-  console.log(heroImg);
   return (
     <Layout header theme='dark'>
       <Container>
@@ -58,18 +58,8 @@ const AboutPage = ({ data }) => {
               </div>
               <div className={styles.bodyCol}>
                 <p>
-                  Starting out in the financial industry, we continue to
-                  cultivate deep relationships with people and firms in this
-                  micro been a leader in executive search for Alternative Asset
-                  Management and Family Office since 1998. Recognized for our
-                  ability to help talent find the jobs they are truly ready for,
-                  while supporting companies to find their next great employee.
-                  We place accounting, operations, tax, valuations, compliance
-                  and investor relations professionals at all levels. Our
-                  clients are both large companies and boutiques, where we deal
-                  with the decision makers. We appreciate the importance of the
-                  person beyond the resume, as do our clients. As a result, we
-                  often fill the jobs no one else knows about.
+                Starting out in the financial industry, we continue to cultivate deep relationships with people and firms in this micro-community.  JSB Partners has been a leader in executive search for Alternative Asset Management and Family Offices since 1998. Known for our ability to help talent find the jobs they are truly ready for, while supporting companies to find their next great employee. We place accounting, operations, tax, valuations, compliance and investor relations professionals at all levels. Our clients are both large companies and boutiques, where we deal with the decision makers. We appreciate the importance of the person beyond the resume, as do our clients. As a result, we often fill the jobs no one else knows about.
+
                 </p>
               </div>
             </div>
@@ -124,14 +114,15 @@ const AboutPage = ({ data }) => {
       </Container>
       <ContouredSection
         className={styles.bottomSection}
-        contourColor='reallyDark'>
+        contourColor='reallyDark'
+      >
         <Container>
           <div className={styles.content}>
             <h2>Are you ready for your next job?</h2>
             <p>Let's find your next</p>
             <ButtonGroup className={styles.btnGroup}>
               <Button to='/submit-resume'>Submit resume</Button>
-              <Button uiType='secondary' href='tel:1234567890'>
+              <Button uiType='secondary' href='tel:+12127507007'>
                 Call us
               </Button>
             </ButtonGroup>
@@ -167,3 +158,4 @@ export const query = graphql`
 AboutPage.propTypes = {};
 
 export default AboutPage;
+export const Head = () => <SEO title='About - JSB Partners' />;

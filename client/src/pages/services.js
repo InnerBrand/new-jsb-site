@@ -1,18 +1,19 @@
 import React from 'react';
-import {graphql} from 'gatsby';
-import {GatsbyImage, getImage} from 'gatsby-plugin-image';
+import { graphql } from 'gatsby';
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 
 // Components
 import Layout from 'components/Layout';
 import Container from 'components/Container';
 import CardSlider from 'components/CardSlider';
+import { SEO } from '../components/Seo';
 
 // Styles
 import * as styles from 'styles/modules/pages/ServicesPage.module.scss';
 import ContouredSection from 'components/ContouredSection';
 import CircleButton from 'components/CircleButton';
 
-const ServicesPage = ({data}) => {
+const ServicesPage = ({ data }) => {
   const heroImgData = data.heroFiles.nodes[0].childImageSharp;
   const heroImg = getImage(heroImgData);
   return (
@@ -44,7 +45,6 @@ const ServicesPage = ({data}) => {
           'Investor Relations',
         ]}
         className={styles.firstCardSlider}
-        eyebrow='With'
         headerHighlight='searches'
         headerPre='Executive'
         variant='slider'
@@ -62,7 +62,6 @@ const ServicesPage = ({data}) => {
           'Estate Manager',
           'Facilities',
         ]}
-        eyebrow='With'
         headerHighlight='temporary staffing'
         headerPre='Administrative and'
       />
@@ -79,7 +78,8 @@ const ServicesPage = ({data}) => {
       />
       <ContouredSection
         className={styles.bottomSection}
-        contourColor='reallyDark'>
+        contourColor='reallyDark'
+      >
         <Container>
           <div className={styles.content}>
             <h2 className={styles.servicesCTA}>Ready to get started?</h2>
@@ -94,7 +94,7 @@ const ServicesPage = ({data}) => {
 
 export const query = graphql`
   {
-    heroFiles: allFile(filter: {name: {eq: "services-hero"}}) {
+    heroFiles: allFile(filter: { name: { eq: "services-hero" } }) {
       nodes {
         childImageSharp {
           gatsbyImageData
@@ -104,3 +104,5 @@ export const query = graphql`
   }
 `;
 export default ServicesPage;
+
+export const Head = () => <SEO title='Services - JSB Partners' />;

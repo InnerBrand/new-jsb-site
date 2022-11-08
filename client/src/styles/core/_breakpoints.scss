@@ -29,6 +29,9 @@ $breakpoint: 0;
   @if $size == 'mobile' {
     $breakpoint: 576 !global;
   }
+  @if $size == 'xs' {
+    $breakpoint: 300 !global;
+  }
   @if type-of($size) == 'number' {
     $breakpoint: $size !global;
   }
@@ -54,6 +57,8 @@ $breakpoint: 0;
     'tablet' and
     $size !=
     'mobile' and
+    $size !=
+    'xs' and
     type-of($size) !=
     'number'
   {

@@ -1,15 +1,12 @@
-import {sendEmail} from '../libs/mail';
+import { sendEmail } from '../libs/mail';
 // import {uploadFile} from '../libs/uploadFile';
 
 export default function sendMail(req, res) {
   if (req.method === 'POST') {
-    // console.log(JSON.stringify(req.body, null, 2));
-
     // Uploading file to google drive
     //   -> gives us a link
-    const {contactMethod, email, phone, firstName, lastName, shareLink} =
+    const { contactMethod, email, phone, firstName, lastName, shareLink } =
       req.body;
-    console.log(req.files);
 
     const nameDisplay = `Name: ${firstName} ${lastName}`;
     const contactDisplay = () => {
@@ -24,8 +21,6 @@ export default function sendMail(req, res) {
     const resumeLinkDisplay = `Link to resume: ${shareLink}`;
 
     const body = `${nameDisplay}\n\n${contactDisplay()}\n\n${resumeLinkDisplay}`;
-
-    console.log(body);
 
     sendEmail({
       email: 'yourexpert@jsbpartners.com',

@@ -1,11 +1,12 @@
 import React from 'react';
 
 // Components
-import Button, {ButtonGroup} from 'components/Button';
+import Button, { ButtonGroup } from 'components/Button';
 import Container from 'components/Container';
 import ContouredSection from 'components/ContouredSection';
 import DefineHero from 'components/DefineHero';
 import Layout from 'components/Layout';
+import { SEO } from '../components/Seo';
 
 // Styles
 import * as styles from 'styles/modules/pages/SuccessPage.module.scss';
@@ -33,7 +34,7 @@ const SuccessPage = () => {
               was hired to conduct a COO search, effectively their first hire.
               Our placement was in charge of establishing a world class
               infrastructure, allowing them to go from an idea to 94B of AUM,
-              and was instrumental in the firm listing on the NASDQ. We are
+              and was instrumental in the firm listing on the NASDAQ. We are
               pleased to state our COO placement is still at Blue Owl.
             </h4>
           </div>
@@ -68,11 +69,11 @@ const SuccessPage = () => {
               Ready to achieve success as a client?
             </h2>
             <p className={styles.cta}>
-              Send us your resume and let’s get started
+              Let's find your next hire
             </p>
             <ButtonGroup className={styles.btnGroup}>
-              <Button to='/submit-resume'>Submit resume</Button>
-              <Button uiType='secondary' href='tel:1234567890'>
+              <Button to='/looking-for-talent'>Looking for Talent</Button>
+              <Button uiType='secondary' href='tel:2127507007'>
                 Call us
               </Button>
             </ButtonGroup>
@@ -84,3 +85,5 @@ const SuccessPage = () => {
 };
 
 export default SuccessPage;
+
+export const Head = () => <SEO title='Success Stories - JSB Partners' />;

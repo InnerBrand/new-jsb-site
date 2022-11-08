@@ -1,5 +1,5 @@
 import nodemailer from 'nodemailer';
-import {google} from 'googleapis';
+import { google } from 'googleapis';
 const OAuth2 = google.auth.OAuth2;
 
 const createTransporter = async () => {
@@ -49,7 +49,6 @@ export const sendEmail = async data => {
 
   try {
     let response = await transporter.sendMail(mailOptions);
-    console.log(response);
     if (response.rejected.length) {
       return false;
     } else {

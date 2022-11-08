@@ -1,17 +1,15 @@
-import React, { useState } from 'react';
-import PropTypes from 'prop-types';
+import React, { useState, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
+import axios from 'axios';
 import validation from 'libs/validation';
 // Components
-import Blob from 'components/Blob';
 import CircleButton from 'components/CircleButton';
 import Container from 'components/Container';
-import Dropzone from 'components/Dropzone';
 import Input from 'components/Input';
 import Layout from 'components/Layout';
 import Space from 'components/Space';
 import TabSelector from 'components/TabSelector';
-import apiAxios from '../../api.config';
+import { SEO } from '../components/Seo';
 // Styles
 import * as styles from 'styles/modules/pages/SubmitResume.module.scss';
 
@@ -26,25 +24,67 @@ const Talent = props => {
     contactMethodData.find(item => item.defaultChecked).id;
 
   const [contactMethod, setContactMethod] = useState(getDefaultContactMethod);
-  const [file, setFile] = useState(null);
+  const [message, setMessage] = useState('Submit');
 
   const {
     register,
     formState: { errors },
     handleSubmit,
+    reset,
   } = useForm({ mode: 'onSubmit' });
 
+  /**
+   * Change message after 5 seconds
+   */
+  useEffect(() => {
+    if (message === 'Success' || message === 'Error') {
+      setTimeout(() => {
+        setMessage('Submit');
+      }, 5000);
+    }
+  }, [message]);
+
   const onSubmit = async (data, e) => {
-    data.file = file;
-    console.log(data);
-    const res = await apiAxios.request({
-      url: '/send-mail',
-      method: 'post',
-      data,
+    setMessage('Sending...');
+
+    const formData = new FormData();
+    Object.entries(data).forEach(([key, value]) => {
+      formData.append(key, value);
     });
+
+    axios
+      .post(process.env.GATSBY_GET_FORM_TALENT, formData, {
+        headers: { Accept: 'application/json' },
+      })
+      .then(function (response) {
+        setMessage('Success');
+      })
+      .catch(function (error) {
+        console.error(error);
+        alert(`Upss...!, Data has not been recorded`);
+        setMessage('Error');
+      })
+      .finally(() => {
+        resetForm();
+      });
   };
 
   const onError = (errors, e) => console.log('Errors: ', errors);
+
+  /**
+   * Clean fileds form
+   */
+  const resetForm = () => {
+    reset({
+      firstName: '',
+      lastName: '',
+      orgName: '',
+      email: '',
+      phone: '',
+      theNeeds: '',
+    });
+    setContactMethod('email');
+  };
 
   return (
     <Layout>
@@ -58,7 +98,8 @@ const Talent = props => {
           <form
             className={styles.form}
             onSubmit={handleSubmit(onSubmit, onError)}
-            noValidate>
+            noValidate
+          >
             <div className={styles.formItem}>
               <h3 className={styles.formQuestion}>What's your name?</h3>
               <div className={styles.inputWrapper}>
@@ -161,7 +202,11 @@ const Talent = props => {
               </div>
             </div>
 
-            <CircleButton ctaText='Submit' showArrow={true} />
+            <CircleButton
+              ctaText={`${message}`}
+              showArrow={true}
+              disabled={message !== 'Submit'}
+            />
 
             <Space unit={24} />
           </form>
@@ -174,3 +219,5 @@ const Talent = props => {
 Talent.propTypes = {};
 
 export default Talent;
+
+export const Head = () => <SEO title='Looking for Talent - JSB Partners' />;
