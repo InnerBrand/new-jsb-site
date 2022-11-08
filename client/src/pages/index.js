@@ -47,7 +47,9 @@ const Home = ({ data }) => {
             </p>
             <ButtonGroup className={styles.btnGroup}>
               <Button to='/submit-resume'>Submit resume</Button>
+
               <Button uiType='secondary' href='tel:2127507007'>
+
                 Call us
               </Button>
             </ButtonGroup>
