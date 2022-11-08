@@ -77,7 +77,7 @@ const Header = props => {
                   <div>
                     <a
                       className={styles.navItem}
-                      href='https://jsb.jobboardfire.com'
+                      href='https://jobs.jsbpartners.com'
                       target='_blank'
                       rel='noopener noreferrer'
                     >
