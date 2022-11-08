@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 // Components
 import Container from 'components/Container';
 // Styles
@@ -12,7 +11,7 @@ const LadyQuote = () => {
     <section className={styles.wrapper}>
       <Container className={styles.content}>
         <div className={styles.image}>
-          <img src={LadyQuotePic} />
+          <img src={LadyQuotePic} alt='' />
         </div>
         <div className={styles.info}>
           <h4>

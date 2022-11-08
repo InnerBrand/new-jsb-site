@@ -1,26 +1,27 @@
-import React, {useState} from 'react';
-import PropTypes from 'prop-types';
-import {useForm} from 'react-hook-form';
+import React, { useState, useEffect } from 'react';
+import { useForm } from 'react-hook-form';
 import validation from 'libs/validation';
 // Components
 import Blob from 'components/Blob';
 import CircleButton from 'components/CircleButton';
 import Container from 'components/Container';
 import Dropzone from 'components/Dropzone';
+import DropzoneEmpty from 'components/DropzoneEmpty';
 import Input from 'components/Input';
 import Layout from 'components/Layout';
 import Space from 'components/Space';
 import TabSelector from 'components/TabSelector';
-import apiAxios from '../../api.config';
-// import {useGoogleApis} from 'hooks/useGoogleApis';
+import axios from 'axios';
+import { SEO } from '../components/Seo';
+
 // Styles
 import * as styles from 'styles/modules/pages/SubmitResume.module.scss';
 
 const SubmitResume = props => {
   const contactMethodData = [
-    {id: 'phone', value: 'Phone', label: 'Phone'},
-    {id: 'email', value: 'Email', label: 'Email', defaultChecked: true},
-    {id: 'either', value: 'Either', label: 'Either'},
+    { id: 'phone', value: 'Phone', label: 'Phone' },
+    { id: 'email', value: 'Email', label: 'Email', defaultChecked: true },
+    { id: 'either', value: 'Either', label: 'Either' },
   ];
 
   const getDefaultContactMethod = () =>
@@ -28,54 +29,89 @@ const SubmitResume = props => {
 
   const [contactMethod, setContactMethod] = useState(getDefaultContactMethod);
   const [file, setFile] = useState(null);
-
-  // Add gapi script to head
-  // useGoogleApis();
+  const [empty, setEmpty] = useState(null);
+  const [message, setMessage] = useState('Submit');
+  const [showDropZone, setShowDropZone] = useState(true);
 
   const {
     register,
-    formState: {errors},
+    formState: { errors },
     handleSubmit,
-  } = useForm({mode: 'onSubmit'});
+    reset,
+  } = useForm({ mode: 'onSubmit' });
+
+  /**
+   * Change message after 5 seconds
+   */
+  useEffect(() => {
+    if (message === 'Success' || message === 'Error') {
+      setTimeout(() => {
+        setMessage('Submit');
+      }, 5000);
+    }
+  }, [message]);
+
+  /**
+   * Refresh dropZone after 1 seconds
+   */
+  useEffect(() => {
+    if (!showDropZone) {
+      setTimeout(() => {
+        setShowDropZone(true);
+      }, 100);
+    }
+  }, [showDropZone]);
 
   const onSubmit = async (data, e) => {
     e.preventDefault();
 
-    const fileData = new FormData();
-    fileData.append('resume', file);
-
-    try {
-      // Upload file
-      const uploadRes = await apiAxios.request({
-        url: '/upload-file',
-        method: 'post',
-        data: fileData,
-        headers: {
-          'Content-Type': 'multipart/form-data',
-        },
-      });
-
-      console.log(uploadRes);
-
-      // Construct share link from uploaded file
-      // https://drive.google.com/file/d/1Z1FyGyRTrEaKy_E8WzqrKsvqzgYE2hJp/view?usp=sharing
-      const {id} = uploadRes.data;
-      const shareLink = `https://drive.google.com/file/d/${id}/view?usp=sharing`;
-
-      data.shareLink = shareLink;
-
-      // Send an email to JSB including the uploaded file share link
-      const mailRes = await apiAxios.request({
-        url: '/send-mail',
-        method: 'post',
-        data,
-      });
-    } catch (error) {
-      console.log(error);
+    if (!file) {
+      alert('You need to upload a resume');
+      return;
     }
+    setMessage('Sending...');
+
+    const formData = new FormData();
+    formData.append('files', file);
+    Object.entries(data).forEach(([key, value]) => {
+      formData.append(key, value);
+    });
+
+    axios
+      .post(process.env.GATSBY_GET_FORM_RESUME, formData, {
+        headers: { Accept: 'application/json' },
+      })
+      .then(function (response) {
+        setMessage('Success');
+      })
+      .catch(function (error) {
+        console.error(error);
+        alert(`Upss...!, Data has not been recorded`);
+        setMessage('Error');
+      })
+      .finally(() => {
+        resetForm();
+      });
   };
 
   const onError = (errors, e) => console.log('Errors: ', errors);
+
+  /**
+   * Clean fileds form
+   */
+  const resetForm = () => {
+    reset({
+      firstName: '',
+      lastName: '',
+      orgName: '',
+      email: '',
+      phone: '',
+      theNeeds: '',
+    });
+    setContactMethod('email');
+    setFile(null);
+    setShowDropZone(false);
+  };
 
   return (
     <Layout>
@@ -89,7 +125,8 @@ const SubmitResume = props => {
           <form
             className={styles.form}
             onSubmit={handleSubmit(onSubmit, onError)}
-            noValidate>
+            noValidate
+          >
             <div className={styles.formItem}>
               <h3 className={styles.formQuestion}>What's your name?</h3>
               <div className={styles.inputWrapper}>
@@ -159,11 +196,19 @@ const SubmitResume = props => {
 
             <div className={styles.formItem}>
               <h3 className={styles.formQuestion}>Upload your resume</h3>
-              <Dropzone setFile={setFile} />
+              {showDropZone ? (
+                <Dropzone setFile={setFile} />
+              ) : (
+                <DropzoneEmpty />
+              )}
               <Blob className={styles.blob} />
             </div>
 
-            <CircleButton ctaText='Submit' showArrow={true} />
+            <CircleButton
+              ctaText={`${message}`}
+              showArrow={true}
+              disabled={message !== 'Submit'}
+            />
 
             <Space unit={24} />
           </form>
@@ -176,3 +221,5 @@ const SubmitResume = props => {
 SubmitResume.propTypes = {};
 
 export default SubmitResume;
+
+export const Head = () => <SEO title='Resume - JSB Partners' />;

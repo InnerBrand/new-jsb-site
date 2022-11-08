@@ -1,8 +1,8 @@
-import React, {useEffect} from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import ReactTooltip from 'react-tooltip';
 // SVG
-import {ExclamationCircleIcon} from '@heroicons/react/solid';
+import { ExclamationCircleIcon } from '@heroicons/react/solid';
 // Styles
 import * as styles from 'styles/modules/Input.module.scss';
 

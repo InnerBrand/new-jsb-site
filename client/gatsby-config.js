@@ -1,9 +1,10 @@
-require('dotenv').config({path: '.env'});
+require('dotenv').config({ path: '.env' });
 
 module.exports = {
   siteMetadata: {
-    siteUrl: 'https://jsb.com',
-    title: 'jsb gatsby 2022',
+    siteUrl: `https://${process.env.DOMAIN}`,
+    title: 'JSB Partners - Consultants Executive Search',
+    description: `JSB Partners - Consultants Executive Search`,
   },
   plugins: [
     `gatsby-plugin-gatsby-cloud`,
@@ -20,6 +21,7 @@ module.exports = {
         projectId: process.env.SANITY_PROJECT_ID,
         dataset: process.env.SANITY_DATASET,
         watchMode: process.env.NODE_ENV === 'development' ? true : false,
+        token: process.env.SANITY_API_TOKEN,
       },
     },
     {
@@ -63,6 +65,23 @@ module.exports = {
       options: {
         name: `images`,
         path: `${__dirname}/src/assets/images/`,
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        policy: [
+          {
+            userAgent: '*',
+            disallow: ['/'],
+          },
+        ],
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-manifest',
+      options: {
+        icon: 'src/assets/images/favicon.png',
       },
     },
   ],

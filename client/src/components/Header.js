@@ -1,6 +1,5 @@
-import React, {useEffect, useRef, useState} from 'react';
-import PropTypes from 'prop-types';
-import {Link} from 'gatsby';
+import React, { useEffect, useRef, useState } from 'react';
+import { Link } from 'gatsby';
 import {
   disableBodyScroll,
   enableBodyScroll,
@@ -19,7 +18,6 @@ const Header = props => {
   const [navbarOpen, setNavbarOpen] = useState(false);
 
   const handleToggle = () => {
-    console.log(handleToggle);
     setNavbarOpen(state => !state);
   };
 
@@ -28,14 +26,14 @@ const Header = props => {
       ? disableBodyScroll(scrollRef.current)
       : enableBodyScroll(scrollRef.current);
     return () => {
-      console.log('header cleanup');
       clearAllBodyScrollLocks(scrollRef.current);
     };
   }, [navbarOpen]);
 
   return (
     <header
-      className={`${styles.header} ${navbarOpen ? styles.menuIsOpen : ''}`}>
+      className={`${styles.header} ${navbarOpen ? styles.menuIsOpen : ''}`}
+    >
       <div className={styles.overlayWrapper}>
         <div className={styles.circleWrapper}>
           <div className={styles.circle} />
@@ -76,6 +74,17 @@ const Header = props => {
                     Looking for talent?
                     <FancyArrowRight className={styles.linkArrow} />
                   </Link>
+                  <div>
+                    <a
+                      className={styles.navItem}
+                      href='https://jobs.jsbpartners.com'
+                      target='_blank'
+                      rel='noopener noreferrer'
+                    >
+                      Career Opportunities
+                      <FancyArrowRight className={styles.linkArrow} />
+                    </a>
+                  </div>
                   <Link to='/success' className={styles.navItem}>
                     Success stories
                     <FancyArrowRight className={styles.linkArrow} />
@@ -93,9 +102,6 @@ const Header = props => {
                     <Link to='/submit-resume' className={styles.navItem}>
                       Send us your resume
                     </Link>
-                    <Link to='/submit-resume' className={styles.navItem}>
-                      Careers at JSB
-                    </Link>
                   </div>
                   <div className={styles.menuAddress}>
                     <p className={styles.navItem}>
@@ -104,7 +110,16 @@ const Header = props => {
                     <a className={styles.navItem} href='tel:212-750-7007'>
                       212-750-7007
                     </a>
-                    <p className={styles.navItem}>yourexpert@jsbpartners.com</p>
+                    <p className={styles.navItem}>
+                      <a
+                        className={styles.text}
+                        href='mailto:yourexpert@jsbpartners.com'
+                        target='_blank'
+                        rel='noreferrer'
+                      >
+                        yourexpert@jsbpartners.com
+                      </a>
+                    </p>
                   </div>
                 </div>
               </div>

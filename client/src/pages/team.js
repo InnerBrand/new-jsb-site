@@ -1,7 +1,6 @@
 import React from 'react';
-import {graphql} from 'gatsby';
+import { graphql } from 'gatsby';
 // Components
-import Blob from 'components/Blob';
 import Container from 'components/Container';
 import FactsPlank from 'components/FactsPlank';
 import Layout from 'components/Layout';
@@ -9,12 +8,13 @@ import LadyQuote from 'components/LadyQuote';
 import Space from 'components/Space';
 import TeamMembers from 'components/TeamMembers';
 import ContouredSection from 'components/ContouredSection';
-import Button, {ButtonGroup} from 'components/Button';
+import Button, { ButtonGroup } from 'components/Button';
+import { SEO } from '../components/Seo';
 
 // Styles
 import * as styles from 'styles/modules/pages/Team.module.scss';
 
-const TeamPage = ({data}) => {
+const TeamPage = ({ data }) => {
   const {
     heroHeadline,
     teamMembers,
@@ -24,7 +24,6 @@ const TeamPage = ({data}) => {
     facts,
   } = data.allSanityTeamPage.nodes[0];
 
-  console.log(data.allSanityTeamPage.nodes[0]);
   return (
     <>
       <Layout>
@@ -115,3 +114,5 @@ export const query = graphql`
 `;
 
 export default TeamPage;
+
+export const Head = () => <SEO title='Meet your Expert - JSB Partners' />;
